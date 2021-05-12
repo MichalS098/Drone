@@ -1,0 +1,73 @@
+/*!
+ \mainpage Wizualizacja niektórych elementów misji Dragonfly
+
+ \author Jan Kowalski
+ \date   2021.05.04
+ \version 0.1
+
+ \section charakterystyka Charakterystyka misji Dragonfly
+
+
+W roku 2027 NASA planuję rozpocząć realizację misji pod nazwą kodową \e Dragonfly.
+Jej celem jest wysłanie zrobotyzowanego drona na Tytana (księżyc Saturna).
+
+ \image html  dragonfly-world.jpg "Wizja artystyczna drona misji \e Dragonfly oraz tego co może zobaczyć na Tytanie"
+
+Lądowanie przewidziane jest na rok 2034 lub później.
+Tytan różni się od innych księżyców w Układzie Słonecznym tym, że ma stosunkowo gęstą
+atmosferę. Dlatego też do jego eksploracji przewidziany jest dron.
+Jak źródło energii będzie wykorzystywane ogniowo izotopowe (podobnie jak w przypadku misji
+Curiosity i Perseverance
+oraz wcześniejszych misji poza Układ Słoneczny, tzn. Pionieer 10 i 11 oraz Voyager 1 i 2).
+Dragonfly po Ingenuity będzie drugim latającym dronem na innym umieszczonym i wykorzystywanym
+na ciele niebieskim. W odróżnieniu od Ingenuity nie będzie jednak tylko demonstratorem
+technologii, a pełnoprawnym samodzielnym laboratorium badawczym, tak jak Curiosity,
+czy też Perseverance. Jednak podobnie jak w przypadku Ingenuity ze względu na duże
+opóźnienie w komunikacji (ponad godzinę), jego przelot będzie
+musiał być w pełni autonomiczny, w tym wyszukiwanie odpowiednich miejsc do lądowania.
+
+
+ \section usecase-diagram Diagram przypadków użycia
+
+Diagram użycia w tym zadaniu obrazuje operacja jakie użytkownik może żądać od aplikacji.
+Może on też pokazywać jakie są niezbędne do realizacji danego żądania.
+Zestaw operacji, które może żądać użytkownik, w tym przypadku odpowiadają pozycjom menu aplikacji.
+
+ \image html  inkscape-dia-diagram_przypadkow_uzycia.svg "Diagram przypadków użycia dla aplikacji"
+
+ \section class-diagram  Diagram podstawowych klas
+
+
+Poniżej przedstawiony jest diagram klas, który traktowany jest jako punkt wyjścia dla tworzonej
+aplikacji. Interfejsy poszczególnych klas zostały ograniczone tylko do najważniejszego zestawu
+metod. Nie należy więc traktować jako kompletnego diagramu.
+
+
+ \image html  inkscape-dia-diagram_klas.svg "Diagram klas z ważniejszymi metodami"
+
+
+ \section activity-diagram  Diagramy czynności dla wybranych metod
+
+ Obliczanie i zapis współrzędnych wierzchołków po zmianie położenia drona realizowane jest
+ przez metodę \p Dron::Oblicz_i_Zapisz_WspGlbDrona(). Wykorzystuje ona dwie inne
+ metody, tzn.  \p Dron::Oblicz_i_Zapisz_WspGlbKorpusu() i  \p Dron::Oblicz_i_Zapisz_WspGlbRotora(.),
+ które odpowiedzialne są odpowiednio za obliczenie współrzędnych korpusu oraz czterech rotorów.
+ Sposób użycia tych metod przedstawia diagramie poniżej.
+ 
+ \image html  inkscape-dia-diagram_czynnosci-obliczanie_wierzcholkow_drona.svg "Diagram czynności dla metody Dron::Oblicz_i_Zapisz_WspGlbDrona()."
+
+
+ Ideę działania metody \p Dron::Oblicz_i_Zapisz_WspGlbRotora(.) prezentuje dalszy diagram czynności.
+ Diagram ten pokazuje kolejne operacje związane z przeskalowaniem wierzchołków bryły geometrycznej.
+ Następnie, przeliczenie i przejście do układu współrzędnych lokalnych drona. W dalszej kolejności
+ ponowne przeliczenie i przejście do układu współrzędnych globalnych sceny.
+
+ \image html  inkscape-dia-diagram_czynnosci-obliczanie_wierzcholkow_rotora.svg "Diagram czynności dla metody Dron::Oblicz_i_Zapisz_WspGlRotorab(.)."
+
+
+ Analogiczną postać ma diagram czynności dla metody \p Dron::Oblicz_i_Zapisz_WspGlbKorpusu().
+
+
+*/
+
+
