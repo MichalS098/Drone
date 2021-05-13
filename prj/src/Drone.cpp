@@ -8,6 +8,14 @@
 #define PLIK_WZORCOWY_GRANIASTOSLUP "bryly_wzorcowe/graniastoslup6.dat"
 #define PLIK_WZORCOWY_PROSTOPADLOSCIAN "bryly_wzorcowe/szescian"
 
+#define PLIK_WLASCIWY__DRON1_KORPUS  "dat/PlikWlasciwy_Dron1_Korpus.dat"
+#define PLIK_WLASCIWY__DRON1_ROTOR1  "dat/PlikWlasciwy_Dron1_Rotor1.dat"
+#define PLIK_WLASCIWY__DRON1_ROTOR2  "dat/PlikWlasciwy_Dron1_Rotor2.dat"
+#define PLIK_WLASCIWY__DRON1_ROTOR3  "dat/PlikWlasciwy_Dron1_Rotor3.dat"
+#define PLIK_WLASCIWY__DRON1_ROTOR4  "dat/PlikWlasciwy_Dron1_Rotor4.dat"
+
+
+
 using namespace std;
 
 /**
@@ -18,14 +26,16 @@ using namespace std;
  * plików wzorcowych oraz plików finalnych
  * 
  */
-Drone::Drone(){
-    Rectangular body(PLIK_WZORCOWY_GRANIASTOSLUP, "text");
-    droneBody=body;
-    HexagonalPrism rotor2(PLIK_WZORCOWY_GRANIASTOSLUP, "xd");
+Drone::Drone(): position{0,0,0}, orientationAngle{0}
+{
+    string rotorFileNames[4]={"dat/PlikWlasciwy_Dron1_Rotor1.dat","dat/PlikWlasciwy_Dron1_Rotor2.dat",
+                              "dat/PlikWlasciwy_Dron1_Rotor3.dat","dat/PlikWlasciwy_Dron1_Rotor4.dat"};
+    droneBody.enterFileName_finalFig(PLIK_WLASCIWY__DRON1_KORPUS);
+    droneBody.enterFileName_refFig(PLIK_WZORCOWY_PROSTOPADLOSCIAN);
     for(int i=0; i<4; ++i){
-        droneRotor[i]=rotor2
+        droneRotor[i].enterFileName_finalFig(rotorFileNames[i]);
+        droneRotor[i].enterFileName_refFig(PLIK_WZORCOWY_GRANIASTOSLUP);   
     }
-    droneRotor
 }
 
 
