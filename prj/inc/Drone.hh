@@ -14,10 +14,16 @@ private:
 
     bool calcAndSave_BodyCoords() const;
     bool calcAndSave_RotorCoords(const HexagonalPrism& rotor) const;
-public:
+
+protected:
     Vector<3> transfToParentCoordSys(const Vector<3>& apex) const;
-    void planInitialFlightPath(double turnAngle, double flightLenght, std::vector<Vector<3>>& pathPoints);
-    bool makeVerticalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze);
+
+public:
+    Drone();
+    
+    void planInitialFlightPath(double turnAngle, double flightLenght, double height,
+                               std::vector<Vector<3>>& pathPoints, PzG::LaczeDoGNUPlota& Lacze);
+    bool makeVerticalFlight(double height, PzG::LaczeDoGNUPlota& Lacze);
     bool makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze);
     bool calcAndSave_DroneCoords() const;
 };

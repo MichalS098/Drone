@@ -30,6 +30,6 @@ public:
     void enterFileName_refFig(std::string fileName) {referenceFig_FileName=fileName;}
     void enterFileName_finalFig(std::string fileName) {finalFig_fileName=fileName;}
     
-    Vector<3> scaleUp(const Vector<3>& apex);
+    Vector<3> scaleUp(const Vector<3>& apex) const ;
 };
 

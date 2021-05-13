@@ -325,7 +325,7 @@ bool TworzKorpus(const char*  NazwPliku_KorpusuWDronie,
 
 
 /*!
- * \brief Tworzy pliku pozwalające na wizualizację drona.
+ * \brief Tworzy pliki pozwalające na wizualizację drona.
  * 
  * Zapisuje do odpwiednich plików opisy brył tworzących wizualizację drona.
  *
