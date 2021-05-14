@@ -1,35 +1,42 @@
 #pragma once
+
 #include <string>
 #include "Vector.hh"
 
 /**
  * @brief Klasa Bazowa opisujaca figure geometryczna
  * 
- *        Klasa bazowa opisujaca figure geometryczna 
- *        przechowuja nazwe pliku z wzorcowa figura oraz nazwe pliku z finalna figura         
+ * Klasa bazowa opisujaca figure geometryczna 
+ * przechowuja nazwe pliku z wzorcowa figura oraz nazwe pliku z finalna figura         
  */
 class GeometricFigure{
 private:
-    std::string referenceFig_FileName;
-    std::string finalFig_fileName;
-    Vector<3> scale;
+    std::string _referenceFig_FileName;
+    std::string _finalFig_fileName;
+    Vector<3>   _scale;
 public:
     /**
-     * @brief Funkcje zwracaja zapisane nazwy plikow
-     *        referencujnego obiektu oraz finalnego
-     * @return const std::string& nazwa pliku przechowujacego figure geometryczna
+     * @brief Funkcja zwraca zapisaną nazwe pliku wzorcowego obiektu.
+     * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
      */
-    const std::string& takeFileName_refFig() const {return referenceFig_FileName;}
-    const std::string& takeFileName_finalFig() const {return finalFig_fileName;}
+    const std::string& takeFileName_refFig() const {return _referenceFig_FileName;}
+    /**
+     * @brief Funkcja zwraca zapisaną nazwe pliku finalnego/właściwego obiektu.
+     * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
+     */
+    const std::string& takeFileName_finalFig() const {return _finalFig_fileName;}
 
     /**
-     * @brief Funkcje pozwalajace na zapis do pliku przechowujacego figure geometryczna
-     * 
-     * @param fileName nazwa pliku do zapisu
+     * @brief Funkcje pozwalające na dostęp do zapisu nazwy pliku wzorcowego i 
+     *        pliku finalnego/właściwego figury geometrycznej.
+     * @param fileName - nazwa pliku do zapisu.
      */
-    void enterFileName_refFig(std::string fileName) {referenceFig_FileName=fileName;}
-    void enterFileName_finalFig(std::string fileName) {finalFig_fileName=fileName;}
+    void enterFileName_refFig(std::string fileName) {_referenceFig_FileName=fileName;}
+    void enterFileName_finalFig(std::string fileName) {_finalFig_fileName=fileName;}
     
     Vector<3> scaleUp(const Vector<3>& apex) const ;
 };
 
+
+std::string makeRotorFileName(unsigned int droneNR, unsigned int rotorNR);
+std::string makeBodyFileName(unsigned int droneNR);

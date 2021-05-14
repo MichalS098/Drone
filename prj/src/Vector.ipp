@@ -148,7 +148,7 @@ std::istream& operator>>(std::istream &is, Vector<T>& v){
 template<unsigned int T>
 std::ostream& operator<<(std::ostream &os, const Vector<T>& v){
 	for(int i=0; i<v.size(); ++i){
-		os << std::setw(16) << std::fixed << std::setprecision(10) << v[i];
+		os << v[i] << " ";
 	}
 	return os;
 }

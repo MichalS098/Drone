@@ -4,16 +4,17 @@
 #include "GeometricFigure.hh"
 
 /**
- * @brief Klasa opisuje prostopadloscian
+ * @brief Klasa pochodna klasy figury geometrycznej definiująca prostopadłościan.
  * 
- * 		  Klasa opisuje prostopadłościan przy pomocy 8 wektorow wodzacych
- * 		  oraz kata orientacji
+ * Klasa pochodna klasy figury geometrycznej definiująca
+ * prostopadłościan. Określamy go na podstawie jego pozycji
+ * kąta orientacji, oraz nazw plików wzorcowego i właściwego 
+ * dziedziczonych z klasy "GeometricFigure".
  */
 class Rectangular: public GeometricFigure{
-	Vector<3> position;		
-    double orientationAngle;
+	Vector<3> 	_position;		
+    double 		_orientationAngle;
 public:
-	//Rectangular(std::string refFileName, std::string finalFileName);
 	Vector<3> transfToParentCoordSys(const Vector<3>& apex) const;
 };
 

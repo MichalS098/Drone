@@ -1,277 +1,266 @@
 #include "Drone.hh"
+#include "GeometricFigure.hh"
+#include "Matrix.hh"
 #include <fstream>
 #include <iostream>
 #include <assert.h>
 #include <unistd.h>
-
-#define PLIK_TRASY_PRZELOTU "dat/trasa_przelotu.dat"
-#define PLIK_WZORCOWY_GRANIASTOSLUP "bryly_wzorcowe/graniastoslup6.dat"
-#define PLIK_WZORCOWY_PROSTOPADLOSCIAN "bryly_wzorcowe/szescian"
-
-#define PLIK_WLASCIWY__DRON1_KORPUS  "dat/PlikWlasciwy_Dron1_Korpus.dat"
-#define PLIK_WLASCIWY__DRON1_ROTOR1  "dat/PlikWlasciwy_Dron1_Rotor1.dat"
-#define PLIK_WLASCIWY__DRON1_ROTOR2  "dat/PlikWlasciwy_Dron1_Rotor2.dat"
-#define PLIK_WLASCIWY__DRON1_ROTOR3  "dat/PlikWlasciwy_Dron1_Rotor3.dat"
-#define PLIK_WLASCIWY__DRON1_ROTOR4  "dat/PlikWlasciwy_Dron1_Rotor4.dat"
-
-
+#include <string>
 
 using namespace std;
 
+// REF stands for reference
+#define REF_ROTOR_FILE_NAME "bryly_wzorcowe/graniastoslup6.dat"
+#define REF_BODY_FILE_NAME "bryly_wzorcowe/szescian.dat"
+#define FLIGHT_PATH_FILE_NAME "dat/trasa_przelotu.dat"
+
 /**
- * @brief Konstruktor obiektu dron.
+ * @brief Funkcja inizjalizuje Drona.
  * 
- * Konstruktor drona, przypisuje on wartości zerowe do wektorów pozycji i kąta orientacji,
- * tworzy obiekty prostopadłościan oraz 4 graniastosłupy sześciokątne inicjalizując je nazwami
- * plików wzorcowych oraz plików finalnych
- * 
+ * Funkcja inicjalizuje drona poprzez, przypisanie jego atrybutom 
+ * (prostopadłościanowi oraz rotorom) ich nazwy plików właściwych oraz wzorcowych.
+ * Funkcja dodaje odrazu nazwy tych plików do łącza do GNU-PLOT'a
+ * @param ID - id Drona
+ * @param Lacze - Lacze do gnuplota 
  */
-Drone::Drone(): position{0,0,0}, orientationAngle{0}
-{
-    string rotorFileNames[4]={"dat/PlikWlasciwy_Dron1_Rotor1.dat","dat/PlikWlasciwy_Dron1_Rotor2.dat",
-                              "dat/PlikWlasciwy_Dron1_Rotor3.dat","dat/PlikWlasciwy_Dron1_Rotor4.dat"};
-    droneBody.enterFileName_finalFig(PLIK_WLASCIWY__DRON1_KORPUS);
-    droneBody.enterFileName_refFig(PLIK_WZORCOWY_PROSTOPADLOSCIAN);
-    for(int i=0; i<4; ++i){
-        droneRotor[i].enterFileName_finalFig(rotorFileNames[i]);
-        droneRotor[i].enterFileName_refFig(PLIK_WZORCOWY_GRANIASTOSLUP);   
+void Drone::makeDrone(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze){
+    unsigned int index=0;
+    string       fileName;
+    _ID=ID;
+
+    for(HexagonalPrism& rotor: _droneRotor){
+        fileName=makeRotorFileName(ID, ++index);
+        rotor.enterFileName_finalFig(fileName);
+        rotor.enterFileName_refFig(REF_ROTOR_FILE_NAME);
+        Lacze.DodajNazwePliku(fileName.c_str());
     }
+    fileName=makeBodyFileName(ID);
+    _droneBody.enterFileName_finalFig(fileName);
+    _droneBody.enterFileName_refFig(REF_BODY_FILE_NAME);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*!
- * \brief Przelicza wartość kąta ze stopni na radiany.
- *
- * Przelicza wartość kąta ze stopni na radiany.
- * \param[in] Kat_st - wartość kąta wyrażona w stopniach.
- * \return Wartość przeliczonego kąta wyrażona w radianach.
- */
-double StopnieNaRadiany(double Kat_st)
-{
-    return Kat_st*M_PI/180;
-}
-
-void  ObrocWzgledemOsiOZ( double  KatObrotu_st, Vector<3>& wierz)
-{
-    double Kat_rad = StopnieNaRadiany(KatObrotu_st);
-    double sn = sin(Kat_rad), cn = cos(Kat_rad);
-    wierz[0] = wierz[0]*cn-wierz[1]*sn;
-    wierz[1] = wierz[0]*sn+wierz[1]*cn;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /**
- * @brief Oblicza i zapisuje wspolrzedne korpusu
+ * @brief Funkcja oblicza i zapisuje współrzędne globalne korpusu do plików. 
  * 
- * @return true kiedy operacja sie powiodla
- * @return false kiedy operacja sie nie powiodla
+ * @return true - Operacja udana
+ * @return false - Błąd operacji
  */
 bool Drone::calcAndSave_BodyCoords() const{
-    ifstream referenceFig{droneBody.takeFileName_refFig()};
-    ofstream finalFig{droneBody.takeFileName_finalFig()};
-
-    if (!referenceFig.is_open()) {
+    ifstream referenceFigStream{_droneBody.takeFileName_refFig()};
+    ofstream finalFigStream{_droneBody.takeFileName_finalFig()};
+    if (!referenceFigStream.is_open()) {
         cerr << endl
-	    << " Blad otwarcia do odczytu pliku: " << droneBody.takeFileName_refFig() << endl
+	    << " Blad otwarcia do odczytu pliku: " << _droneBody.takeFileName_refFig() << endl
 	    << endl;
         return false;
     }
-    if (!finalFig.is_open()) {
+    if (!finalFigStream.is_open()) {
         cerr << endl
-        << " Blad otwarcia do odczytu pliku: " << droneBody.takeFileName_finalFig() << endl
+        << " Blad otwarcia do odczytu pliku: " << _droneBody.takeFileName_finalFig() << endl
 	    << endl;
         return false;
     }
-
-    Vector<3> bodyPosVec;
-    while (!referenceFig.fail()) {
-        for (unsigned int apexCounter=0; apexCounter < 4; ++apexCounter){
-            referenceFig>>bodyPosVec;         //wczytanie z pliku linii
-            bodyPosVec = droneBody.scaleUp(this->position);  
-            bodyPosVec = droneBody.transfToParentCoordSys(bodyPosVec);
-            bodyPosVec = this->transfToParentCoordSys(bodyPosVec);
-            finalFig << bodyPosVec[0] << " " << bodyPosVec[1] << " " << bodyPosVec[2] << endl;
-            assert(apexCounter == 3 || !referenceFig.fail());
+    Vector<3> apex;
+    referenceFigStream >> apex;
+    while (!referenceFigStream.fail()) {
+        for (int apexSize = 0; apexSize < 4; ++apexSize) {
+            apex = _droneBody.scaleUp(apex);
+            apex = _droneBody.transfToParentCoordSys(apex);
+            apex = transfToParentCoordSys(apex);
+            finalFigStream     << apex << endl;
+            referenceFigStream >> apex;
+            assert(apexSize == 3 || !referenceFigStream.fail());
         }
-        finalFig << endl;
+        finalFigStream << endl;
     }
-    referenceFig.close();
-    finalFig.close();
-    return !finalFig.fail();
+    return !finalFigStream.fail();
 }
 
+
 /**
- * @brief Funkcja oblicza i zapisuje wspolrzedne rotora.
+ * @brief Funkcja oblicza i zapisuje współrzędne globalne rotora do plików. 
  * 
- * @param rotor Obiekt ktorego wspolrzedne beda obliczane.
- * @return true jesli operacja a dokladniej otwarcie pliku sie powiedzie.
- * @return false jesli operacja sie nie powiedzie, czyli np nie ma pliku do otwarcia.
+ * @param rotor - jeden z 4 rotorów drona, którego współrzędne będą przeliczane
+ * @return true - Operacja udana
+ * @return false - Błąd operacji
  */
 bool Drone::calcAndSave_RotorCoords(const HexagonalPrism& rotor) const{
-    ifstream referenceFig{rotor.takeFileName_refFig()};
-    ofstream finalFig{rotor.takeFileName_finalFig()};
-
-    if (!referenceFig.is_open()) {
+    ifstream referenceFigStream{rotor.takeFileName_refFig()};
+    ofstream finalFigStream{rotor.takeFileName_finalFig()};
+    if (!referenceFigStream.is_open()) {
         cerr << endl
 	    << " Blad otwarcia do odczytu pliku: " << rotor.takeFileName_refFig() << endl
 	    << endl;
         return false;
     }
-    if (!finalFig.is_open()) {
+    if (!finalFigStream.is_open()) {
         cerr << endl
         << " Blad otwarcia do odczytu pliku: " << rotor.takeFileName_finalFig() << endl
 	    << endl;
         return false;
     }
-
-    Vector<3> rotorPos;
-    while (!referenceFig.fail()) {
-        for (unsigned int apexCounter=0; apexCounter < 4; ++apexCounter){
-            referenceFig>>rotorPos;         //wczytanie z pliku linii
-            //rotorPos = rotor.scaleUp(rotorPos);  
-            rotorPos = rotor.transfToParentCoordSys(this->position);
-            rotorPos = this->transfToParentCoordSys(rotorPos);
-            finalFig << rotorPos[0] << " " << rotorPos[1] << " " << rotorPos[2] << endl;
-            assert(apexCounter == 3 || !referenceFig.fail());
+    Vector<3> apex;
+    referenceFigStream >> apex;
+    while (!referenceFigStream.fail()) {
+        for (int apexSize = 0; apexSize < 4; ++apexSize) {
+            apex = rotor.scaleUp(apex);
+            apex = rotor.transfToParentCoordSys(apex);
+            apex = transfToParentCoordSys(apex);
+            finalFigStream     << apex << endl;
+            referenceFigStream >> apex;
+            assert(apexSize == 3 || !referenceFigStream.fail());
         }
-        finalFig << endl;
+        finalFigStream << endl;
     }
-    referenceFig.close();
-    finalFig.close();
-    return !finalFig.fail();
+    return !finalFigStream.fail();
 }
 
-
-Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
-
-}
 
 /**
- * @brief Funkcja zapisuje do pliku planowana sciezke przelotu drona
+ * @brief Funkcja oblicza i zapisuje współrzędne globalne drona do plików. 
  * 
- *  Funkcja zapisuje do pliku planowana sciezke przelotu drona
- *  i przypisuje ten plik do gnuplota poprzez lacze
- * @param turnAngle kat w kierunku ktorego bedziemy rysowac sciezke
- * @param flightLenght dlugosc sciezki
- * @param pathPoints wektor z STL do przechowywania punktow przelotu
+ * @return true - Operacja udana
+ * @return false - Błąd operacji
  */
-void Drone::planInitialFlightPath(double turnAngle, double flightLenght, double height,
-                                  std::vector<Vector<3>>& pathPoints,
-                                  PzG::LaczeDoGNUPlota& Lacze)
-{
-    orientationAngle=turnAngle;
+bool Drone::calcAndSave_DroneCoords() const{
+    if(!calcAndSave_BodyCoords()) return false;
+    for(int i=0; i<4; ++i){
+        if(!calcAndSave_RotorCoords(_droneRotor[i])) return false;
+    }
+    return true;
+}
 
-    ofstream  pathFile(PLIK_TRASY_PRZELOTU);
-    if (!pathFile.is_open()) {
+
+/**
+ * @brief Funkcja przekształca zadany wierzchołek do układu współrzędnych rodzica. 
+ * 
+ * @param apex - Wierzchołek do przekształcenia 
+ * @return Vector<3> - Przekształcony wierzchołek
+ */
+Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
+    Matrix<3> rotationMatrix;
+    makeRotationMatrix('z', _orientationAngle, rotationMatrix);
+    Vector<3> apexAfterTransf = rotationMatrix * apex;
+    return (apexAfterTransf + _position);
+}
+
+
+/**
+ * @brief Funkcja planuje początkową ścieżkę lotu drona.
+ *
+ * Funkcja tworzy ścieżkę lotu drona dla zadanego kąta i długości
+ * lotu i zapisuje współrzędne jej punktów w wektorze PunktySciezki
+ * 
+ * @param turnAngle Kąt obrotu
+ * @param flightLenght Długość ścieżki
+ * @param pathPoints wektor do którego zapiszemy punkty ścieżki
+ */
+void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, std::vector<Vector<3>>& pathPoints){
+    Vector<3> vec;
+    Matrix<3> rotationMatrix;
+    makeRotationMatrix('z', turnAngle, rotationMatrix);
+ 
+    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* poczatek */
+    vec[2] += flightHeight;
+    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po uniesieniu */
+    vec[0]+=flightLenght;
+    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po locie poziomym */
+    vec[2]-=flightHeight;
+    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po ladowaniu */
+
+    ofstream fileNameStr(FLIGHT_PATH_FILE_NAME);
+    if (!fileNameStr.is_open()){
         cerr << endl
-	    << " Nie mozna otworzyc do zapisu pliku: " << PLIK_TRASY_PRZELOTU << endl
+	    << " Blad otwarcia pliku: " << FLIGHT_PATH_FILE_NAME << endl
 	    << endl;
-        exit (1);
-    }
-    Vector<3> v2=position;
-    v2[2]=v2[2]+height;
-    Vector<3> v3{position[0]+flightLenght,
-                 position[1]+flightLenght,
-                 position[2]+flightLenght};
-    ObrocWzgledemOsiOZ(turnAngle, v3);
-    Vector<3> v4=v3;
-    v4[2]=position[2];
-    pathFile<< this->position << endl
-         	<< v2 << endl
-         	<< v3 << endl
-         	<< v4 << endl;
-    Lacze.DodajNazwePliku(PLIK_TRASY_PRZELOTU);
-}
-
-
-
-bool Drone::makeVerticalFlight(double height, PzG::LaczeDoGNUPlota& Lacze){
-    if(height>0){
-        cout << endl << "Wznoszenie ... " << endl;
-        for (; position[2] <= height; position[2] += 2) {
-            calcAndSave_DroneCoords();
-            usleep(100000); // 0.1 ms
-            Lacze.Rysuj();
-        }
-        position[2] = position[2]-2;
-    }
-    else{
-        cout << endl << "Opadanie ... " << endl;
-        for (; position[2] >= height; position[2] -= 2) {
-            calcAndSave_DroneCoords();
-            usleep(100000); // 0.1 ms
-            Lacze.Rysuj();
-        }
-        position[2] = position[2]+2;
     }   
+    for(const Vector<3> vec : pathPoints){
+        fileNameStr << vec << endl;
     }
+    fileNameStr << endl;
 }
 
+
+/**
+ * @brief Funkcja usuwa powstałą wcześniej ścieżkę lotu drona
+ * 
+ */
+void Drone::deleteFlightPath() const{
+    ofstream fileNameStr(FLIGHT_PATH_FILE_NAME);
+    if (!fileNameStr.is_open()){
+        cerr << endl
+	    << " Blad otwarcia pliku: " << FLIGHT_PATH_FILE_NAME << endl
+	    << endl;
+    }
+    fileNameStr << " ";
+}
+
+
+/**
+ * @brief Funckja przemieszcza dron do przodu.
+ * 
+ * @param flightLenght - długość na jaką ma polecieć dron
+ * @param Lacze - łącze do gnuplota
+ * @return true - zwraca kiedy operacja się powiedzie
+ * @return false - kiedy operacja się nie powiedzie
+ */
 bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze){
     cout << "Lot do przodu ... " << endl;
-    for (; position[0] <= flightLenght; position[0] += 1, position[1] += 1) {
-        calcAndSave_DroneCoords();
+    for (; _position[0] <= 150; _position[0] += 1, _position[1] += 1) {
+        if (!this->calcAndSave_DroneCoords()) return false;
         usleep(100000);
         Lacze.Rysuj();
     }  
-    position[0] = position[0]-1, position[1] = position[1]-1;
+    _position[0] -= 1;
+    _position[1] -= 1;
 }
 
+
 /**
- * @brief Funkcja oblicza i zapisuje wspolrzedne drona 
- *        
- * Zapisujac wspolrzedne rotorow i korpusu w plikach 
+ * @brief Funkcja przemieszcza drona wokol wlasnej osi o podany kat.
  * 
- * @return true kiedy operacja sie powiedzie
- * @return false kiedy operacja sie nie powiedzie
+ * @param angle - kąt obrotu
+ * @param Lacze - łącze do gnuplota
+ * @return true - zwraca kiedy operacja się powiedzie
+ * @return false - kiedy operacja się nie powiedzie
  */
-bool Drone::calcAndSave_DroneCoords() const{
-    if(!calcAndSave_BodyCoords()) return 1;
-    for(int i=0; i<4; ++i){
-        if(!calcAndSave_RotorCoords(droneRotor[i])) return 1;
+bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
+    cout << "Zmiana orientacji ... " << endl;
+    for (; _orientationAngle <= angle; _orientationAngle += 5) {
+        if (!this->calcAndSave_DroneCoords()) return false;
+        usleep(100000);
+        Lacze.Rysuj();
     }
-    return 0;
+    _orientationAngle -= 5;
+}
+
+
+/**
+ * @brief Funkcja przemieszcza drona w kierunku pionowym wokół osi z.
+ * 
+ * @param flightHeight - Wielkość zmiany położenia wysokości
+ * @param Lacze - łącze do gnuplota
+ * @return true - zwraca kiedy operacja się powiedzie
+ * @return false - kiedy operacja się nie powiedzie
+ */
+bool Drone::makeVerticalFlight(double flightHeight, PzG::LaczeDoGNUPlota& Lacze){
+    if(flightHeight>0){
+        cout << endl << "Wznoszenie ... " << endl;
+        for (; _position[2] <= flightHeight; _position[2] += 2) {
+            if (!this->calcAndSave_DroneCoords()) return false;
+            usleep(100000); // 0.1 ms
+            Lacze.Rysuj();
+        }
+        _position[2] -= 2;
+    }
+    else{
+        cout << endl << "Opadanie ... " << endl;
+        for (; _position[2] >= 0; _position[2] -= 2) {
+            if (!this->calcAndSave_DroneCoords()) return false;
+            usleep(100000); // 0.1 ms
+            Lacze.Rysuj();
+        }
+        _position[2] -= 2;
+    }
 }

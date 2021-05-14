@@ -156,31 +156,31 @@ void Matrix<T>::operator=(const Matrix<T>& m){
 }
 
 /**
- * @brief Funkcja tworzy macierz rotacji na podstawie osi wokol ktorej ma obrocic.
+ * @brief Funkcja tworząca macierz obrotu.
  * 
- *        Funkcja tworzy macierz rotacji na podstawie osi wokol ktorej ma obrocic, 
- *        kata o jaki ma obrocic i wielkosci macierzy. Jesli obrot ma zostac wykonany dla macierzy
- *        2x2 jako axis nalezy wpisac 'o' . **Powstala macierz przemnaza przez juz istniejaca i podana jako 
- *        argument, uzyskujac tym samym zlozenie obrotow**
- * @tparam T wielkosc macierzy
- * @param axis Os wokol ktorej macierz ma wykonac obrot
- * @param angleInDegrees kat obrotu podany w stopniach
- * @param rotationMatrix macierz ktora ma zostac przemnozona
+ * Funkcja tworzy macierz obrotu na podstawie osi wokół której ma obrócić oraz
+ * kąta obrotu. Funkcja potrafi tworzyć macierz obrotu wielkości 3x3 pozwalających na obrót
+ * wokół osi (x,y,z) oraz również potrafi stworzyć macierz obrotu wielkości 2x2, wtedy jako 
+ * oś czyli "axis" należy podać 'o' a macierz podana jako argument powinna być macierzą wielkości 2x2.
+ * @tparam T 
+ * @param axis - oś wokół której macierz ma obracać, dostępne opcje : (o,x,y,z)
+ * @param angleInDegrees - kąt obrotu
+ * @param rotationMatrix - macierz rotacji podana jako argument
  */
 template<unsigned int T>
 void makeRotationMatrix(char axis, double angleInDegrees, Matrix<T>& rotationMatrix){           
     double angleRad = angleInDegrees*(number_pi/180);
     if(axis=='o' && T==2){
-	    rotationMatrix = rotationMatrix * Matrix<T>({std::cos(angleRad), std::sin(angleRad), -std::sin(angleRad), std::cos(angleRad)}); 
+	    rotationMatrix = Matrix<T>({std::cos(angleRad), std::sin(angleRad), -std::sin(angleRad), std::cos(angleRad)}); 
     }
     else if(axis=='x' && T==3){
-        rotationMatrix = rotationMatrix * Matrix<T>({1, 0, 0, 0, std::cos(angleRad), std::sin(angleRad), 0, -std::sin(angleRad), std::cos(angleRad)}); 
+        rotationMatrix = Matrix<T>({1, 0, 0, 0, std::cos(angleRad), std::sin(angleRad), 0, -std::sin(angleRad), std::cos(angleRad)}); 
     }
     else if(axis=='y' && T==3){
-        rotationMatrix = rotationMatrix * Matrix<T>({std::cos(angleRad), 0, -std::sin(angleRad), 0, 1, 0, std::sin(angleRad), 0, std::cos(angleRad)}); 
+        rotationMatrix = Matrix<T>({std::cos(angleRad), 0, -std::sin(angleRad), 0, 1, 0, std::sin(angleRad), 0, std::cos(angleRad)}); 
     }
     else if(axis=='z' && T==3){
-        rotationMatrix = rotationMatrix * Matrix<T>({std::cos(angleRad), std::sin(angleRad), 0, -std::sin(angleRad), std::cos(angleRad), 0, 0, 0, 1}); 
+        rotationMatrix = Matrix<T>({std::cos(angleRad), std::sin(angleRad), 0, -std::sin(angleRad), std::cos(angleRad), 0, 0, 0, 1}); 
     }
     else{
         throw std::invalid_argument("unknown axis, there are only options(o,x,y,z), or unknown size for rotation matrix");

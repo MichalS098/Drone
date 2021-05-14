@@ -4,8 +4,8 @@
 
 class Scene{
 private:
-    Drone droneArray[2];
-    PzG::LaczeDoGNUPlota lacze;
+    Drone                 _droneArray[2];
+    PzG::LaczeDoGNUPlota  _lacze;
 public:
     const Drone& takeActiveDrone() const;
     Drone& useActiveDrone();

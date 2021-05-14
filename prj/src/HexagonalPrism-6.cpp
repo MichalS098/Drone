@@ -1,25 +1,18 @@
 #include <string>
 #include "HexagonalPrism-6.hh"
+#include "Matrix.hh"
 
 using namespace std;
 
 /**
- * @brief Standardowy konstruktos graniastoslupa prawidlowego szesciokatnego.
+ * @brief Funkcja przekształca zadany wierzchołek do układu współrzędnych rodzica.
  * 
- * Standardowy konstruktor graniastosłupa prawidłowego sześciokątnego, 
- * powinniśmy podać nazwy pliku wzorcowego i finalnego, gdzie w pliku wzorcowym .dat
- * powinnien znaleźć się odpowiednio zdefiniowany graniastoslup o podstawie szesciokata foremnego
- * 
- * @param refFileName - Nazwa pliku wzorcowego graniastoslupa
- * @param finalFileName - Nazwa pliku finalnego graniastosłupa
+ * @param apex - wektor do transformacji.
+ * @return Vector<3> - zwracany jest przetransformowany wektor.
  */
-HexagonalPrism::HexagonalPrism(string refFileName, string finalFileName)
-: position{0,0,0}, orientationAngle{0}
-{
-    enterFileName_finalFig(finalFileName);
-    enterFileName_finalFig(refFileName);
-}
-
 Vector<3> HexagonalPrism::transfToParentCoordSys(const Vector<3>& apex) const{
-    
+    Matrix<3> rotationMatrix;
+    makeRotationMatrix('z', _orientationAngle, rotationMatrix);
+    Vector<3> apexAfterTransf = rotationMatrix * apex;
+    return (apexAfterTransf + _position);
 }
