@@ -161,15 +161,15 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
  * Funkcja tworzy ścieżkę lotu drona dla zadanego kąta i długości
  * lotu i zapisuje współrzędne jej punktów w wektorze PunktySciezki
  * 
- * @param turnAngle    - Kąt obrotu
+ * @param turnAngle    - Kąt obrotu w stopniach
  * @param flightLenght - Długość ścieżki
- * @param pathPoints   - wektor do którego zapiszemy punkty ścieżki
  */
-void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, std::vector<Vector<3>>& pathPoints){
-    Vector<3> vec;
+void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght){
+    Vector<3> vec = _position;
     Matrix<3> rotationMatrix;
     makeRotationMatrix('z', turnAngle, rotationMatrix);
  
+    vector<Vector<3>> pathPoints{};
     pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* poczatek */
     vec[2] += flightHeight;
     pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po uniesieniu */
@@ -184,8 +184,8 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
 	    << " Blad otwarcia pliku: " << FLIGHT_PATH_FILE_NAME << endl
 	    << endl;
     }   
-    for(const Vector<3> vec : pathPoints){
-        fileNameStr << vec << endl;
+    for(const Vector<3> vector3d : pathPoints){
+        fileNameStr << vector3d << endl;
     }
     fileNameStr << endl;
 }
@@ -194,7 +194,7 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
 /**
  * @brief Funkcja usuwa powstałą wcześniej ścieżkę lotu drona
  */
-void Drone::deleteFlightPath() const{
+void Drone::deleteFlightPath(PzG::LaczeDoGNUPlota& lacze) const{
     ofstream fileNameStr(FLIGHT_PATH_FILE_NAME);
     if (!fileNameStr.is_open()){
         cerr << endl
@@ -202,6 +202,7 @@ void Drone::deleteFlightPath() const{
 	    << endl;
     }
     fileNameStr << " ";
+  	lacze.UsunNazwePliku(FLIGHT_PATH_FILE_NAME);
 }
 
 

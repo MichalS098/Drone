@@ -14,7 +14,7 @@ dat:
 ./${APP}: obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o 
 	g++ -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o 
 
-obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh 
+obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh inc/Drone.hh 
 	g++  -Iinc -W -Wall -pedantic -c -o obj/main.o src/main.cpp
 
 obj/Drone.o: src/Drone.cpp inc/Drone.hh inc/Rectangular.hh inc/lacze_do_gnuplota.hh inc/HexagonalPrism-6.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh  
