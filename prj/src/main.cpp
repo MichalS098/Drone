@@ -29,7 +29,7 @@ int main(){
   	cout << "Nacisnij ENTER, aby pokazac sciezke przelotu drona " << flush;
   	cin.ignore(10000,'\n');
 
-	firstDrone.planInitialFlightPath(FLIGHT_HEIGHT, 45, FLIGHT_LENGHT);
+	firstDrone.planInitialFlightPath(FLIGHT_HEIGHT, 45, FLIGHT_LENGHT, Lacze);
   	Lacze.Rysuj();
 
   	cout << "Nacisnij ENTER, aby wykonac animacje lotu drona " << flush;

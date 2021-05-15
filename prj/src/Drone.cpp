@@ -164,12 +164,13 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
  * @param turnAngle    - Kąt obrotu w stopniach
  * @param flightLenght - Długość ścieżki
  */
-void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght){
-    Vector<3> vec = _position;
-    Matrix<3> rotationMatrix;
+void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota& lacze){
+    Vector<3U> vec;
+    vec = _position;
+    Matrix<3U> rotationMatrix;
     makeRotationMatrix('z', turnAngle, rotationMatrix);
  
-    vector<Vector<3>> pathPoints{};
+    vector<Vector<3>> pathPoints;
     pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* poczatek */
     vec[2] += flightHeight;
     pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po uniesieniu */
@@ -184,10 +185,11 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
 	    << " Blad otwarcia pliku: " << FLIGHT_PATH_FILE_NAME << endl
 	    << endl;
     }   
-    for(const Vector<3> vector3d : pathPoints){
-        fileNameStr << vector3d << endl;
+    for(unsigned int i=0; i<pathPoints.size(); ++i){
+        fileNameStr << pathPoints[i] << endl;
     }
     fileNameStr << endl;
+    lacze.DodajNazwePliku(FLIGHT_PATH_FILE_NAME);
 }
 
 
@@ -217,13 +219,14 @@ void Drone::deleteFlightPath(PzG::LaczeDoGNUPlota& lacze) const{
  */
 bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze){
     cout << "Lot do przodu ... " << endl;
-    for (; _position[0] <= 150; _position[0] += 1, _position[1] += 1) {
+    for (; _position[0] <= flightLenght; _position[0] += 1, _position[1] += 1) {
         if (!this->calcAndSave_DroneCoords()) return false;
         usleep(100000);
         Lacze.Rysuj();
     }  
     _position[0] -= 1;
     _position[1] -= 1;
+    return true;
 }
 
 
@@ -244,6 +247,7 @@ bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
         Lacze.Rysuj();
     }
     _orientationAngle -= 5;
+    return true;
 }
 
 
@@ -275,4 +279,5 @@ bool Drone::makeVerticalFlight(double flightHeight, PzG::LaczeDoGNUPlota& Lacze)
         }
         _position[2] -= 2;
     }
+    return true;
 }

@@ -37,7 +37,7 @@ Vector<T>::Vector(const std::initializer_list<double>& lst){
 template<unsigned int T>
 Vector<T> Vector<T>::operator+(const Vector<T>& v) const{
 	if(v.size()!=size()) throw std::invalid_argument("Cannot add vectors with different sizes");
-	Vector<T> result;
+	Vector<T> result();
 	for(int i=0; i<size(); ++i){
 		result[i]=elem[i]+v[i];
 	} 
@@ -119,7 +119,7 @@ Vector<T> Vector<T>::operator*(const double& multiplier) const{
 template<unsigned int T>
 void Vector<T>::operator=(const Vector<T>& v){
 	if(size()!=v.size()) throw std::invalid_argument("Cannot assing vector with different size");
-	for(int i=0; i<size(); ++i) elem[i]=v[i];
+	for(int i=0; i<size(); ++i) {elem[i]=v[i];}
 }
 
 /**
