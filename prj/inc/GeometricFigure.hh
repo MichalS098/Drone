@@ -10,7 +10,6 @@
  * przechowuja nazwe pliku z wzorcowa figura oraz nazwe pliku z finalna figura         
  */
 class GeometricFigure{
-private:
     std::string _referenceFig_FileName;
     std::string _finalFig_fileName;
     Vector<3>   _scale;
@@ -20,6 +19,7 @@ public:
      * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
      */
     const std::string& takeFileName_refFig() const {return _referenceFig_FileName;}
+
     /**
      * @brief Funkcja zwraca zapisaną nazwe pliku finalnego/właściwego obiektu.
      * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
@@ -34,7 +34,13 @@ public:
     void enterFileName_refFig(std::string fileName) {_referenceFig_FileName=fileName;}
     void enterFileName_finalFig(std::string fileName) {_finalFig_fileName=fileName;}
     
-    Vector<3> scaleUp(const Vector<3>& apex) const ;
+    Vector<3> scaleUp(const Vector<3>& apex) const;
+
+    /**
+     * @brief Funkcja umożliwia ustawienie skali
+     * @param scale - Wektor 3 elementowy 
+     */
+    void setScale(const Vector<3>& scale) {_scale=scale;}
 };
 
 

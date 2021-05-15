@@ -1,12 +1,9 @@
 TASKNO=5
-APP=sterowanie-dronem
-TASKDIR=${HOME}/edu/po/zad/z${TASKNO}
+APP=dron_dragonfly
 
 __start__: obj dat ./${APP}
 	rm -f core.* core; ./${APP}
 
-# Tworzy katalog "obj" gdy go nie ma
-# 
 obj:
 	mkdir obj
 
@@ -14,16 +11,26 @@ dat:
 	mkdir dat
 
 
-./${APP}: obj/main.o obj/lacze_do_gnuplota.o
-	g++ -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o
-
-
-ext: ./${APP}_rozszerzony
-	rm -f core.* core; echo "2i 1+3.1i 2 ? / + ?" | ./${APP}_rozszerzony
-
+./${APP}: obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o 
+	g++ -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o 
 
 obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh 
 	g++  -Iinc -W -Wall -pedantic -c -o obj/main.o src/main.cpp
+
+obj/Drone.o: src/Drone.cpp inc/Drone.hh inc/Rectangular.hh inc/lacze_do_gnuplota.hh inc/HexagonalPrism-6.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh  
+	g++  -Iinc -W -Wall -pedantic -c -o obj/Drone.o src/Drone.cpp
+
+obj/Scene.o: src/Scene.cpp inc/Scene.hh inc/Drone.hh inc/lacze_do_gnuplota.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/Scene.o src/Scene.cpp
+
+obj/Rectangular.o: src/Rectangular.cpp inc/Rectangular.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/Rectangular.o src/Rectangular.cpp
+
+obj/HexagonalPrism-6.o: src/HexagonalPrism-6.cpp inc/HexagonalPrism-6.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh  
+	g++  -Iinc -W -Wall -pedantic -c -o obj/HexagonalPrism-6.o src/HexagonalPrism-6.cpp
+
+obj/GeometricFigure.o: src/GeometricFigure.cpp inc/GeometricFigure.hh inc/Vector.hh 
+	g++  -Iinc -W -Wall -pedantic -c -o obj/GeometricFigure.o src/GeometricFigure.cpp
 
 obj/lacze_do_gnuplota.o: src/lacze_do_gnuplota.cpp inc/lacze_do_gnuplota.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/lacze_do_gnuplota.o src/lacze_do_gnuplota.cpp
@@ -31,15 +38,6 @@ obj/lacze_do_gnuplota.o: src/lacze_do_gnuplota.cpp inc/lacze_do_gnuplota.hh
 
 clean:
 	rm -f obj/* ./${APP} core.* core
-
-${TASKDIR}:
-	mkdir -p ${TASKDIR}/bin.diablo ${TASKDIR}/bin.panamint
-
-__TARGET__:
-	if [ ! "${HOST}" = "diablo" ] && [ ! "${HOST}" = "panamint" ]; then exit 1; fi
-
-export: __TARGET__ ./${APP}  ./${APP}_rozszerzony ${TASKDIR}
-	mv ${APP} ${APP}_rozszerzony ${HOME}/edu/po/zad/z${TASKNO}/bin.${HOST}/
 
 help:
 	@echo

@@ -11,7 +11,6 @@
  * kąta orientacji, oraz nazw plików wzorcowego i właściwego dziedziczonych z klasy "GeometricFigure".
  */
 class HexagonalPrism: public GeometricFigure{
-private:
     Vector<3>   _position;
     double      _orientationAngle;
 public:

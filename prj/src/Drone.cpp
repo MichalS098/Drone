@@ -9,41 +9,46 @@
 
 using namespace std;
 
-// REF stands for reference
+// REF stands for reference (plik wzorcowy)
 #define REF_ROTOR_FILE_NAME "bryly_wzorcowe/graniastoslup6.dat"
 #define REF_BODY_FILE_NAME "bryly_wzorcowe/szescian.dat"
 #define FLIGHT_PATH_FILE_NAME "dat/trasa_przelotu.dat"
 
 /**
- * @brief Funkcja inizjalizuje Drona.
+ * @brief Funkcja inicjalizuje Drona.
+ * 
  * 
  * Funkcja inicjalizuje drona poprzez, przypisanie jego atrybutom 
  * (prostopadłościanowi oraz rotorom) ich nazwy plików właściwych oraz wzorcowych.
  * Funkcja dodaje odrazu nazwy tych plików do łącza do GNU-PLOT'a
- * @param ID - id Drona
+ * @param ID    - id Drona
  * @param Lacze - Lacze do gnuplota 
  */
-void Drone::makeDrone(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze){
-    unsigned int index=0;
-    string       fileName;
+void Drone::makeDrone(const Vector<3>& position, const Vector<3>& scale, unsigned int ID, PzG::LaczeDoGNUPlota& Lacze){
     _ID=ID;
+    _position=position;
+    unsigned int index=0;
+    string fileName;
 
     for(HexagonalPrism& rotor: _droneRotor){
         fileName=makeRotorFileName(ID, ++index);
         rotor.enterFileName_finalFig(fileName);
         rotor.enterFileName_refFig(REF_ROTOR_FILE_NAME);
         Lacze.DodajNazwePliku(fileName.c_str());
+        rotor.setScale(scale);
     }
     fileName=makeBodyFileName(ID);
     _droneBody.enterFileName_finalFig(fileName);
     _droneBody.enterFileName_refFig(REF_BODY_FILE_NAME);
+    _droneBody.setScale(scale);
 }
 
 
 /**
  * @brief Funkcja oblicza i zapisuje współrzędne globalne korpusu do plików. 
  * 
- * @return true - Operacja udana
+ * 
+ * @return true  - Operacja udana
  * @return false - Błąd operacji
  */
 bool Drone::calcAndSave_BodyCoords() const{
@@ -61,16 +66,16 @@ bool Drone::calcAndSave_BodyCoords() const{
 	    << endl;
         return false;
     }
-    Vector<3> apex;
+    Vector<3> apex{};
     referenceFigStream >> apex;
     while (!referenceFigStream.fail()) {
-        for (int apexSize = 0; apexSize < 4; ++apexSize) {
+        for (int apexCounter = 0; apexCounter < 4; ++apexCounter) {
             apex = _droneBody.scaleUp(apex);
             apex = _droneBody.transfToParentCoordSys(apex);
             apex = transfToParentCoordSys(apex);
             finalFigStream     << apex << endl;
             referenceFigStream >> apex;
-            assert(apexSize == 3 || !referenceFigStream.fail());
+            assert(apexCounter == 3 || !referenceFigStream.fail());
         }
         finalFigStream << endl;
     }
@@ -81,8 +86,9 @@ bool Drone::calcAndSave_BodyCoords() const{
 /**
  * @brief Funkcja oblicza i zapisuje współrzędne globalne rotora do plików. 
  * 
- * @param rotor - jeden z 4 rotorów drona, którego współrzędne będą przeliczane
- * @return true - Operacja udana
+ * 
+ * @param rotor  - jeden z 4 rotorów drona, którego współrzędne będą przeliczane
+ * @return true  - Operacja udana
  * @return false - Błąd operacji
  */
 bool Drone::calcAndSave_RotorCoords(const HexagonalPrism& rotor) const{
@@ -120,7 +126,8 @@ bool Drone::calcAndSave_RotorCoords(const HexagonalPrism& rotor) const{
 /**
  * @brief Funkcja oblicza i zapisuje współrzędne globalne drona do plików. 
  * 
- * @return true - Operacja udana
+ * 
+ * @return true  - Operacja udana
  * @return false - Błąd operacji
  */
 bool Drone::calcAndSave_DroneCoords() const{
@@ -135,7 +142,8 @@ bool Drone::calcAndSave_DroneCoords() const{
 /**
  * @brief Funkcja przekształca zadany wierzchołek do układu współrzędnych rodzica. 
  * 
- * @param apex - Wierzchołek do przekształcenia 
+ * 
+ * @param apex       - Wierzchołek do przekształcenia 
  * @return Vector<3> - Przekształcony wierzchołek
  */
 Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
@@ -149,12 +157,13 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
 /**
  * @brief Funkcja planuje początkową ścieżkę lotu drona.
  *
+ * 
  * Funkcja tworzy ścieżkę lotu drona dla zadanego kąta i długości
  * lotu i zapisuje współrzędne jej punktów w wektorze PunktySciezki
  * 
- * @param turnAngle Kąt obrotu
- * @param flightLenght Długość ścieżki
- * @param pathPoints wektor do którego zapiszemy punkty ścieżki
+ * @param turnAngle    - Kąt obrotu
+ * @param flightLenght - Długość ścieżki
+ * @param pathPoints   - wektor do którego zapiszemy punkty ścieżki
  */
 void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, std::vector<Vector<3>>& pathPoints){
     Vector<3> vec;
@@ -184,7 +193,6 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
 
 /**
  * @brief Funkcja usuwa powstałą wcześniej ścieżkę lotu drona
- * 
  */
 void Drone::deleteFlightPath() const{
     ofstream fileNameStr(FLIGHT_PATH_FILE_NAME);
@@ -200,10 +208,11 @@ void Drone::deleteFlightPath() const{
 /**
  * @brief Funckja przemieszcza dron do przodu.
  * 
+ * 
  * @param flightLenght - długość na jaką ma polecieć dron
- * @param Lacze - łącze do gnuplota
- * @return true - zwraca kiedy operacja się powiedzie
- * @return false - kiedy operacja się nie powiedzie
+ * @param Lacze        - łącze do gnuplota
+ * @return true        - zwraca kiedy operacja się powiedzie
+ * @return false       - kiedy operacja się nie powiedzie
  */
 bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze){
     cout << "Lot do przodu ... " << endl;
@@ -220,9 +229,10 @@ bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacz
 /**
  * @brief Funkcja przemieszcza drona wokol wlasnej osi o podany kat.
  * 
- * @param angle - kąt obrotu
- * @param Lacze - łącze do gnuplota
- * @return true - zwraca kiedy operacja się powiedzie
+ * 
+ * @param angle  - kąt obrotu
+ * @param Lacze  - łącze do gnuplota
+ * @return true  - zwraca kiedy operacja się powiedzie
  * @return false - kiedy operacja się nie powiedzie
  */
 bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
@@ -239,10 +249,11 @@ bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
 /**
  * @brief Funkcja przemieszcza drona w kierunku pionowym wokół osi z.
  * 
+ * 
  * @param flightHeight - Wielkość zmiany położenia wysokości
- * @param Lacze - łącze do gnuplota
- * @return true - zwraca kiedy operacja się powiedzie
- * @return false - kiedy operacja się nie powiedzie
+ * @param Lacze        - łącze do gnuplota
+ * @return true        - zwraca kiedy operacja się powiedzie
+ * @return false       - kiedy operacja się nie powiedzie
  */
 bool Drone::makeVerticalFlight(double flightHeight, PzG::LaczeDoGNUPlota& Lacze){
     if(flightHeight>0){

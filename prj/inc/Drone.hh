@@ -25,7 +25,7 @@ class Drone{
 protected:
     Vector<3> transfToParentCoordSys(const Vector<3>& apex) const;
 public:
-    void makeDrone(unsigned int ID, PzG::LaczeDoGNUPlota& Lacze);
+    void makeDrone(const Vector<3>& position, const Vector<3>& scale, unsigned int ID, PzG::LaczeDoGNUPlota& Lacze);
     void planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, std::vector<Vector<3>>& pathPoints);
     void deleteFlightPath() const;
     bool makeVerticalFlight(double height, PzG::LaczeDoGNUPlota& Lacze);

@@ -3,7 +3,6 @@
 #include "lacze_do_gnuplota.hh"
 
 class Scene{
-private:
     Drone                 _droneArray[2];
     PzG::LaczeDoGNUPlota  _lacze;
 public:
