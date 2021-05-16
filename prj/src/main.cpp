@@ -21,10 +21,18 @@ int main(){
   	Lacze.UstawZakresZ(0, 120);
   	Lacze.UstawRotacjeXZ(64,65); // Tutaj ustawiany jest widok
 	
-	Drone firstDrone;
-	Vector<3> initialPosition={20,20,20};
-	Vector<3> scale={1,1,1};
+	Lacze.DodajNazwePliku("bryly_wzorcowe/plaszczyzna.dat");
+
+	Drone firstDrone, secondDrone;
+	Vector<3> initialPosition({20,20,4});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
+	Vector<3> scale({1,1,1});
+
 	firstDrone.makeDrone(initialPosition, scale, 1, Lacze);
+	secondDrone.makeDrone(Vector<3>{40,50,4}, scale, 2, Lacze);
+	secondDrone.calcAndSave_DroneCoords();
+	firstDrone.calcAndSave_DroneCoords();
+
+
   	Lacze.Rysuj();        // Teraz powinno pojawic sie okienko gnuplota
   	cout << "Nacisnij ENTER, aby pokazac sciezke przelotu drona " << flush;
   	cin.ignore(10000,'\n');
@@ -35,10 +43,12 @@ int main(){
   	cout << "Nacisnij ENTER, aby wykonac animacje lotu drona " << flush;
   	cin.ignore(10000,'\n');
 	//animacja
-
+	firstDrone.makeVerticalFlight(FLIGHT_HEIGHT, Lacze);
+	firstDrone.changeDroneOrientation(45, Lacze);
+	firstDrone.makeHorizontalFlight(FLIGHT_LENGHT-4, Lacze);
+	firstDrone.makeVerticalFlight(-FLIGHT_HEIGHT, Lacze);
   	cout << endl << "Nacisnij ENTER, aby usunac sciezke ... " << flush;
   	cin.ignore(10000,'\n');
-
 	firstDrone.deleteFlightPath(Lacze);
   	Lacze.Rysuj();
   

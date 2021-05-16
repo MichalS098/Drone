@@ -14,6 +14,9 @@ using namespace std;
 #define REF_BODY_FILE_NAME "bryly_wzorcowe/szescian.dat"
 #define FLIGHT_PATH_FILE_NAME "dat/trasa_przelotu.dat"
 
+#define DRONE_BODY_SCALE 8.0
+#define DRONE_ROTOR_SCALE 4.0
+
 /**
  * @brief Funkcja inicjalizuje Drona.
  * 
@@ -27,20 +30,28 @@ using namespace std;
 void Drone::makeDrone(const Vector<3>& position, const Vector<3>& scale, unsigned int ID, PzG::LaczeDoGNUPlota& Lacze){
     _ID=ID;
     _position=position;
-    unsigned int index=0;
+    _orientationAngle=0;
+    unsigned int index=0,index2=0;
     string fileName;
+
+    //Ustawiam polozenie rotorow drona w stosunku do srodka korpusu drona
+    Vector<3> rotorPositions[4]={{4,4,4},{4,-4,4},{-4,4,4},{-4,-4,4}};
 
     for(HexagonalPrism& rotor: _droneRotor){
         fileName=makeRotorFileName(ID, ++index);
         rotor.enterFileName_finalFig(fileName);
         rotor.enterFileName_refFig(REF_ROTOR_FILE_NAME);
         Lacze.DodajNazwePliku(fileName.c_str());
-        rotor.setScale(scale);
+        rotor.setScale(scale*DRONE_ROTOR_SCALE);
+        rotor.enterOrientationAngle(_orientationAngle);
+        rotor.enterPosition(rotorPositions[index2++]);
     }
     fileName=makeBodyFileName(ID);
     _droneBody.enterFileName_finalFig(fileName);
     _droneBody.enterFileName_refFig(REF_BODY_FILE_NAME);
-    _droneBody.setScale(scale);
+    _droneBody.setScale(scale*DRONE_BODY_SCALE);
+    _droneBody.enterOrientationAngle(_orientationAngle);
+    Lacze.DodajNazwePliku(fileName.c_str());
 }
 
 
@@ -66,7 +77,7 @@ bool Drone::calcAndSave_BodyCoords() const{
 	    << endl;
         return false;
     }
-    Vector<3> apex{};
+    Vector<3> apex;
     referenceFigStream >> apex;
     while (!referenceFigStream.fail()) {
         for (int apexCounter = 0; apexCounter < 4; ++apexCounter) {
@@ -109,7 +120,7 @@ bool Drone::calcAndSave_RotorCoords(const HexagonalPrism& rotor) const{
     Vector<3> apex;
     referenceFigStream >> apex;
     while (!referenceFigStream.fail()) {
-        for (int apexSize = 0; apexSize < 4; ++apexSize) {
+        for (int apexSize = 0; apexSize < 4; ++apexSize){
             apex = rotor.scaleUp(apex);
             apex = rotor.transfToParentCoordSys(apex);
             apex = transfToParentCoordSys(apex);
@@ -166,11 +177,11 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
  */
 void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota& lacze){
     Vector<3U> vec;
-    vec = _position;
     Matrix<3U> rotationMatrix;
     makeRotationMatrix('z', turnAngle, rotationMatrix);
  
     vector<Vector<3>> pathPoints;
+    vec[2] -=4;
     pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* poczatek */
     vec[2] += flightHeight;
     pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po uniesieniu */
@@ -268,16 +279,18 @@ bool Drone::makeVerticalFlight(double flightHeight, PzG::LaczeDoGNUPlota& Lacze)
             usleep(100000); // 0.1 ms
             Lacze.Rysuj();
         }
-        _position[2] -= 2;
+         _position[2]+=4;
     }
+   
     else{
         cout << endl << "Opadanie ... " << endl;
-        for (; _position[2] >= 0; _position[2] -= 2) {
+        for (; _position[2] >= 4; _position[2] -= 2) {
             if (!this->calcAndSave_DroneCoords()) return false;
             usleep(100000); // 0.1 ms
             Lacze.Rysuj();
         }
-        _position[2] -= 2;
+         _position[2]+=4;
     }
+
     return true;
 }

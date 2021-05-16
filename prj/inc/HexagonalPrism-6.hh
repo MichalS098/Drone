@@ -15,4 +15,11 @@ class HexagonalPrism: public GeometricFigure{
     double      _orientationAngle;
 public:
     Vector<3> transfToParentCoordSys(const Vector<3>& apex) const;
+    /**
+     * @brief Funkcja pozwalajaca na wprowadzenie kata orientacji
+     * 
+     * @param angle - kat orientacji
+     */
+    void enterOrientationAngle(double angle) {_orientationAngle=angle;}
+    void enterPosition(Vector<3> vec) {_position=vec;}
 };

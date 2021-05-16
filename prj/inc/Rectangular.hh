@@ -16,5 +16,6 @@ class Rectangular: public GeometricFigure{
     double 		_orientationAngle;
 public:
 	Vector<3> transfToParentCoordSys(const Vector<3>& apex) const;
+	void enterOrientationAngle(double angle) {_orientationAngle=angle;}
 };
 
