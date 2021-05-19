@@ -1,4 +1,7 @@
 #pragma once
+//
+//	Implementation file for Vector template
+//
 
 
 /**
@@ -8,8 +11,11 @@
  */
 template<unsigned int T>
 Vector<T>::Vector(){
-	for(int i=0; i<size(); ++i)
+	for(int i=0; i<size(); ++i){
 		elem[i]=0;
+	}
+	VECTOR_OBJECT_COUNTER++;
+	VECTOR_OBJECT_SUM++;
 }
 
 /**
@@ -25,6 +31,17 @@ Vector<T>::Vector(const std::initializer_list<double>& lst){
 	for(const double& x : lst){
 		elem[i++]=x;
 	}
+	VECTOR_OBJECT_COUNTER++;
+	VECTOR_OBJECT_SUM++;
+}
+
+/**
+ * @brief Destruktor obiektu Vector, stworzony jedynie na potrzeby zadania do zliczania
+ * 		  ilości stworzonych obiektów typu wektor.
+ */
+template<unsigned int T>
+Vector<T>::~Vector(){
+	VECTOR_OBJECT_COUNTER--;
 }
 
 /**
@@ -114,7 +131,7 @@ Vector<T> Vector<T>::operator*(const double& multiplier) const{
 /**
  * @brief Operacja przypisania dla wektora
  * @tparam T, wielkosc wektora
- * @param v, wektor ktory przypisujemy do naszego obiektu
+ * @param v, wektor ktory przypisujemy do naszego obiektu  
  */
 template<unsigned int T>
 void Vector<T>::operator=(const Vector<T>& v){

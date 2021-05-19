@@ -1,6 +1,7 @@
 #include "Drone.hh"
 #include "GeometricFigure.hh"
 #include "Matrix.hh"
+#include <cmath>
 #include <fstream>
 #include <iostream>
 #include <assert.h>
@@ -23,25 +24,33 @@ using namespace std;
  * 
  * Funkcja inicjalizuje drona poprzez, przypisanie jego atrybutom 
  * (prostopadłościanowi oraz rotorom) ich nazwy plików właściwych oraz wzorcowych.
- * Funkcja dodaje odrazu nazwy tych plików do łącza do GNU-PLOT'a
+ * Funkcja dodaje odrazu nazwy tych plików do łącza do GNU-PLOT'a.
+ * Ustawia również domyślny kolor rysowanego drona, jego pozycje początkową, skale wielkości
+ * oraz jego ID.
  * @param ID    - id Drona
  * @param Lacze - Lacze do gnuplota 
+ * @param position - pozycja początkowa drona
+ * @param scale - skala rysowanego drona
+ * @param droneColor - kolor rysowanego Drona
  */
-void Drone::makeDrone(const Vector<3>& position, const Vector<3>& scale, unsigned int ID, PzG::LaczeDoGNUPlota& Lacze){
+void Drone::makeDrone(const Vector<3>& position, const Vector<3>& scale, 
+                      unsigned int ID, PzG::LaczeDoGNUPlota& Lacze, int droneColor)
+{
     _ID=ID;
     _position=position;
+    _position[2]+=4;     //zwiększenie wysokości o 4 żeby dron znajdował się równo na ziemi
     _orientationAngle=0;
     unsigned int index=0,index2=0;
     string fileName;
 
-    //Ustawiam polozenie rotorow drona w stosunku do srodka korpusu drona
+    // Ustawiam polozenie rotorow drona w stosunku do srodka korpusu drona
     Vector<3> rotorPositions[4]={{4,4,4},{4,-4,4},{-4,4,4},{-4,-4,4}};
 
     for(HexagonalPrism& rotor: _droneRotor){
         fileName=makeRotorFileName(ID, ++index);
         rotor.enterFileName_finalFig(fileName);
         rotor.enterFileName_refFig(REF_ROTOR_FILE_NAME);
-        Lacze.DodajNazwePliku(fileName.c_str());
+        Lacze.DodajNazwePliku(fileName.c_str()).ZmienKolor(droneColor);
         rotor.setScale(scale*DRONE_ROTOR_SCALE);
         rotor.enterOrientationAngle(_orientationAngle);
         rotor.enterPosition(rotorPositions[index2++]);
@@ -51,7 +60,7 @@ void Drone::makeDrone(const Vector<3>& position, const Vector<3>& scale, unsigne
     _droneBody.enterFileName_refFig(REF_BODY_FILE_NAME);
     _droneBody.setScale(scale*DRONE_BODY_SCALE);
     _droneBody.enterOrientationAngle(_orientationAngle);
-    Lacze.DodajNazwePliku(fileName.c_str());
+    Lacze.DodajNazwePliku(fileName.c_str()).ZmienKolor(droneColor);
 }
 
 
@@ -177,18 +186,17 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
  */
 void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota& lacze){
     Vector<3U> vec;
-    Matrix<3U> rotationMatrix;
-    makeRotationMatrix('z', turnAngle, rotationMatrix);
- 
-    vector<Vector<3>> pathPoints;
+    _orientationAngle=turnAngle;
+    vector<Vector<3U>> pathPoints;
+
     vec[2] -=4;
-    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* poczatek */
-    vec[2] += flightHeight;
-    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po uniesieniu */
-    vec[0]+=flightLenght;
-    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po locie poziomym */
-    vec[2]-=flightHeight;
-    pathPoints.push_back(transfToParentCoordSys(rotationMatrix * vec));    /* po ladowaniu */
+    pathPoints.push_back(transfToParentCoordSys(vec));    /* poczatek */
+    vec[2] += flightHeight-4;
+    pathPoints.push_back(transfToParentCoordSys(vec));    /* po uniesieniu */
+    vec[0] = flightLenght;
+    pathPoints.push_back(transfToParentCoordSys(vec));    /* po locie poziomym */
+    vec[2] -= flightHeight-4;
+    pathPoints.push_back(transfToParentCoordSys(vec));    /* po ladowaniu */
 
     ofstream fileNameStr(FLIGHT_PATH_FILE_NAME);
     if (!fileNameStr.is_open()){
@@ -200,6 +208,7 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
         fileNameStr << pathPoints[i] << endl;
     }
     fileNameStr << endl;
+    fileNameStr.close();
     lacze.DodajNazwePliku(FLIGHT_PATH_FILE_NAME);
 }
 
@@ -215,6 +224,7 @@ void Drone::deleteFlightPath(PzG::LaczeDoGNUPlota& lacze) const{
 	    << endl;
     }
     fileNameStr << " ";
+    fileNameStr.close();
   	lacze.UsunNazwePliku(FLIGHT_PATH_FILE_NAME);
 }
 
@@ -229,14 +239,15 @@ void Drone::deleteFlightPath(PzG::LaczeDoGNUPlota& lacze) const{
  * @return false       - kiedy operacja się nie powiedzie
  */
 bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze){
-    cout << "Lot do przodu ... " << endl;
-    for (; _position[0] <= flightLenght; _position[0] += 1, _position[1] += 1) {
+    double angleRad = _orientationAngle*(M_PI/180);
+    double xlenght=_position[0]+flightLenght*cos(angleRad);     //dlugosc do przebycia w kierunku osi x
+    double ylenght=_position[1]+flightLenght*sin(angleRad);     
+    for (; _position[0] <= xlenght && _position[1]<= ylenght; _position[0] += xlenght/100, _position[1] += ylenght/100) {
+        this->rotateRotor(36*_position[0]);
         if (!this->calcAndSave_DroneCoords()) return false;
         usleep(100000);
         Lacze.Rysuj();
     }  
-    _position[0] -= 1;
-    _position[1] -= 1;
     return true;
 }
 
@@ -251,8 +262,8 @@ bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacz
  * @return false - kiedy operacja się nie powiedzie
  */
 bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
-    cout << "Zmiana orientacji ... " << endl;
     for (; _orientationAngle <= angle; _orientationAngle += 5) {
+        this->rotateRotor(4*_orientationAngle);
         if (!this->calcAndSave_DroneCoords()) return false;
         usleep(100000);
         Lacze.Rysuj();
@@ -263,7 +274,7 @@ bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
 
 
 /**
- * @brief Funkcja przemieszcza drona w kierunku pionowym wokół osi z.
+ * @brief Funkcja przemieszcza drona w kierunku pionowym wzdłuż osi z.
  * 
  * 
  * @param flightHeight - Wielkość zmiany położenia wysokości
@@ -273,24 +284,39 @@ bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
  */
 bool Drone::makeVerticalFlight(double flightHeight, PzG::LaczeDoGNUPlota& Lacze){
     if(flightHeight>0){
-        cout << endl << "Wznoszenie ... " << endl;
-        for (; _position[2] <= flightHeight; _position[2] += 2) {
+        for (; _position[2] <= flightHeight-4; _position[2] += 2) {       
+            this->rotateRotor(4*_position[2]);
             if (!this->calcAndSave_DroneCoords()) return false;
             usleep(100000); // 0.1 ms
             Lacze.Rysuj();
         }
-         _position[2]+=4;
     }
-   
     else{
-        cout << endl << "Opadanie ... " << endl;
         for (; _position[2] >= 4; _position[2] -= 2) {
+            this->rotateRotor(4*_position[2]);
             if (!this->calcAndSave_DroneCoords()) return false;
             usleep(100000); // 0.1 ms
             Lacze.Rysuj();
         }
-         _position[2]+=4;
+        _position[2]+=2;
     }
-
     return true;
+}
+
+
+/**
+ * @brief Funkcja odpowiadająca za animacje obrotu wirników drona.
+ * 
+ *
+ * Funkcja odpowiadająca za animacje obrotu wirników drona, 
+ * obraca ona wszystkie 4 rotory drona o zadany kąt, uwzględniając zależność
+ * że wirniki nie kręcą się wszystkie w jedną stronę.
+ * @param rotor - rotor drona
+ */
+void Drone::rotateRotor(double angle){
+    int k=0;
+    for(int i=0; i<4; ++i){
+        k = (i%2==0) ? 1 : -1;
+        _droneRotor[i].enterOrientationAngle(k*angle);
+    }
 }

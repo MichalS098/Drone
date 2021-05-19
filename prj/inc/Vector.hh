@@ -14,9 +14,15 @@ private:
 	unsigned int vecSize={T};
     double elem[T];         
 public:
+
+	//Zmienna stworzona na potrzebe zliczania obiektow Vector
+	//w zadaniu
+	static unsigned int VECTOR_OBJECT_COUNTER;
+	static unsigned int VECTOR_OBJECT_SUM;
+
   	Vector();
   	Vector(const std::initializer_list<double>& lst);
-	
+	~Vector();
   	/**
   	 * @brief Operator pozwalajacy na dostep do prywatnej czesci obiektu
 	 * 

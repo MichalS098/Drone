@@ -6,54 +6,90 @@
 #include <unistd.h>
 #include "lacze_do_gnuplota.hh"
 #include "Drone.hh"
-
-#define FLIGHT_HEIGHT 50
-#define FLIGHT_LENGHT 80
+#include "Scene.hh"
 
 using namespace std;
 
+template<unsigned int T>
+unsigned int Vector<T>::VECTOR_OBJECT_COUNTER=0;
+template<unsigned int T>
+unsigned int Vector<T>::VECTOR_OBJECT_SUM=0;
+void printNumberOfVectors();
+void printMenu();
+
+
 int main(){
     PzG::LaczeDoGNUPlota  Lacze;
-    Lacze.ZmienTrybRys(PzG::TR_3D);
+    bool endOfProgram=false;
+	char userInput=' ';
+	Lacze.ZmienTrybRys(PzG::TR_3D);
     Lacze.Inicjalizuj();  // Tutaj startuje gnuplot.
   	Lacze.UstawZakresX(0, 200);
   	Lacze.UstawZakresY(0, 200);
   	Lacze.UstawZakresZ(0, 120);
   	Lacze.UstawRotacjeXZ(64,65); // Tutaj ustawiany jest widok
-	
 	Lacze.DodajNazwePliku("bryly_wzorcowe/plaszczyzna.dat");
 
-	Drone firstDrone, secondDrone;
-	Vector<3> initialPosition({20,20,4});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
-	Vector<3> scale({1,1,1});
+	Scene sceneOfDrones(Lacze); //inicjalizacja sceny
+	Lacze.Rysuj(); //tutaj powinno pojawić się okienko GNUPlot'a
 
-	firstDrone.makeDrone(initialPosition, scale, 1, Lacze);
-	secondDrone.makeDrone(Vector<3>{40,50,4}, scale, 2, Lacze);
-	secondDrone.calcAndSave_DroneCoords();
-	firstDrone.calcAndSave_DroneCoords();
-
-
-  	Lacze.Rysuj();        // Teraz powinno pojawic sie okienko gnuplota
-  	cout << "Nacisnij ENTER, aby pokazac sciezke przelotu drona " << flush;
-  	cin.ignore(10000,'\n');
-
-	firstDrone.planInitialFlightPath(FLIGHT_HEIGHT, 45, FLIGHT_LENGHT, Lacze);
-  	Lacze.Rysuj();
-
-  	cout << "Nacisnij ENTER, aby wykonac animacje lotu drona " << flush;
-  	cin.ignore(10000,'\n');
-	//animacja
-	firstDrone.makeVerticalFlight(FLIGHT_HEIGHT, Lacze);
-	firstDrone.changeDroneOrientation(45, Lacze);
-	firstDrone.makeHorizontalFlight(FLIGHT_LENGHT-4, Lacze);
-	firstDrone.makeVerticalFlight(-FLIGHT_HEIGHT, Lacze);
-  	cout << endl << "Nacisnij ENTER, aby usunac sciezke ... " << flush;
-  	cin.ignore(10000,'\n');
-	firstDrone.deleteFlightPath(Lacze);
-  	Lacze.Rysuj();
-  
-  	cout << "Nacisnij ENTER, aby zakonczyc ... " << flush;
-  	cin.ignore(10000,'\n');
-
+	cout<<endl;
+	sceneOfDrones.printPositionOfActiveDrone();
+	printMenu();
+	printNumberOfVectors();
+	while(endOfProgram!=true){
+		cout<<"Twoj wybor, m - menu > ";
+		cin>>userInput;
+		switch (userInput){
+			case 'a':{
+				sceneOfDrones.takeActiveDrone();
+				sceneOfDrones.printPositionOfActiveDrone();
+				printNumberOfVectors();
+				break;
+			}
+			case 'p':{
+				sceneOfDrones.droneFlightAnimation();
+				printNumberOfVectors();
+				break;
+			}
+			case 'm':{
+				sceneOfDrones.printPositionOfActiveDrone();
+				printMenu();
+				printNumberOfVectors();
+				break;
+			}
+			case 'k':{
+				endOfProgram=true;
+				cout<<"Koniec dzialania programu DragonFly"<<endl<<endl;
+				break;
+			}
+			default:{
+				cerr<<"Nieznana opcja, sprobuje jeszcze raz."<<endl;
+				printMenu();
+				break;
+			}
+		}
+	}
 	return 0;
+}
+
+
+/**
+ * @brief Funkcja wyswietla na stdout ilosc aktualnie 
+ * 		  istniejących obiektów wektor3d oraz ich całkowitą ilość
+ */
+void printNumberOfVectors(){
+	cout<<"Aktualna ilość obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_COUNTER<<endl;
+	cout<<"Ilość stworzonych obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_SUM<<endl<<endl;
+}
+
+/**
+ * @brief Funkcja wypisuje na stdout menu dla użytkownika
+ * 
+ */
+void printMenu(){
+	cout<<"\ta - wybierz aktywnego drona"<<endl;
+	cout<<"\tp - zadaj parametry przelotu"<<endl;
+	cout<<"\tm - wyswietl menu"<<endl<<endl;
+	cout<<"\tk - zakoncz dzialanie programu"<<endl<<endl;
 }
