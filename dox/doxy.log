@@ -1,0 +1,470 @@
+warning: doxygen no longer ships with the FreeSans font.
+You may want to clear or change DOT_FONTNAME.
+Otherwise you run the risk that the wrong font is being used for dot generated graphs.
+warning: The selected output language "polish" has not been updated
+since release 1.8.2.  As a result some sentences may appear in English.
+
+/home/michal/Desktop/dron/Dron/prj/src/Drone.cpp:177: warning: argument 'Lacze' of command @param is not found in the argument list of Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota &lacze)
+/home/michal/Desktop/dron/Dron/prj/inc/Drone.hh:31: warning: The following parameter of Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota &lacze) is not documented:
+  parameter 'lacze'
+/home/michal/Desktop/dron/Dron/prj/src/Drone.cpp:319: warning: argument 'rotor' of command @param is not found in the argument list of Drone::rotateRotor(double angle)
+/home/michal/Desktop/dron/Dron/prj/inc/Drone.hh:25: warning: The following parameter of Drone::rotateRotor(double angle) is not documented:
+  parameter 'angle'
+/home/michal/Desktop/dron/Dron/prj/src/Vector.ipp:131: warning: argument 'wektor' of command @param is not found in the argument list of Vector< T >::operator=(const Vector< T > &v)
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00057.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00057.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_af7df3657c144275d093ec67e3f79e138_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_af7df3657c144275d093ec67e3f79e138_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00024.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00024.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_ab0ce8612935678e534dd5b2e8c822919_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_ab0ce8612935678e534dd5b2e8c822919_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00074.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00074.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_a33e3cf1dcedc469cc4ebda78ed04c6d_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_a33e3cf1dcedc469cc4ebda78ed04c6d_dep.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_af13b8aacbf7d640cf684c172541d47c0_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_af13b8aacbf7d640cf684c172541d47c0_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00025.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00025.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00092_a7ca4eef2d276f14861c963465a1bbde9_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00092_a7ca4eef2d276f14861c963465a1bbde9_icgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00076_a1cfe36287063fc265b38fce4bfd7e32d_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00076_a1cfe36287063fc265b38fce4bfd7e32d_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00092_ab3daa9c0ad0882f041651a87b4d2660a_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00092_ab3daa9c0ad0882f041651a87b4d2660a_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00080_abb41201ef93212c4e720cb9e0ad63473_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00080_abb41201ef93212c4e720cb9e0ad63473_cgraph.png"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00088_aeed69a140973c313b9dee29b458df0d0_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00088_aeed69a140973c313b9dee29b458df0d0_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00075.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00075.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00048.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00048.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00062_afbee8685eba8033e340917640a7909d8_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00062_afbee8685eba8033e340917640a7909d8_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_3ffddfcbca87fb26749cd268b3af476d_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_3ffddfcbca87fb26749cd268b3af476d_dep.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00084_a07ded887eab08d7cc7bb4a92f5ab54b3_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00084_a07ded887eab08d7cc7bb4a92f5ab54b3_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00050_ab13e858612c64eeef73aff1d8a03945e_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00050_ab13e858612c64eeef73aff1d8a03945e_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00023_ad6d8fe908dfe65d46dd956f7385624a5_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00023_ad6d8fe908dfe65d46dd956f7385624a5_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00070.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00070.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00092_ad045dbcdcb99b8ab9f79a177ea3d2fc0_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00092_ad045dbcdcb99b8ab9f79a177ea3d2fc0_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00021.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00021.png"'
+sh: 1: dot: not found
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00096_a196e9eedc9a88a48f64e69e39405fa72_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00096_a196e9eedc9a88a48f64e69e39405fa72_icgraph.png"'
+dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00084_a84049eb06754dee345cff0bcd59ba6dd_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00084_a84049eb06754dee345cff0bcd59ba6dd_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_6ca29fe8855be2f9297c48b7f9531dc3_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_6ca29fe8855be2f9297c48b7f9531dc3_dep.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00080_abb41201ef93212c4e720cb9e0ad63473_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00080_abb41201ef93212c4e720cb9e0ad63473_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/graph_legend.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/graph_legend.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00053_a2317d4101ee5164b72e47e21ca850856_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00053_a2317d4101ee5164b72e47e21ca850856_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00033.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00033.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_a37a3e693aed550ee5265d4ade78415ab_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_a37a3e693aed550ee5265d4ade78415ab_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00084_a893715299fcaeeb95b4f2f41f0b7eaba_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00084_a893715299fcaeeb95b4f2f41f0b7eaba_cgraph.png"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00084_a57edbbfcea7c17a1869f9e0539f5eaea_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00084_a57edbbfcea7c17a1869f9e0539f5eaea_cgraph.png"'
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00050_a55555416eceaaba3a1c33e685468bc1c_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00050_a55555416eceaaba3a1c33e685468bc1c_icgraph.png"'
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00034.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00034.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00076_a13bd49360e3bb199f3324d70c6922200_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00076_a13bd49360e3bb199f3324d70c6922200_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_ed2d0ab67782f28b823437a6aacb2629_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_ed2d0ab67782f28b823437a6aacb2629_dep.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00084_a2d86a4987883b400d579f8b26bc06da6_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00084_a2d86a4987883b400d579f8b26bc06da6_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00042.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00042.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00044_a88a900c011a5122ce37ec8eb259904c0_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00044_a88a900c011a5122ce37ec8eb259904c0_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00038_afbee8685eba8033e340917640a7909d8_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00038_afbee8685eba8033e340917640a7909d8_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00053_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00053_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00055.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00055.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_a2fd7489f927b46b0fffa68400998f938_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_a2fd7489f927b46b0fffa68400998f938_cgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00092_afef0ce71ec071c41994719872b9113e0_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00092_afef0ce71ec071c41994719872b9113e0_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_ad3b6c1aeee762f41433c407d7f447c55_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_ad3b6c1aeee762f41433c407d7f447c55_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_1.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_1.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00031.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00031.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_65fdab7bf7f772fce1392fb9d8bbf0e8_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_65fdab7bf7f772fce1392fb9d8bbf0e8_dep.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_3a73eb9ef2e99bbb5be4f2de43b94998_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_3a73eb9ef2e99bbb5be4f2de43b94998_dep.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00028.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00028.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00095.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00095.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00030.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00030.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00079.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00079.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00078.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00078.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00045.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00045.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00051.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00051.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00064.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00064.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00027.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00027.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_0.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_0.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_a1066d32282694e4f58db5dfe3ad03ba1_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_a1066d32282694e4f58db5dfe3ad03ba1_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_af6dae612960cbc73fa4e3dd098f315e6_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_af6dae612960cbc73fa4e3dd098f315e6_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00086.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00086.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00023_a09711a47c9e3d962d711f9081d6d486c_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00023_a09711a47c9e3d962d711f9081d6d486c_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00062_a5c27cb7e40c60f7addda5657b30bef12_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00062_a5c27cb7e40c60f7addda5657b30bef12_cgraph.png"'
+dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_5.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_5.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00092_ad045dbcdcb99b8ab9f79a177ea3d2fc0_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00092_ad045dbcdcb99b8ab9f79a177ea3d2fc0_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00038_a5c27cb7e40c60f7addda5657b30bef12_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00038_a5c27cb7e40c60f7addda5657b30bef12_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00076_af4f5d691b7c7f0691a1811b98f7752b8_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00076_af4f5d691b7c7f0691a1811b98f7752b8_icgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00087.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00087.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_4.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_4.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00084_af1b6bc1d726bf699d5cab7a1dd6bf8c3_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00084_af1b6bc1d726bf699d5cab7a1dd6bf8c3_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00090.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00090.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00029_a2317d4101ee5164b72e47e21ca850856_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00029_a2317d4101ee5164b72e47e21ca850856_cgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00040.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00040.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00044_ad93f6a50164d6899208c36f9db679d82_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00044_ad93f6a50164d6899208c36f9db679d82_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00084_a3a952058b788b08f01c07c0154e7ebc2_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00084_a3a952058b788b08f01c07c0154e7ebc2_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_3.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_3.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00092_ab3daa9c0ad0882f041651a87b4d2660a_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00092_ab3daa9c0ad0882f041651a87b4d2660a_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00036.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00036.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_2.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_2.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_ad3b6c1aeee762f41433c407d7f447c55_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_ad3b6c1aeee762f41433c407d7f447c55_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00050_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00050_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.png"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00029_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00029_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00060.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00060.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_df3a0c9f0a5175701d4b46785f0d3973_dep.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/dir_df3a0c9f0a5175701d4b46785f0d3973_dep.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00022.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00022.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00092_afef0ce71ec071c41994719872b9113e0_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00092_afef0ce71ec071c41994719872b9113e0_icgraph.png"'
+sh: 1: sh: 1: dot: not found
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00072_ac9a5bd25edd22674eca21a31e4093d09_icgraph.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00072_ac9a5bd25edd22674eca21a31e4093d09_icgraph.png"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00037.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00037.png"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/a00039.dot" -Tpng -o "/home/michal/Desktop/dron/Dron/dox/html/a00039.png"'
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00021.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00022.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00024.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00025.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00023_a09711a47c9e3d962d711f9081d6d486c_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00023_ad6d8fe908dfe65d46dd956f7385624a5_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00027.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00028.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00030.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00031.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00029_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00029_a2317d4101ee5164b72e47e21ca850856_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00033.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00034.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00036.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00037.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00039.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00040.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00038_afbee8685eba8033e340917640a7909d8_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00038_a5c27cb7e40c60f7addda5657b30bef12_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00042.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00045.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00044_a88a900c011a5122ce37ec8eb259904c0_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00044_ad93f6a50164d6899208c36f9db679d82_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00048.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00051.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00050_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00050_ab13e858612c64eeef73aff1d8a03945e_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00050_a55555416eceaaba3a1c33e685468bc1c_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00055.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00053_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00053_a2317d4101ee5164b72e47e21ca850856_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00057.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00060.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00064.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00062_afbee8685eba8033e340917640a7909d8_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00062_a5c27cb7e40c60f7addda5657b30bef12_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00070.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_a1066d32282694e4f58db5dfe3ad03ba1_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_af13b8aacbf7d640cf684c172541d47c0_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_ac9a5bd25edd22674eca21a31e4093d09_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_af7df3657c144275d093ec67e3f79e138_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_af6dae612960cbc73fa4e3dd098f315e6_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_ab0ce8612935678e534dd5b2e8c822919_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_ad3b6c1aeee762f41433c407d7f447c55_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_ad3b6c1aeee762f41433c407d7f447c55_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_a37a3e693aed550ee5265d4ade78415ab_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00072_a2fd7489f927b46b0fffa68400998f938_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00075.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00074.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00076_a13bd49360e3bb199f3324d70c6922200_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00076_a1cfe36287063fc265b38fce4bfd7e32d_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00076_af4f5d691b7c7f0691a1811b98f7752b8_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00079.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00078.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00080_abb41201ef93212c4e720cb9e0ad63473_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00080_abb41201ef93212c4e720cb9e0ad63473_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00084_a07ded887eab08d7cc7bb4a92f5ab54b3_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00084_af1b6bc1d726bf699d5cab7a1dd6bf8c3_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00084_a893715299fcaeeb95b4f2f41f0b7eaba_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00084_a57edbbfcea7c17a1869f9e0539f5eaea_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00084_a84049eb06754dee345cff0bcd59ba6dd_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00084_a2d86a4987883b400d579f8b26bc06da6_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00084_a3a952058b788b08f01c07c0154e7ebc2_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00087.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00086.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00088_aeed69a140973c313b9dee29b458df0d0_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00090.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00092_ad045dbcdcb99b8ab9f79a177ea3d2fc0_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00092_ad045dbcdcb99b8ab9f79a177ea3d2fc0_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00092_ab3daa9c0ad0882f041651a87b4d2660a_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00092_ab3daa9c0ad0882f041651a87b4d2660a_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00092_afef0ce71ec071c41994719872b9113e0_cgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00092_afef0ce71ec071c41994719872b9113e0_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00092_a7ca4eef2d276f14861c963465a1bbde9_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00095.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/a00096_a196e9eedc9a88a48f64e69e39405fa72_icgraph.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_df3a0c9f0a5175701d4b46785f0d3973_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_a33e3cf1dcedc469cc4ebda78ed04c6d_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_3a73eb9ef2e99bbb5be4f2de43b94998_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_3ffddfcbca87fb26749cd268b3af476d_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_ed2d0ab67782f28b823437a6aacb2629_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_6ca29fe8855be2f9297c48b7f9531dc3_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/dir_65fdab7bf7f772fce1392fb9d8bbf0e8_dep.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/inherit_graph_0.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/inherit_graph_1.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/inherit_graph_2.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/inherit_graph_3.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/inherit_graph_4.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.
+error: problems opening map file /home/michal/Desktop/dron/Dron/dox/html/inherit_graph_5.map for inclusion in the docs!
+If you installed Graphviz/dot after a previous failing run, 
+try deleting the output directory and rerun doxygen.

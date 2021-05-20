@@ -48,6 +48,9 @@ public:
 	Vector<T> operator*(const double& multiplier) const;
 
   	void operator=(const Vector<T>& v);
+	Vector(const Vector<T>&) = default;
+	Vector(Vector<T>&&) = default;
+	Vector<T>& operator=(Vector<T>&&) = default;
 };
 
 template<unsigned int T>

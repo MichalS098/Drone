@@ -1,6 +1,6 @@
 #include "Scene.hh"
 
-#define FIRST_DRONE_COLOR 0 //czerwony
+#define FIRST_DRONE_COLOR 3 //niebieski
 #define SECOND_DRONE_COLOR 3 //niebieski
 #define UNIT_SCALE 1,1,1
 
@@ -43,7 +43,16 @@ const Drone& Scene::takeActiveDrone(){
 	cout<<"Wprowadz numer aktywnego drona(1 lub 2)> ";
 	cin>>droneID;
 	_ID_of_active_Drone=droneID-1;
-    return _droneArray[_ID_of_active_Drone];
+
+	//tworze drona na nowo by zmienic kolor
+	for(int i=1; i<=4; ++i){
+		_lacze.UsunNazwePliku(makeRotorFileName(_ID_of_active_Drone+1, i));
+	}
+	_lacze.UsunNazwePliku(makeBodyFileName(_ID_of_active_Drone+1));
+	Vector<3> newPosition = _droneArray[_ID_of_active_Drone].takeDronePosition();
+	_droneArray[_ID_of_active_Drone].makeDrone(newPosition, Vector<3>{1,1,1},_ID_of_active_Drone+1, _lacze, 0);
+    _lacze.Rysuj();
+	return _droneArray[_ID_of_active_Drone];
 }
 
 
@@ -92,6 +101,7 @@ void Scene::droneFlightAnimation(){
   	cout<<"Realizacja przelotu..." <<endl<<endl<<endl<<endl;
 	useActiveDrone().makeVerticalFlight(flightHeight, 		 _lacze);
 	useActiveDrone().changeDroneOrientation(flightDirection, _lacze);
+
 	useActiveDrone().makeHorizontalFlight(flightLenght, 	 _lacze);
 	useActiveDrone().makeVerticalFlight(-flightHeight, 		 _lacze);
   	cout<<endl<<"Dron wyladowal... " <<endl<<endl<<"Usuwam sciezke..."<<endl;

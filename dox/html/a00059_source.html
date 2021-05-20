@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dragonfly: Plik źródłowy /home/michal/Desktop/dron/Dron/prj/src/Scene.cpp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="dragonfly-icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Dragonfly
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00059_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="headertitle">
+<div class="title">Scene.cpp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="a00059.html">Idź do dokumentacji tego pliku.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00035.html">Scene.hh</a>&quot;</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
+<div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="a00059.html#a05a5c13442ed4d5325d373ccc0ffa1ec">    3</a></span>&#160;<span class="preprocessor">#define FIRST_DRONE_COLOR 0 //czerwony</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="a00059.html#ae0f150262b052a824f4031c1531775bd">    4</a></span>&#160;<span class="preprocessor">#define SECOND_DRONE_COLOR 3 //niebieski</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="a00059.html#a3028beddd2009447c51c8e34f4aa435b">    5</a></span>&#160;<span class="preprocessor">#define UNIT_SCALE 1,1,1</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="a00092.html#ae6b47a946500a1d904bce5c8cef80066">   18</a></span>&#160;<a class="code" href="a00092.html#ae6b47a946500a1d904bce5c8cef80066">Scene::Scene</a>(PzG::LaczeDoGNUPlota&amp; Lacze): _lacze{Lacze}, _ID_of_active_Drone{0}</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="a00096.html">Vector&lt;3&gt;</a> initialPosition({20,20,0});  <span class="comment">//wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="a00096.html">Vector&lt;3&gt;</a> secondInitialPosition({50,70,0});</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="a00096.html">Vector&lt;3&gt;</a> scale({<a class="code" href="a00059.html#a3028beddd2009447c51c8e34f4aa435b">UNIT_SCALE</a>});</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    _droneArray[0].makeDrone(initialPosition, scale, 1, Lacze, <a class="code" href="a00059.html#a05a5c13442ed4d5325d373ccc0ffa1ec">FIRST_DRONE_COLOR</a>);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        _droneArray[0].calcAndSave_DroneCoords();</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        _droneArray[1].makeDrone(secondInitialPosition, scale, 2, Lacze, <a class="code" href="a00059.html#ae0f150262b052a824f4031c1531775bd">SECOND_DRONE_COLOR</a>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    _droneArray[1].calcAndSave_DroneCoords();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="a00092.html#afef0ce71ec071c41994719872b9113e0">   35</a></span>&#160;<span class="keyword">const</span> <a class="code" href="a00072.html">Drone</a>&amp; <a class="code" href="a00092.html#afef0ce71ec071c41994719872b9113e0">Scene::takeActiveDrone</a>(){</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> droneID=0;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;1 - Polozenie (x,y): &quot;</span>&lt;&lt;<a class="code" href="a00092.html#ae1b9d5e8db15ff32fc61e418bdc58f19">_droneArray</a>[0].<a class="code" href="a00072.html#a37a3e693aed550ee5265d4ade78415ab">takeDronePosition</a>();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="a00092.html#a1f081554849d70c0a816d88aba63f297">_ID_of_active_Drone</a>==0) cout&lt;&lt;<span class="stringliteral">&quot; &lt;-- Dron aktywny&quot;</span>;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        cout&lt;&lt;endl;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;2 - Polozenie (x,y): &quot;</span>&lt;&lt;<a class="code" href="a00092.html#ae1b9d5e8db15ff32fc61e418bdc58f19">_droneArray</a>[1].<a class="code" href="a00072.html#a37a3e693aed550ee5265d4ade78415ab">takeDronePosition</a>();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="a00092.html#a1f081554849d70c0a816d88aba63f297">_ID_of_active_Drone</a>==1) cout&lt;&lt;<span class="stringliteral">&quot; &lt;-- Dron aktywny&quot;</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        cout&lt;&lt;endl;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Wprowadz numer aktywnego drona(1 lub 2)&gt; &quot;</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        cin&gt;&gt;droneID;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <a class="code" href="a00092.html#a1f081554849d70c0a816d88aba63f297">_ID_of_active_Drone</a>=droneID-1;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="a00092.html#ae1b9d5e8db15ff32fc61e418bdc58f19">_droneArray</a>[<a class="code" href="a00092.html#a1f081554849d70c0a816d88aba63f297">_ID_of_active_Drone</a>];</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">   57</a></span>&#160;<a class="code" href="a00072.html">Drone</a>&amp; <a class="code" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">Scene::useActiveDrone</a>(){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="a00092.html#ae1b9d5e8db15ff32fc61e418bdc58f19">_droneArray</a>[<a class="code" href="a00092.html#a1f081554849d70c0a816d88aba63f297">_ID_of_active_Drone</a>];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="a00092.html#ab3daa9c0ad0882f041651a87b4d2660a">   65</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00092.html#ab3daa9c0ad0882f041651a87b4d2660a">Scene::printPositionOfActiveDrone</a>(){</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    cout&lt;&lt;<span class="stringliteral">&quot;Polozenie Drona aktywnego (x,y):&quot;</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        &lt;&lt;<a class="code" href="a00092.html#ae1b9d5e8db15ff32fc61e418bdc58f19">_droneArray</a>[<a class="code" href="a00092.html#a1f081554849d70c0a816d88aba63f297">_ID_of_active_Drone</a>].<a class="code" href="a00072.html#a37a3e693aed550ee5265d4ade78415ab">takeDronePosition</a>()&lt;&lt;endl;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="a00092.html#ad045dbcdcb99b8ab9f79a177ea3d2fc0">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00092.html#ad045dbcdcb99b8ab9f79a177ea3d2fc0">Scene::droneFlightAnimation</a>(){</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordtype">double</span> flightDirection;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">double</span> flightLenght;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">double</span> flightHeight;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Podaj kierunek lotu (kat w stopniach)&gt; &quot;</span>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        cin&gt;&gt;flightDirection;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Podaj dlugosc lotu&gt; &quot;</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        cin&gt;&gt;flightLenght;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Podaj wysokosc lotu&gt; &quot;</span>;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        cin&gt;&gt;flightHeight; cout&lt;&lt;endl&lt;&lt;endl;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Rysuje zaplanowana sciezke lotu...&quot;</span> &lt;&lt;endl&lt;&lt;endl&lt;&lt;endl&lt;&lt;endl;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <a class="code" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">useActiveDrone</a>().<a class="code" href="a00072.html#ad3b6c1aeee762f41433c407d7f447c55">planInitialFlightPath</a>(flightHeight, flightDirection, flightLenght, <a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>.Rysuj();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        cout&lt;&lt;<span class="stringliteral">&quot;Realizacja przelotu...&quot;</span> &lt;&lt;endl&lt;&lt;endl&lt;&lt;endl&lt;&lt;endl;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">useActiveDrone</a>().<a class="code" href="a00072.html#ab0ce8612935678e534dd5b2e8c822919">makeVerticalFlight</a>(flightHeight,                <a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">useActiveDrone</a>().<a class="code" href="a00072.html#af13b8aacbf7d640cf684c172541d47c0">changeDroneOrientation</a>(flightDirection, <a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">useActiveDrone</a>().<a class="code" href="a00072.html#af6dae612960cbc73fa4e3dd098f315e6">makeHorizontalFlight</a>(flightLenght,      <a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">useActiveDrone</a>().<a class="code" href="a00072.html#ab0ce8612935678e534dd5b2e8c822919">makeVerticalFlight</a>(-flightHeight,               <a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        cout&lt;&lt;endl&lt;&lt;<span class="stringliteral">&quot;Dron wyladowal... &quot;</span> &lt;&lt;endl&lt;&lt;endl&lt;&lt;<span class="stringliteral">&quot;Usuwam sciezke...&quot;</span>&lt;&lt;endl;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">useActiveDrone</a>().<a class="code" href="a00072.html#ac9a5bd25edd22674eca21a31e4093d09">deleteFlightPath</a>(<a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">_lacze</a>.Rysuj();</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="a00092.html#ab3daa9c0ad0882f041651a87b4d2660a">printPositionOfActiveDrone</a>();</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aa00092_html_ae6b47a946500a1d904bce5c8cef80066"><div class="ttname"><a href="a00092.html#ae6b47a946500a1d904bce5c8cef80066">Scene::Scene</a></div><div class="ttdeci">Scene(PzG::LaczeDoGNUPlota &amp;lacze)</div><div class="ttdoc">Konstruktor sceny, tworzący dwa drony.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00018">Scene.cpp:18</a></div></div>
+<div class="ttc" id="aa00072_html"><div class="ttname"><a href="a00072.html">Drone</a></div><div class="ttdoc">Klasa definiująca drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00016">Drone.hh:16</a></div></div>
+<div class="ttc" id="aa00059_html_ae0f150262b052a824f4031c1531775bd"><div class="ttname"><a href="a00059.html#ae0f150262b052a824f4031c1531775bd">SECOND_DRONE_COLOR</a></div><div class="ttdeci">#define SECOND_DRONE_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00004">Scene.cpp:4</a></div></div>
+<div class="ttc" id="aa00092_html_a7ca4eef2d276f14861c963465a1bbde9"><div class="ttname"><a href="a00092.html#a7ca4eef2d276f14861c963465a1bbde9">Scene::useActiveDrone</a></div><div class="ttdeci">Drone &amp; useActiveDrone()</div><div class="ttdoc">Funkcja używa aktywnego drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00057">Scene.cpp:57</a></div></div>
+<div class="ttc" id="aa00072_html_ab0ce8612935678e534dd5b2e8c822919"><div class="ttname"><a href="a00072.html#ab0ce8612935678e534dd5b2e8c822919">Drone::makeVerticalFlight</a></div><div class="ttdeci">bool makeVerticalFlight(double height, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Funkcja przemieszcza drona w kierunku pionowym wzdłuż osi z.</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00297">Drone.cpp:297</a></div></div>
+<div class="ttc" id="aa00092_html_afef0ce71ec071c41994719872b9113e0"><div class="ttname"><a href="a00092.html#afef0ce71ec071c41994719872b9113e0">Scene::takeActiveDrone</a></div><div class="ttdeci">const Drone &amp; takeActiveDrone()</div><div class="ttdoc">Funkcja pozwala na wybranie przez użytkownika aktywnego drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00035">Scene.cpp:35</a></div></div>
+<div class="ttc" id="aa00059_html_a3028beddd2009447c51c8e34f4aa435b"><div class="ttname"><a href="a00059.html#a3028beddd2009447c51c8e34f4aa435b">UNIT_SCALE</a></div><div class="ttdeci">#define UNIT_SCALE</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00005">Scene.cpp:5</a></div></div>
+<div class="ttc" id="aa00092_html_ab3daa9c0ad0882f041651a87b4d2660a"><div class="ttname"><a href="a00092.html#ab3daa9c0ad0882f041651a87b4d2660a">Scene::printPositionOfActiveDrone</a></div><div class="ttdeci">void printPositionOfActiveDrone()</div><div class="ttdoc">Funkcja wypisuje na stdout położenie aktywnego drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00065">Scene.cpp:65</a></div></div>
+<div class="ttc" id="aa00072_html_ac9a5bd25edd22674eca21a31e4093d09"><div class="ttname"><a href="a00072.html#ac9a5bd25edd22674eca21a31e4093d09">Drone::deleteFlightPath</a></div><div class="ttdeci">void deleteFlightPath(PzG::LaczeDoGNUPlota &amp;lacze) const</div><div class="ttdoc">Funkcja usuwa powstałą wcześniej ścieżkę lotu drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00223">Drone.cpp:223</a></div></div>
+<div class="ttc" id="aa00096_html"><div class="ttname"><a href="a00096.html">Vector&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aa00072_html_af13b8aacbf7d640cf684c172541d47c0"><div class="ttname"><a href="a00072.html#af13b8aacbf7d640cf684c172541d47c0">Drone::changeDroneOrientation</a></div><div class="ttdeci">bool changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Funkcja przemieszcza drona wokol wlasnej osi o podany kat.</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00276">Drone.cpp:276</a></div></div>
+<div class="ttc" id="aa00092_html_a1f081554849d70c0a816d88aba63f297"><div class="ttname"><a href="a00092.html#a1f081554849d70c0a816d88aba63f297">Scene::_ID_of_active_Drone</a></div><div class="ttdeci">unsigned int _ID_of_active_Drone</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00014">Scene.hh:14</a></div></div>
+<div class="ttc" id="aa00059_html_a05a5c13442ed4d5325d373ccc0ffa1ec"><div class="ttname"><a href="a00059.html#a05a5c13442ed4d5325d373ccc0ffa1ec">FIRST_DRONE_COLOR</a></div><div class="ttdeci">#define FIRST_DRONE_COLOR</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00003">Scene.cpp:3</a></div></div>
+<div class="ttc" id="aa00092_html_a50bb4fcc59dd2a3e0eda899c29557631"><div class="ttname"><a href="a00092.html#a50bb4fcc59dd2a3e0eda899c29557631">Scene::_lacze</a></div><div class="ttdeci">PzG::LaczeDoGNUPlota &amp; _lacze</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00015">Scene.hh:15</a></div></div>
+<div class="ttc" id="aa00092_html_ae1b9d5e8db15ff32fc61e418bdc58f19"><div class="ttname"><a href="a00092.html#ae1b9d5e8db15ff32fc61e418bdc58f19">Scene::_droneArray</a></div><div class="ttdeci">Drone _droneArray[2]</div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00013">Scene.hh:13</a></div></div>
+<div class="ttc" id="aa00035_html"><div class="ttname"><a href="a00035.html">Scene.hh</a></div></div>
+<div class="ttc" id="aa00092_html_ad045dbcdcb99b8ab9f79a177ea3d2fc0"><div class="ttname"><a href="a00092.html#ad045dbcdcb99b8ab9f79a177ea3d2fc0">Scene::droneFlightAnimation</a></div><div class="ttdeci">void droneFlightAnimation()</div><div class="ttdoc">Funkcja wykonuje animacje lotu drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00059_source.html#l00078">Scene.cpp:78</a></div></div>
+<div class="ttc" id="aa00072_html_a37a3e693aed550ee5265d4ade78415ab"><div class="ttname"><a href="a00072.html#a37a3e693aed550ee5265d4ade78415ab">Drone::takeDronePosition</a></div><div class="ttdeci">Vector&lt; 3 &gt; takeDronePosition() const</div><div class="ttdef"><b>Definition:</b> <a href="a00020_source.html#l00038">Drone.hh:38</a></div></div>
+<div class="ttc" id="aa00072_html_af6dae612960cbc73fa4e3dd098f315e6"><div class="ttname"><a href="a00072.html#af6dae612960cbc73fa4e3dd098f315e6">Drone::makeHorizontalFlight</a></div><div class="ttdeci">bool makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota &amp;Lacze)</div><div class="ttdoc">Funckja przemieszcza dron do przodu.</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00245">Drone.cpp:245</a></div></div>
+<div class="ttc" id="aa00072_html_ad3b6c1aeee762f41433c407d7f447c55"><div class="ttname"><a href="a00072.html#ad3b6c1aeee762f41433c407d7f447c55">Drone::planInitialFlightPath</a></div><div class="ttdeci">void planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota &amp;lacze)</div><div class="ttdoc">Funkcja planuje początkową ścieżkę lotu drona.</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00189">Drone.cpp:189</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_ed2d0ab67782f28b823437a6aacb2629.html">michal</a></li><li class="navelem"><a class="el" href="dir_df3a0c9f0a5175701d4b46785f0d3973.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_a33e3cf1dcedc469cc4ebda78ed04c6d.html">dron</a></li><li class="navelem"><a class="el" href="dir_3a73eb9ef2e99bbb5be4f2de43b94998.html">Dron</a></li><li class="navelem"><a class="el" href="dir_6ca29fe8855be2f9297c48b7f9531dc3.html">prj</a></li><li class="navelem"><a class="el" href="dir_65fdab7bf7f772fce1392fb9d8bbf0e8.html">src</a></li><li class="navelem"><a class="el" href="a00059.html">Scene.cpp</a></li>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

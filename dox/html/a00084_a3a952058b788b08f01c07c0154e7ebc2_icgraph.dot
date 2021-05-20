@@ -1,0 +1,20 @@
+digraph "Matrix::size"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Matrix::size",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Funkcja zwraca wielkosc macierzy w postaci liczby int (np dla macierzy 2x2 zwroci 2)."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Matrix::operator*",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00084.html#a07ded887eab08d7cc7bb4a92f5ab54b3",tooltip="Operacja mnozenia macierzy przez macierz."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Matrix::operator+",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00084.html#a893715299fcaeeb95b4f2f41f0b7eaba",tooltip="Operacja dodawania macierzy."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="Matrix::operator-",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00084.html#a57edbbfcea7c17a1869f9e0539f5eaea",tooltip="Operacja odejmowania macierzy."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="operator\<\<",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00053.html#a2317d4101ee5164b72e47e21ca850856",tooltip="Operacja wysylajaca macierz na podany strumien, wysylane sa elementy z ktorych macierz sie sklada odp..."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="Matrix::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00084.html#a84049eb06754dee345cff0bcd59ba6dd",tooltip="Operacja przypisania dla macierzy, kazdy element macierzy m przypisuje do macierzy obiektu,..."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Matrix::operator==",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00084.html#a2d86a4987883b400d579f8b26bc06da6",tooltip=" "];
+}

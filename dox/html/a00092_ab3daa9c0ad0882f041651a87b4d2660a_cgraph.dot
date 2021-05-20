@@ -1,0 +1,10 @@
+digraph "Scene::printPositionOfActiveDrone"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Scene::printPositionOfActive\lDrone",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Funkcja wypisuje na stdout położenie aktywnego drona."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Drone::takeDronePosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00072.html#a37a3e693aed550ee5265d4ade78415ab",tooltip=" "];
+}

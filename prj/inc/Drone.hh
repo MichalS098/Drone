@@ -34,6 +34,7 @@ public:
     bool makeVerticalFlight(double height, PzG::LaczeDoGNUPlota& Lacze);
     bool makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze);
     bool changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze);
+    bool tiltForward(PzG::LaczeDoGNUPlota& Lacze);
     bool calcAndSave_DroneCoords() const;
     Vector<3> takeDronePosition() const {return _position;}
 };

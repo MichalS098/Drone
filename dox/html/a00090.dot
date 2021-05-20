@@ -1,0 +1,23 @@
+digraph "Scene"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="Scene",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Klasa definiująca scene zawierającą dwa drony."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _droneArray" ,fontname="FreeSans"];
+  Node2 [label="Drone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00072.html",tooltip="Klasa definiująca drona."];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _droneRotor" ,fontname="FreeSans"];
+  Node3 [label="HexagonalPrism",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00080.html",tooltip="Klasa pochodna klasy figury geometrycznej definiująca graniastosłup sześciokątny."];
+  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="GeometricFigure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00076.html",tooltip="Klasa Bazowa opisujaca figure geometryczna."];
+  Node5 -> Node4 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _scale" ,fontname="FreeSans"];
+  Node5 [label="Vector\< 3 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00096.html",tooltip=" "];
+  Node6 -> Node5 [dir="back",color="orange",fontsize="10",style="dashed",label=" \< 3 \>" ,fontname="FreeSans"];
+  Node6 [label="Vector\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00096.html",tooltip="Klasa Vector opisuje wektor roznowymiarowy bedacy tablica liczb double o wielkosci T,..."];
+  Node5 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _position" ,fontname="FreeSans"];
+  Node7 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _droneBody" ,fontname="FreeSans"];
+  Node7 [label="Rectangular",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00088.html",tooltip="Klasa pochodna klasy figury geometrycznej definiująca prostopadłościan."];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 -> Node7 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _position" ,fontname="FreeSans"];
+  Node5 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _position" ,fontname="FreeSans"];
+}

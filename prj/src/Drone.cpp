@@ -183,10 +183,14 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
  * 
  * @param turnAngle    - Kąt obrotu w stopniach
  * @param flightLenght - Długość ścieżki
+ * @param flightHeight - wysokosc lotu
+ * @param Lacze        - lacze do GNUPlota       
  */
 void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota& lacze){
     Vector<3U> vec;
-    _orientationAngle=turnAngle;
+    //_orientationAngle=turnAngle;
+    Matrix<3> rotationMatrix;
+    makeRotationMatrix('z', turnAngle, rotationMatrix);
     vector<Vector<3U>> pathPoints;
 
     vec[2] -=4;
@@ -194,9 +198,9 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
     vec[2] += flightHeight-4;
     pathPoints.push_back(transfToParentCoordSys(vec));    /* po uniesieniu */
     vec[0] = flightLenght;
-    pathPoints.push_back(transfToParentCoordSys(vec));    /* po locie poziomym */
+    pathPoints.push_back(transfToParentCoordSys(rotationMatrix*vec));    /* po locie poziomym */
     vec[2] -= flightHeight-4;
-    pathPoints.push_back(transfToParentCoordSys(vec));    /* po ladowaniu */
+    pathPoints.push_back(transfToParentCoordSys(rotationMatrix*vec));    /* po ladowaniu */
 
     ofstream fileNameStr(FLIGHT_PATH_FILE_NAME);
     if (!fileNameStr.is_open()){
@@ -242,10 +246,18 @@ bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacz
     double angleRad = _orientationAngle*(M_PI/180);
     double xlenght=_position[0]+flightLenght*cos(angleRad);     //dlugosc do przebycia w kierunku osi x
     double ylenght=_position[1]+flightLenght*sin(angleRad);     
-    for (; _position[0] <= xlenght && _position[1]<= ylenght; _position[0] += xlenght/100, _position[1] += ylenght/100) {
+    const double initPosX=_position[0];
+    const double initPosY=_position[1];
+    while( (pow(_position[0]-initPosX,2)+pow(_position[1]-initPosY,2)) <= pow(flightLenght,2) ){
+        if(_position[0]<=xlenght){
+            _position[0]+=(xlenght/300);
+        }
+        if(_position[1]<=ylenght){
+            _position[1]+=(ylenght/300);
+        }
         this->rotateRotor(36*_position[0]);
         if (!this->calcAndSave_DroneCoords()) return false;
-        usleep(100000);
+        usleep(35000);
         Lacze.Rysuj();
     }  
     return true;
@@ -284,21 +296,21 @@ bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
  */
 bool Drone::makeVerticalFlight(double flightHeight, PzG::LaczeDoGNUPlota& Lacze){
     if(flightHeight>0){
-        for (; _position[2] <= flightHeight-4; _position[2] += 2) {       
+        for (; _position[2] <= flightHeight-4; _position[2] += 1) {       
             this->rotateRotor(4*_position[2]);
             if (!this->calcAndSave_DroneCoords()) return false;
-            usleep(100000); // 0.1 ms
+            usleep(50000); 
             Lacze.Rysuj();
         }
     }
     else{
-        for (; _position[2] >= 4; _position[2] -= 2) {
+        for (; _position[2] >= 4; _position[2] -= 1) {
             this->rotateRotor(4*_position[2]);
             if (!this->calcAndSave_DroneCoords()) return false;
-            usleep(100000); // 0.1 ms
+            usleep(50000); 
             Lacze.Rysuj();
         }
-        _position[2]+=2;
+        _position[2]+=1;
     }
     return true;
 }
@@ -319,4 +331,21 @@ void Drone::rotateRotor(double angle){
         k = (i%2==0) ? 1 : -1;
         _droneRotor[i].enterOrientationAngle(k*angle);
     }
+}
+
+
+/**
+ * @brief Funkcja pochyla drona w kierunku lotu
+ * 
+ * @param Lacze - lacze do GNUPlota
+ */
+bool Drone::tiltForward(PzG::LaczeDoGNUPlota& Lacze){
+    for (; _orientationAngle <= 20; _orientationAngle += 5) {
+        
+        if (!this->calcAndSave_DroneCoords()) return false;
+        usleep(100000);
+        Lacze.Rysuj();
+    }
+    _orientationAngle -= 5;
+    return true;
 }

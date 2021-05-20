@@ -1,0 +1,239 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dragonfly: Dokumentacja pliku /home/michal/Desktop/dron/Dron/prj/src/Matrix.ipp</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="dragonfly-icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Dragonfly
+   &#160;<span id="projectnumber">0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',false,false,'search.php','Szukaj');
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('a00053.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<div class="header">
+  <div class="summary">
+<a href="#func-members">Funkcje</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja pliku Matrix.ipp</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><div class="dynheader">
+Ten wykres pokazuje, które pliki bezpośrednio lub pośrednio załączają ten plik:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00055.png" border="0" usemap="#_2home_2michal_2_desktop_2dron_2_dron_2prj_2src_2_matrix_8ippdep" alt=""/></div>
+</div>
+</div>
+<p><a href="a00053_source.html">Idź do kodu źródłowego tego pliku.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a8483aa9f8e99f4a9e89e244b2baff8a0"><td class="memTemplParams" colspan="2">template&lt;unsigned int T&gt; </td></tr>
+<tr class="memitem:a8483aa9f8e99f4a9e89e244b2baff8a0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00053.html#a8483aa9f8e99f4a9e89e244b2baff8a0">makeRotationMatrix</a> (char axis, double angleInDegrees, <a class="el" href="a00084.html">Matrix</a>&lt; T &gt; &amp;rotationMatrix)</td></tr>
+<tr class="memdesc:a8483aa9f8e99f4a9e89e244b2baff8a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja tworząca macierz obrotu.  <a href="a00053.html#a8483aa9f8e99f4a9e89e244b2baff8a0">Więcej...</a><br /></td></tr>
+<tr class="separator:a8483aa9f8e99f4a9e89e244b2baff8a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2317d4101ee5164b72e47e21ca850856"><td class="memTemplParams" colspan="2">template&lt;unsigned int T&gt; </td></tr>
+<tr class="memitem:a2317d4101ee5164b72e47e21ca850856"><td class="memTemplItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="a00053.html#a2317d4101ee5164b72e47e21ca850856">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="a00084.html">Matrix</a>&lt; T &gt; &amp;m)</td></tr>
+<tr class="memdesc:a2317d4101ee5164b72e47e21ca850856"><td class="mdescLeft">&#160;</td><td class="mdescRight">Operacja wysylajaca macierz na podany strumien, wysylane sa elementy z ktorych macierz sie sklada odpowiednio sformatowane.  <a href="a00053.html#a2317d4101ee5164b72e47e21ca850856">Więcej...</a><br /></td></tr>
+<tr class="separator:a2317d4101ee5164b72e47e21ca850856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a8483aa9f8e99f4a9e89e244b2baff8a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8483aa9f8e99f4a9e89e244b2baff8a0">&#9670;&nbsp;</a></span>makeRotationMatrix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void makeRotationMatrix </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>axis</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>angleInDegrees</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00084.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>rotationMatrix</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcja tworzy macierz obrotu na podstawie osi wokół której ma obrócić oraz kąta obrotu. Funkcja potrafi tworzyć macierz obrotu wielkości 3x3 pozwalających na obrót wokół osi (x,y,z) oraz również potrafi stworzyć macierz obrotu wielkości 2x2, wtedy jako oś czyli "axis" należy podać 'o' a macierz podana jako argument powinna być macierzą wielkości 2x2. </p><dl class="tparams"><dt>Parametry Szablonu</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">axis</td><td>- oś wokół której macierz ma obracać, dostępne opcje : (o,x,y,z) </td></tr>
+    <tr><td class="paramname">angleInDegrees</td><td>- kąt obrotu </td></tr>
+    <tr><td class="paramname">rotationMatrix</td><td>- macierz rotacji podana jako argument </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="a00053_source.html#l00171">171</a> pliku <a class="el" href="a00053_source.html">Matrix.ipp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                                                                                    {           </div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">double</span> angleRad = angleInDegrees*(<a class="code" href="a00029.html#ac8276a5f8bca6056da2f931ccc7bb47e">number_pi</a>/180);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">if</span>(axis==<span class="charliteral">&#39;o&#39;</span> &amp;&amp; T==2){</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            rotationMatrix = <a class="code" href="a00084.html">Matrix&lt;T&gt;</a>({std::cos(angleRad), std::sin(angleRad), -std::sin(angleRad), std::cos(angleRad)}); </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    }</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(axis==<span class="charliteral">&#39;x&#39;</span> &amp;&amp; T==3){</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        rotationMatrix = <a class="code" href="a00084.html">Matrix&lt;T&gt;</a>({1, 0, 0, 0, std::cos(angleRad), std::sin(angleRad), 0, -std::sin(angleRad), std::cos(angleRad)}); </div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    }</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(axis==<span class="charliteral">&#39;y&#39;</span> &amp;&amp; T==3){</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        rotationMatrix = <a class="code" href="a00084.html">Matrix&lt;T&gt;</a>({std::cos(angleRad), 0, -std::sin(angleRad), 0, 1, 0, std::sin(angleRad), 0, std::cos(angleRad)}); </div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    }</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(axis==<span class="charliteral">&#39;z&#39;</span> &amp;&amp; T==3){</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        rotationMatrix = <a class="code" href="a00084.html">Matrix&lt;T&gt;</a>({std::cos(angleRad), std::sin(angleRad), 0, -std::sin(angleRad), std::cos(angleRad), 0, 0, 0, 1}); </div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">throw</span> std::invalid_argument(<span class="stringliteral">&quot;unknown axis, there are only options(o,x,y,z), or unknown size for rotation matrix&quot;</span>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00053_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.png" border="0" usemap="#a00053_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+<a id="a2317d4101ee5164b72e47e21ca850856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2317d4101ee5164b72e47e21ca850856">&#9670;&nbsp;</a></span>operator&lt;&lt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;unsigned int T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::ostream&amp; operator&lt;&lt; </td>
+          <td>(</td>
+          <td class="paramtype">std::ostream &amp;&#160;</td>
+          <td class="paramname"><em>os</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="a00084.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>m</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="tparams"><dt>Parametry Szablonu</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>wielkosc macierzy </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">os</td><td>Strumien podany przez uzytkownika na ktory zostanie wyslana macierz </td></tr>
+    <tr><td class="paramname">m</td><td>Macierz ktora zostanie wyslana (wyswietlona w szczegolnosci dla stdout) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>ostream&amp; </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="a00053_source.html#l00199">199</a> pliku <a class="el" href="a00053_source.html">Matrix.ipp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                                                          {</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i=0; i&lt;m.<a class="code" href="a00084.html#a3a952058b788b08f01c07c0154e7ebc2">size</a>(); ++i){</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j=0; j&lt;m.<a class="code" href="a00084.html#a3a952058b788b08f01c07c0154e7ebc2">size</a>(); ++j){</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;            os&lt;&lt;std::setw(16)&lt;&lt;std::fixed&lt;&lt;std::setprecision(10)&lt;&lt;m(i,j);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        os&lt;&lt;std::endl;</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    <span class="keywordflow">return</span> os;</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;}</div>
+</div><!-- fragment --><div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00053_a2317d4101ee5164b72e47e21ca850856_cgraph.png" border="0" usemap="#a00053_a2317d4101ee5164b72e47e21ca850856_cgraph" alt=""/></div>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div class="ttc" id="aa00084_html_a3a952058b788b08f01c07c0154e7ebc2"><div class="ttname"><a href="a00084.html#a3a952058b788b08f01c07c0154e7ebc2">Matrix::size</a></div><div class="ttdeci">int size() const</div><div class="ttdoc">Funkcja zwraca wielkosc macierzy w postaci liczby int (np dla macierzy 2x2 zwroci 2).</div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00039">Matrix.hh:39</a></div></div>
+<div class="ttc" id="aa00029_html_ac8276a5f8bca6056da2f931ccc7bb47e"><div class="ttname"><a href="a00029.html#ac8276a5f8bca6056da2f931ccc7bb47e">number_pi</a></div><div class="ttdeci">constexpr long double number_pi</div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00057">Matrix.hh:57</a></div></div>
+<div class="ttc" id="aa00084_html"><div class="ttname"><a href="a00084.html">Matrix</a></div><div class="ttdoc">Klasa Matrix reprezentuje macierz kwadratowa, ktorej wielkosc podajemy przy deklaracji obiektu,...</div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00016">Matrix.hh:16</a></div></div>
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_43e0a1f539e00dcfa1a6bc4d4fee4fc2.html">home</a></li><li class="navelem"><a class="el" href="dir_ed2d0ab67782f28b823437a6aacb2629.html">michal</a></li><li class="navelem"><a class="el" href="dir_df3a0c9f0a5175701d4b46785f0d3973.html">Desktop</a></li><li class="navelem"><a class="el" href="dir_a33e3cf1dcedc469cc4ebda78ed04c6d.html">dron</a></li><li class="navelem"><a class="el" href="dir_3a73eb9ef2e99bbb5be4f2de43b94998.html">Dron</a></li><li class="navelem"><a class="el" href="dir_6ca29fe8855be2f9297c48b7f9531dc3.html">prj</a></li><li class="navelem"><a class="el" href="dir_65fdab7bf7f772fce1392fb9d8bbf0e8.html">src</a></li><li class="navelem"><a class="el" href="a00053.html">Matrix.ipp</a></li>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>
