@@ -12,7 +12,7 @@ using namespace std;
 
 template<unsigned int T>
 unsigned int Vector<T>::VECTOR_OBJECT_COUNTER=0;
-template<unsigned int T>
+template<unsigned int T> 
 unsigned int Vector<T>::VECTOR_OBJECT_SUM=0;
 void printNumberOfVectors();
 void printMenu();

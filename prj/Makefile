@@ -20,7 +20,7 @@ obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh inc/Drone.hh
 obj/Drone.o: src/Drone.cpp inc/Drone.hh inc/Rectangular.hh inc/lacze_do_gnuplota.hh inc/HexagonalPrism-6.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh  
 	g++  -Iinc -W -Wall -pedantic -c -o obj/Drone.o src/Drone.cpp
 
-obj/Scene.o: src/Scene.cpp inc/Scene.hh inc/Drone.hh inc/lacze_do_gnuplota.hh
+obj/Scene.o: src/Scene.cpp inc/Scene.hh inc/Drone.hh inc/lacze_do_gnuplota.hh inc/Plateau.hh inc/SharpTopHill.hh inc/LongRidgeHill.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/Scene.o src/Scene.cpp
 
 obj/Rectangular.o: src/Rectangular.cpp inc/Rectangular.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh
@@ -35,6 +35,14 @@ obj/GeometricFigure.o: src/GeometricFigure.cpp inc/GeometricFigure.hh inc/Vector
 obj/lacze_do_gnuplota.o: src/lacze_do_gnuplota.cpp inc/lacze_do_gnuplota.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/lacze_do_gnuplota.o src/lacze_do_gnuplota.cpp
 
+obj/Plateau.o: src/Plateau.cpp inc/Plateau.hh inc/GeometricFigure.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/Plateau.o src/Plateau.cpp
+
+obj/SharpTopHill.o: src/SharpTopHill.cpp inc/SharpTopHill.hh inc/GeometricFigure.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/SharpTopHill.o src/SharpTopHill.cpp
+
+obj/LongRidgeHill.o: src/LongRidgeHill.cpp inc/LongRidgeHill.hh inc/GeometricFigure.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/LongRidgeHill.o src/LongRidgeHill.cpp
 
 clean:
 	rm -f obj/* ./${APP} core.* core

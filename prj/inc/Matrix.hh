@@ -9,8 +9,8 @@
 
 /**
  * @brief Klasa Matrix reprezentuje macierz kwadratowa, ktorej wielkosc podajemy przy 
- * 	      deklaracji obiektu, 
- * @tparam T wielkosc macierzy kwadratowej
+ * 	      deklaracji obiektu.
+ * @tparam T wielkość macierzy kwadratowej.
  */
 template<unsigned int T>
 class Matrix{
@@ -54,6 +54,6 @@ void makeRotationMatrix(char axis, double angleInDegrees, Matrix<T>& rotationMat
 template<unsigned int T>
 std::ostream& operator<<(std::ostream &os, const Matrix<T> &m);
 
-constexpr long double number_pi=3.14159265358979323;		//number pi used to create rotation matrix
+constexpr long double number_pi=3.14159265358979323;		//number pi used to convert degree angle to radian angle
 
 #include "../src/Matrix.ipp" //including implementation file

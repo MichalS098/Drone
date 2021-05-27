@@ -193,14 +193,20 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
     makeRotationMatrix('z', turnAngle, rotationMatrix);
     vector<Vector<3U>> pathPoints;
 
-    vec[2] -=4;
-    pathPoints.push_back(transfToParentCoordSys(vec));    /* poczatek */
-    vec[2] += flightHeight-4;
-    pathPoints.push_back(transfToParentCoordSys(vec));    /* po uniesieniu */
-    vec[0] = flightLenght;
-    pathPoints.push_back(transfToParentCoordSys(rotationMatrix*vec));    /* po locie poziomym */
-    vec[2] -= flightHeight-4;
-    pathPoints.push_back(transfToParentCoordSys(rotationMatrix*vec));    /* po ladowaniu */
+    vec=_position;
+    vec[2]-=4;
+    pathPoints.push_back(vec);
+    vec[2]+=flightHeight-4;
+    pathPoints.push_back(vec);
+    vec=Vector<3>{0,0,0};
+    vec[0]+=flightLenght;
+    vec[2]+=flightHeight;
+    vec=rotationMatrix*vec;
+    vec=vec+_position;
+    vec[2]-=8;
+    pathPoints.push_back(vec);
+    vec[2]-=flightHeight-4;
+    pathPoints.push_back(vec);
 
     ofstream fileNameStr(FLIGHT_PATH_FILE_NAME);
     if (!fileNameStr.is_open()){

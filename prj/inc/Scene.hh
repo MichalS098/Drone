@@ -1,4 +1,6 @@
 #pragma once
+#include <list>
+#include <memory>
 #include "Drone.hh"
 #include "lacze_do_gnuplota.hh"
 
@@ -10,14 +12,15 @@
  * z rysowaniem planowanej ścieżki.
  */
 class Scene{
-    Drone                 _droneArray[2];
-    unsigned int          _ID_of_active_Drone;
-    PzG::LaczeDoGNUPlota& _lacze;
+    std::list<GeometricFigure*> _lstOfElements;       
+    Drone                       _droneArray[2];
+    unsigned int                _ID_of_active_Drone;
+    PzG::LaczeDoGNUPlota&       _lacze;
 public:
     Scene(PzG::LaczeDoGNUPlota& lacze);
     const Drone& takeActiveDrone();
     Drone& useActiveDrone();
-    void printPositionOfActiveDrone();
+    void printPositionOfActiveDrone() const;
     void droneFlightAnimation();
 };
 

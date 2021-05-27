@@ -2,7 +2,9 @@
 
 
 /**
- * @brief Podstawowy konstruktor macierzy 
+ * @brief Podstawowy konstruktor macierzy.
+ * 
+ * Podstawowy konstruktor macierzy, przypisuje wszystkim elementom wartość 0.
  * @tparam T, wielkosc macierzy
  */
 template<unsigned int T>
@@ -18,7 +20,7 @@ Matrix<T>::Matrix(){
  * @brief Konstruktor inicjalizujacy macierz podanymi elementami w liscie.
  *        Elementy nalezy podawac od gory do dolu kolejno po kolumnach.
  * @tparam T, wielkosc macierzy
- * @param lst Lista elementow typu double ktorymi zainicjalizowana zostanie macierz, liczba 
+ * @param[in] lst Lista elementow typu double ktorymi zainicjalizowana zostanie macierz, liczba 
  *            elementow w liscie powinna rownac sie kwadratowi wielkosci macierzy  
  */
 template<unsigned int T>

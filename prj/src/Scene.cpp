@@ -1,9 +1,14 @@
+#include "Vector.hh"
 #include "Scene.hh"
-
+#include "Plateau.hh"
+#include "LongRidgeHill.hh"
+#include "SharpTopHill.hh"
 #define FIRST_DRONE_COLOR 3 //niebieski
 #define SECOND_DRONE_COLOR 3 //niebieski
 #define UNIT_SCALE 1,1,1
-
+#define SHARP_HILL_FILE "dat/PlikWlasciwy_GoraZOstrymSzczytem.dat"
+#define LONG_RIDGE_HILL_FILE "dat/PlikWlasciwy_GoraZDlugaGrania.dat"
+#define PLATEAU_FILE "dat/PlikWlasciwy_Plaskowyz.dat"
 
 using namespace std;
 
@@ -15,15 +20,28 @@ using namespace std;
  * tworząc dwa drony z wprowadzonymi na sztywno pozycjami początkowymi.
  * Ustawia również początkowo pierwszego drona jako aktywnego drona.
  */
-Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _lacze{Lacze}, _ID_of_active_Drone{0}
+Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
 {
-    Vector<3> initialPosition({20,20,0});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
-	Vector<3> secondInitialPosition({50,70,0});
+    Vector<3> DroneInitialPosition({20,20,0});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
+	Vector<3> secondDroneInitialPosition({50,70,0});
 	Vector<3> scale({UNIT_SCALE});
-    _droneArray[0].makeDrone(initialPosition, scale, 1, Lacze, FIRST_DRONE_COLOR);
+    _droneArray[0].makeDrone(DroneInitialPosition, scale, 1, Lacze, FIRST_DRONE_COLOR);
 	_droneArray[0].calcAndSave_DroneCoords();
-	_droneArray[1].makeDrone(secondInitialPosition, scale, 2, Lacze, SECOND_DRONE_COLOR);
+	_droneArray[1].makeDrone(secondDroneInitialPosition, scale, 2, Lacze, SECOND_DRONE_COLOR);
     _droneArray[1].calcAndSave_DroneCoords();
+
+	//Płaskowyż
+	Plateau plt(Vector<3>({50,50,4}), Vector<3>({3,3,3}), "bryly_wzorcowe/szescian.dat", PLATEAU_FILE);
+	_lacze.DodajNazwePliku(PLATEAU_FILE);
+	_lstOfElements.push_back(&plt);
+	//Góra z długą granią
+	LongRidgeHill lrg(Vector<3>({80,80,4}), Vector<3>({3,3,3}), "bryly_wzorcowe/szescian.dat", LONG_RIDGE_HILL_FILE);
+	_lacze.DodajNazwePliku(LONG_RIDGE_HILL_FILE);
+	_lstOfElements.push_back(&lrg);
+	//Góra z ostrym szczytem
+	SharpTopHill sth(Vector<3>({20,80,4}), Vector<3>({3,3,3}), "bryly_wzorcowe/szescian.dat", SHARP_HILL_FILE);
+	_lacze.DodajNazwePliku(SHARP_HILL_FILE);
+	_lstOfElements.push_back(&sth);
 }
 
 
@@ -71,7 +89,7 @@ Drone& Scene::useActiveDrone(){
 /**
  * @brief Funkcja wypisuje na stdout położenie aktywnego drona. 
  */
-void Scene::printPositionOfActiveDrone(){
+void Scene::printPositionOfActiveDrone() const{
     cout<<"Polozenie Drona aktywnego (x,y):"
         <<_droneArray[_ID_of_active_Drone].takeDronePosition()<<endl;
 }
