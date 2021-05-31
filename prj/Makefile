@@ -11,8 +11,8 @@ dat:
 	mkdir dat
 
 
-./${APP}: obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o 
-	g++ -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o 
+./${APP}: obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o obj/Plateau.o obj/SharpTopHill.o obj/LongRidgeHill.o
+	g++ -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o obj/Plateau.o obj/SharpTopHill.o obj/LongRidgeHill.o
 
 obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh inc/Drone.hh 
 	g++  -Iinc -W -Wall -pedantic -c -o obj/main.o src/main.cpp
@@ -20,7 +20,7 @@ obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh inc/Drone.hh
 obj/Drone.o: src/Drone.cpp inc/Drone.hh inc/Rectangular.hh inc/lacze_do_gnuplota.hh inc/HexagonalPrism-6.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh  
 	g++  -Iinc -W -Wall -pedantic -c -o obj/Drone.o src/Drone.cpp
 
-obj/Scene.o: src/Scene.cpp inc/Scene.hh inc/Drone.hh inc/lacze_do_gnuplota.hh inc/Plateau.hh inc/SharpTopHill.hh inc/LongRidgeHill.hh
+obj/Scene.o: src/Scene.cpp inc/Scene.hh inc/Drone.hh inc/lacze_do_gnuplota.hh inc/Plateau.hh inc/SharpTopHill.hh inc/LongRidgeHill.hh inc/GeometricFigure.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/Scene.o src/Scene.cpp
 
 obj/Rectangular.o: src/Rectangular.cpp inc/Rectangular.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh

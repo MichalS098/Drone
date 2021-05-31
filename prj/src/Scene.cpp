@@ -9,7 +9,7 @@
 #define SHARP_HILL_FILE "dat/PlikWlasciwy_GoraZOstrymSzczytem.dat"
 #define LONG_RIDGE_HILL_FILE "dat/PlikWlasciwy_GoraZDlugaGrania.dat"
 #define PLATEAU_FILE "dat/PlikWlasciwy_Plaskowyz.dat"
-
+#define CUBE_SAMPLE_FILE "bryly_wzorcowe/szescian.dat"
 using namespace std;
 
 
@@ -22,8 +22,8 @@ using namespace std;
  */
 Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
 {
-    Vector<3> DroneInitialPosition({20,20,0});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
-	Vector<3> secondDroneInitialPosition({50,70,0});
+    Vector<3> DroneInitialPosition({20,20,4});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
+	Vector<3> secondDroneInitialPosition({50,70,4});
 	Vector<3> scale({UNIT_SCALE});
     _droneArray[0].makeDrone(DroneInitialPosition, scale, 1, Lacze, FIRST_DRONE_COLOR);
 	_droneArray[0].calcAndSave_DroneCoords();
@@ -31,15 +31,15 @@ Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
     _droneArray[1].calcAndSave_DroneCoords();
 
 	//Płaskowyż
-	Plateau plt(Vector<3>({50,50,4}), Vector<3>({3,3,3}), "bryly_wzorcowe/szescian.dat", PLATEAU_FILE);
+	Plateau plt(Vector<3>({70,30,6}), Vector<3>({20,16,12}), CUBE_SAMPLE_FILE, PLATEAU_FILE);
 	_lacze.DodajNazwePliku(PLATEAU_FILE);
 	_lstOfElements.push_back(&plt);
 	//Góra z długą granią
-	LongRidgeHill lrg(Vector<3>({80,80,4}), Vector<3>({3,3,3}), "bryly_wzorcowe/szescian.dat", LONG_RIDGE_HILL_FILE);
+	LongRidgeHill lrg(Vector<3>({80,140,8}), Vector<3>({20,18,16}), CUBE_SAMPLE_FILE, LONG_RIDGE_HILL_FILE);
 	_lacze.DodajNazwePliku(LONG_RIDGE_HILL_FILE);
 	_lstOfElements.push_back(&lrg);
 	//Góra z ostrym szczytem
-	SharpTopHill sth(Vector<3>({20,80,4}), Vector<3>({3,3,3}), "bryly_wzorcowe/szescian.dat", SHARP_HILL_FILE);
+	SharpTopHill sth(Vector<3>({150,70,10}), Vector<3>({20,20,20}), CUBE_SAMPLE_FILE, SHARP_HILL_FILE);
 	_lacze.DodajNazwePliku(SHARP_HILL_FILE);
 	_lstOfElements.push_back(&sth);
 }
@@ -90,7 +90,7 @@ Drone& Scene::useActiveDrone(){
  * @brief Funkcja wypisuje na stdout położenie aktywnego drona. 
  */
 void Scene::printPositionOfActiveDrone() const{
-    cout<<"Polozenie Drona aktywnego (x,y):"
+    cout<<"\tPolozenie Drona aktywnego (x,y):"
         <<_droneArray[_ID_of_active_Drone].takeDronePosition()<<endl;
 }
 
@@ -125,5 +125,69 @@ void Scene::droneFlightAnimation(){
   	cout<<endl<<"Dron wyladowal... " <<endl<<endl<<"Usuwam sciezke..."<<endl;
 	useActiveDrone().deleteFlightPath(_lacze);
   	_lacze.Rysuj();
-	printPositionOfActiveDrone();
+}
+
+/**
+ * @brief Funkcja dodaje nowy element powierzchni.
+ * 
+ * Funkcja dodaje nowy element powierzchni, pytając użytkownika
+ * o rodzaj tego elementu, jego skale i współrzędne położenia.
+ */
+void Scene::makeNewElement(){
+	unsigned int elementType{0};
+	Vector<3> scale, position;
+	double xPos, yPos;
+	cout<<"Wybierz rodzaj powierzchniowego elementu"<<endl<<endl;
+	cout<<"\t1 - Gora z ostrym szczytem"<<endl;
+	cout<<"\t2 - Gora z grania"<<endl;
+	cout<<"\t3 - Plaskowyz"<<endl<<endl;
+	cout<<"Wprowadz numer typu elementu> ";
+	cin>>elementType;
+	cout<<endl<<endl<<endl<<"Podaj skale wzdlud kolejnych osi OX, OY, OZ."<<endl;
+	cout<<"Wprowadz skale> ";
+	cin>>scale;
+	cout<<endl<<"Wprowadz wspolrzedne srodka podstawy x,y."<<endl;
+	cout<<"Wprowadz wspolrzedne: x, y>";	
+	cin>>xPos>>yPos;
+	position=Vector<3>({xPos,yPos,scale[2]/2});
+
+	switch (elementType){
+	case 1:{
+		SharpTopHill sth(position, scale, CUBE_SAMPLE_FILE, SHARP_HILL_FILE);
+		_lacze.DodajNazwePliku(SHARP_HILL_FILE);
+		_lstOfElements.push_back(&sth);
+		break;
+	}
+	case 2:{
+		LongRidgeHill lrg(position, scale, CUBE_SAMPLE_FILE, LONG_RIDGE_HILL_FILE);
+		_lacze.DodajNazwePliku(LONG_RIDGE_HILL_FILE);
+		_lstOfElements.push_back(&lrg);
+		break;
+	}
+	case 3:{
+		Plateau plt(position, scale, CUBE_SAMPLE_FILE, PLATEAU_FILE);
+		_lacze.DodajNazwePliku(PLATEAU_FILE);
+		_lstOfElements.push_back(&plt);
+		break;
+	}
+	default:
+		cerr<<"Nieprawidlowy numer typu elementu!"<<endl;
+		break;
+	}
+	cout<<endl<<endl<<"Element zostal dodany do sceny."<<endl;
+}
+
+
+/**
+ * @brief Funkcja usuwa element ze sceny.
+ * 
+ * Funkcja usuwa wybrany przez użytkownika element ze sceny.
+ */
+void Scene::deleteElement(){
+	unsigned int k{0};
+	cout<<endl<<"Wybierz element powierzchni do usuniecia:"<<endl;
+	for(const GeometricFigure* elem: _lstOfElements){
+		cout<<++k<<" - ";
+		elem->
+	}
 }

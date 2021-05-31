@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cmath>
 #include "SharpTopHill.hh"
-#define AMOUNT_OF_VERTICES 5    //wierzchołki
-#define AMOUNT_OF_EDGES 4       //krawędzie
+#define AMOUNT_OF_VERTICES 4    //wierzchołki
+#define AMOUNT_OF_EDGES 5       //krawędzie
 
 using namespace std;
 
@@ -41,13 +41,9 @@ SharpTopHill::SharpTopHill(const Vector<3>& pos, const Vector<3>& scale, string 
         for (unsigned int vertice = 0; vertice < AMOUNT_OF_VERTICES; ++vertice) {
             refFileStream >> apex;
             //deformacja
-            if (apex[2] > 0.5) {
+            if (apex[2] >= 0.5) {
 	            apex[0] = apex[1] = 0;
             } 
-            else if (apex[2] == 0.5) {
-                apex[0] /= 2;  
-                apex[1] /= 2;
-            }
             // transformacja wierzcholka 
             if (refFileStream.fail()) exit(1);
             for(unsigned int i=0; i<3; ++i){

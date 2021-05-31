@@ -38,24 +38,27 @@ int main(){
 	printMenu();
 	printNumberOfVectors();
 	while(endOfProgram!=true){
-		cout<<"Twoj wybor, m - menu > ";
+		sceneOfDrones.printPositionOfActiveDrone();
+		printNumberOfVectors();
+		cout<<"\tTwoj wybor, m - menu > ";
 		cin>>userInput;
 		switch (userInput){
 			case 'a':{
-				sceneOfDrones.takeActiveDrone();
-				sceneOfDrones.printPositionOfActiveDrone();
-				printNumberOfVectors();
+				sceneOfDrones.takeActiveDrone();		
 				break;
 			}
 			case 'p':{
 				sceneOfDrones.droneFlightAnimation();
-				printNumberOfVectors();
 				break;
 			}
+			case 'd':{
+				sceneOfDrones.makeNewElement();
+			}
+			case 'u':{
+				sceneOfDrones.deleteElement();
+			}
 			case 'm':{
-				sceneOfDrones.printPositionOfActiveDrone();
 				printMenu();
-				printNumberOfVectors();
 				break;
 			}
 			case 'k':{
@@ -79,8 +82,8 @@ int main(){
  * 		  istniejących obiektów wektor3d oraz ich całkowitą ilość
  */
 void printNumberOfVectors(){
-	cout<<"Aktualna ilość obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_COUNTER<<endl;
-	cout<<"Ilość stworzonych obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_SUM<<endl<<endl;
+	cout<<"\tAktualna ilość obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_COUNTER<<endl;
+	cout<<"\tIlość stworzonych obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_SUM<<endl<<endl;
 }
 
 /**
@@ -90,6 +93,8 @@ void printNumberOfVectors(){
 void printMenu(){
 	cout<<"\ta - wybierz aktywnego drona"<<endl;
 	cout<<"\tp - zadaj parametry przelotu"<<endl;
+	cout<<"\td - dodaj element powierzchni"<<endl;
+	cout<<"\tu - usun element powierzchni"<<endl;
 	cout<<"\tm - wyswietl menu"<<endl<<endl;
 	cout<<"\tk - zakoncz dzialanie programu"<<endl<<endl;
 }

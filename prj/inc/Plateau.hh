@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <iostream>
 #include "GeometricFigure.hh"
 
 
@@ -14,4 +15,5 @@ class Plateau: public GeometricFigure{
 public:
     // konstruktor tworzy płaskowyż
     Plateau(const Vector<3>& pos, const Vector<3>& scale, std::string refFile, std::string finalFile);
+    inline void printPosition() const {std::cout<<"("<<_position<<")";}
 };

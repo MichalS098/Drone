@@ -3,6 +3,7 @@
 #include <memory>
 #include "Drone.hh"
 #include "lacze_do_gnuplota.hh"
+#include "GeometricFigure.hh"
 
 /**
  * @brief Klasa definiująca scene zawierającą dwa drony.
@@ -22,5 +23,7 @@ public:
     Drone& useActiveDrone();
     void printPositionOfActiveDrone() const;
     void droneFlightAnimation();
+    void makeNewElement();
+    void deleteElement();
 };
 

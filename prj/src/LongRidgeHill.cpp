@@ -2,8 +2,8 @@
 #include <iostream>
 #include <cmath>
 #include "LongRidgeHill.hh"
-#define AMOUNT_OF_VERTICES 5    //wierzchołki
-#define AMOUNT_OF_EDGES 4       //krawędzie
+#define AMOUNT_OF_VERTICES 4    //wierzchołki
+#define AMOUNT_OF_EDGES 5       //krawędzie
 
 using namespace std;
 
@@ -41,7 +41,7 @@ LongRidgeHill::LongRidgeHill(const Vector<3>& pos, const Vector<3>& scale, strin
         for (unsigned int vertice = 0; vertice < AMOUNT_OF_VERTICES; ++vertice) {
             refFileStream >> apex;
             //deformacja
-            if (apex[2] > 0.5) {
+            if (apex[2] >= 0.5) {
 	            if (apex[0] < 0) apex[0] = fabs(apex[0]);
             }
             // transformacja wierzcholka 

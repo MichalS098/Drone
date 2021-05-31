@@ -25,16 +25,22 @@ class Drone{
     void rotateRotor(double angle);
 protected:
     Vector<3> transfToParentCoordSys(const Vector<3>& apex) const;
+    bool makeFlight(const Vector<3>& direction, double flightLenght, PzG::LaczeDoGNUPlota& lacze);
 public:
     void makeDrone(const Vector<3>& position, const Vector<3>& scale,  
                    unsigned int ID, PzG::LaczeDoGNUPlota& Lacze, int droneColor);
     void planInitialFlightPath(double flightHeight, double turnAngle,  
                                double flightLenght, PzG::LaczeDoGNUPlota& lacze);
     void deleteFlightPath(PzG::LaczeDoGNUPlota& lacze) const;
+
     bool makeVerticalFlight(double height, PzG::LaczeDoGNUPlota& Lacze);
     bool makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacze);
     bool changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze);
     bool tiltForward(PzG::LaczeDoGNUPlota& Lacze);
+
     bool calcAndSave_DroneCoords() const;
     Vector<3> takeDronePosition() const {return _position;}
 };
+
+#define COMPUTATION_ERR 1e-8
+constexpr double singleStepLenght=1;

@@ -45,6 +45,21 @@ Vector<T>::~Vector(){
 }
 
 /**
+ * @brief Funkcja zwraca długość wektora.
+ * 
+ * @tparam T wielkość wektora
+ * @return double zwracana długość typu double
+ */
+template<unsigned int T>
+double Vector<T>::lenght() const{
+	double len{0};
+	for(int i=0; i<size(); ++i){
+		len+=std::pow(elem[i],2);
+	}
+	return std::sqrt(len);
+}
+
+/**
  * @brief Podstawowa operacja dodawania dwoch wektorow
  * 		  tworzy ona trzeci wektor bedacy suma dwoch podanych 
  * @tparam T, wielkosc wektorow

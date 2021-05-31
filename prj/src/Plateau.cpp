@@ -1,8 +1,8 @@
 #include <fstream>
 #include <iostream>
 #include "Plateau.hh"
-#define AMOUNT_OF_VERTICES 5    //wierzchołki
-#define AMOUNT_OF_EDGES 4       //krawędzie
+#define AMOUNT_OF_VERTICES 4    //wierzchołki
+#define AMOUNT_OF_EDGES 5       //krawędzie
 
 using namespace std;
 

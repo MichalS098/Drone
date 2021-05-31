@@ -3,6 +3,7 @@
 #include <iostream>
 #include <initializer_list>
 #include <iomanip>
+#include <cmath>
 /**
  * @brief Klasa Vector opisuje wektor roznowymiarowy bedacy tablica liczb double o wielkosci T, opisuje ona 
  *        wektor w sposob taki sam jak w algebrze.
@@ -41,6 +42,7 @@ public:
   	 */
   	int size() const {return static_cast<int>(vecSize);}
 
+	double lenght() const;
   	Vector<T> operator+(const Vector<T>& v) const;
   	Vector<T> operator-(const Vector<T>& v) const;
   	double operator*(const Vector<T>& v) const;
