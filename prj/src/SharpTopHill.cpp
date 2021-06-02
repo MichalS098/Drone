@@ -20,11 +20,11 @@ using namespace std;
  * @return Zwraca true jeśli udało się otworzyć pliki i stworzyć płaskowyż
  *         lub false jeśli operacja się nie powiodła.
  */
-SharpTopHill::SharpTopHill(const Vector<3>& pos, const Vector<3>& scale, string refFile, string finalFile): _position{pos}{
+SharpTopHill::SharpTopHill(const Vector<3>& pos, const Vector<3>& scale, string refFile, string finalFile){
     this->enterFileName_finalFig(finalFile);
     this->enterFileName_refFig(refFile);
     this->setScale(scale);
-
+    _position={pos};
     ifstream refFileStream{this->takeFileName_refFig()};
     ofstream finalFileStream{this->takeFileName_finalFig()};
     if (!refFileStream.is_open()) {

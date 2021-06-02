@@ -1,3 +1,4 @@
+#include <iterator>
 #include "Vector.hh"
 #include "Scene.hh"
 #include "Plateau.hh"
@@ -42,6 +43,7 @@ Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
 	SharpTopHill sth(Vector<3>({150,70,10}), Vector<3>({20,20,20}), CUBE_SAMPLE_FILE, SHARP_HILL_FILE);
 	_lacze.DodajNazwePliku(SHARP_HILL_FILE);
 	_lstOfElements.push_back(&sth);
+	_numberOfElements=3;
 }
 
 
@@ -127,6 +129,21 @@ void Scene::droneFlightAnimation(){
   	_lacze.Rysuj();
 }
 
+
+/**
+ * @brief Funkcja tworzy nazwe pliku dla nowego elementu.
+ * 
+ * Funkcja tworzy nazwe pliku dla nowego elementu na podstawie
+ * ilości elementów tzn. zmiennej obiektu scena _numberOfElements.
+ * @return string Zwracana nazwa nowego pliku dla elementu.
+ */
+string Scene::makeElementFileName(unsigned int ID) const{
+	ostringstream nameStream;
+    nameStream<<"dat/PlikNowyElementPowierzchni"<<ID<<".dat";
+    return nameStream.str();
+}
+
+
 /**
  * @brief Funkcja dodaje nowy element powierzchni.
  * 
@@ -143,7 +160,7 @@ void Scene::makeNewElement(){
 	cout<<"\t3 - Plaskowyz"<<endl<<endl;
 	cout<<"Wprowadz numer typu elementu> ";
 	cin>>elementType;
-	cout<<endl<<endl<<endl<<"Podaj skale wzdlud kolejnych osi OX, OY, OZ."<<endl;
+	cout<<endl<<endl<<endl<<"Podaj skale wzdluz kolejnych osi OX, OY, OZ."<<endl;
 	cout<<"Wprowadz skale> ";
 	cin>>scale;
 	cout<<endl<<"Wprowadz wspolrzedne srodka podstawy x,y."<<endl;
@@ -153,20 +170,26 @@ void Scene::makeNewElement(){
 
 	switch (elementType){
 	case 1:{
-		SharpTopHill sth(position, scale, CUBE_SAMPLE_FILE, SHARP_HILL_FILE);
-		_lacze.DodajNazwePliku(SHARP_HILL_FILE);
+		_numberOfElements++;
+		string fileName = makeElementFileName(_numberOfElements);
+		SharpTopHill sth(position, scale, CUBE_SAMPLE_FILE, fileName);
+		_lacze.DodajNazwePliku(fileName.c_str());
 		_lstOfElements.push_back(&sth);
 		break;
 	}
 	case 2:{
-		LongRidgeHill lrg(position, scale, CUBE_SAMPLE_FILE, LONG_RIDGE_HILL_FILE);
-		_lacze.DodajNazwePliku(LONG_RIDGE_HILL_FILE);
+		_numberOfElements++;
+		string fileName = makeElementFileName(_numberOfElements);
+		LongRidgeHill lrg(position, scale, CUBE_SAMPLE_FILE, fileName);
+		_lacze.DodajNazwePliku(fileName.c_str());
 		_lstOfElements.push_back(&lrg);
 		break;
 	}
 	case 3:{
-		Plateau plt(position, scale, CUBE_SAMPLE_FILE, PLATEAU_FILE);
-		_lacze.DodajNazwePliku(PLATEAU_FILE);
+		_numberOfElements++;
+		string fileName = makeElementFileName(_numberOfElements);
+		Plateau plt(position, scale, CUBE_SAMPLE_FILE, fileName);
+		_lacze.DodajNazwePliku(fileName.c_str());
 		_lstOfElements.push_back(&plt);
 		break;
 	}
@@ -174,6 +197,7 @@ void Scene::makeNewElement(){
 		cerr<<"Nieprawidlowy numer typu elementu!"<<endl;
 		break;
 	}
+	_lacze.Rysuj();
 	cout<<endl<<endl<<"Element zostal dodany do sceny."<<endl;
 }
 
@@ -181,13 +205,25 @@ void Scene::makeNewElement(){
 /**
  * @brief Funkcja usuwa element ze sceny.
  * 
- * Funkcja usuwa wybrany przez użytkownika element ze sceny.
+ * Funkcja usuwa wybrany przez użytkownika element ze sceny, jedno-
+ * cześnie usuwając nazwe jego pliku z łącza do gnuplota.
  */
 void Scene::deleteElement(){
-	unsigned int k{0};
-	cout<<endl<<"Wybierz element powierzchni do usuniecia:"<<endl;
-	for(const GeometricFigure* elem: _lstOfElements){
-		cout<<++k<<" - ";
-		elem->
-	}
+	unsigned int k{0}, elemNumber{0};
+	//cout<<endl<<"Wybierz element powierzchni do usuniecia:"<<endl;
+
+	//for(const GeometricFigure* fig : _lstOfElements){  			
+	//	cout<<++k<<" - ";
+	//	cout<<fig->takeElemPosition()<<fig->takeType()<<endl;
+	//}
+	
+	cout<<"Podaj numer elementu> ";
+	cin>>elemNumber;
+	list<GeometricFigure*>::iterator iter = _lstOfElements.begin();
+	advance(iter, (elemNumber-1));			//przesuwa wskaźnik "elemNumber-1" razy 
+	_lstOfElements.erase(iter);				//usuwa element z listy
+	string fileName = makeElementFileName(elemNumber);	//tworzy nazwe pliku usunietego elementu
+	_lacze.UsunNazwePliku(fileName.c_str());			//usuwa plik tego elementu z lącza
+	_lacze.Rysuj();
+	cout<<"Element poprawnie usunięty"<<endl;
 }

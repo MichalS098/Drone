@@ -1,0 +1,14 @@
+digraph "/home/michal/Desktop/dron/Dron/prj/inc/lacze_do_gnuplota.hh"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="/home/michal/Desktop\l/dron/Dron/prj/inc/lacze\l_do_gnuplota.hh",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="/home/michal/Desktop\l/dron/Dron/prj/inc/Drone.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_drone_8hh_source.html",tooltip=" "];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="/home/michal/Desktop\l/dron/Dron/prj/inc/Scene.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_scene_8hh_source.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="/home/michal/Desktop\l/dron/Dron/prj/src/lacze\l_do_gnuplota.cpp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$lacze__do__gnuplota_8cpp.html",tooltip=" "];
+}

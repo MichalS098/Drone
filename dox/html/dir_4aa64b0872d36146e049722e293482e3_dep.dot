@@ -1,0 +1,12 @@
+digraph "/home/michal/Desktop/dron/Dron/prj" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_4aa64b0872d36146e049722e293482e3 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_4aa64b0872d36146e049722e293482e3.html"];
+    dir_4aa64b0872d36146e049722e293482e3 [shape=plaintext label="prj"];
+    dir_72345776cd6700fb0dedb8f1faaa0c00 [shape=box label="inc" color="black" fillcolor="white" style="filled" URL="dir_72345776cd6700fb0dedb8f1faaa0c00.html"];
+    dir_400757c3a0df52e783ed9699284f29ce [shape=box label="src" color="black" fillcolor="white" style="filled" URL="dir_400757c3a0df52e783ed9699284f29ce.html"];
+  }
+  dir_400757c3a0df52e783ed9699284f29ce->dir_72345776cd6700fb0dedb8f1faaa0c00 [headlabel="2", labeldistance=1.5 headhref="dir_000002_000001.html"];
+}

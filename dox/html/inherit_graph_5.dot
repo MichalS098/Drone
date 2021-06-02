@@ -1,8 +1,8 @@
-digraph "Graficzna hierarchia klas"
+digraph "Graphical Class Hierarchy"
 {
  // LATEX_PDF_SIZE
-  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
-  node [fontname="FreeSans",fontsize="10",shape=record];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Vector\< T \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00096.html",tooltip="Klasa Vector opisuje wektor roznowymiarowy bedacy tablica liczb double o wielkosci T,..."];
+  Node0 [label="PzG::InfoPunktyDoRysowania",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_info_punkty_do_rysowania.html",tooltip="Modeluje zestaw informacji o rysowanych punktach."];
 }

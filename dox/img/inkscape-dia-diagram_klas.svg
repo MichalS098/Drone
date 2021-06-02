@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1402pt" height="1072pt" viewBox="0 0 1402 1072" version="1.1">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1402pt" height="1030pt" viewBox="0 0 1402 1030" version="1.1">
 <defs>
 <g>
 <symbol overflow="visible" id="glyph0-0">
@@ -271,8 +271,8 @@
 </symbol>
 </g>
 </defs>
-<g id="surface5267">
-<rect x="0" y="0" width="1402" height="1072" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
+<g id="surface5397">
+<rect x="0" y="0" width="1402" height="1030" style="fill:rgb(100%,100%,100%);fill-opacity:1;stroke:none;"/>
 <path style="fill-rule:evenodd;fill:rgb(88.235295%,99.215686%,100%);fill-opacity:1;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 12.214063 43.370127 L 27.344141 43.370127 L 27.344141 44.770127 L 12.214063 44.770127 Z M 12.214063 43.370127 " transform="matrix(20,0,0,20,-70.5,28.9998)"/>
 <g style="fill:rgb(0%,0%,0%);fill-opacity:1;">
   <use xlink:href="#glyph0-1" x="298.148438" y="915.261773"/>
@@ -2977,6 +2977,5 @@
   <use xlink:href="#glyph1-66" x="311.333333" y="568.685655"/>
 </g>
 <path style="fill:none;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-dasharray:0.5,0.5;stroke-miterlimit:10;" d="M 14.455078 27.440049 L 14.455078 31.15001 L 31.1 31.15001 " transform="matrix(20,0,0,20,-70.5,28.9998)"/>
-<path style="fill-rule:evenodd;fill:rgb(100%,100%,100%);fill-opacity:1;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke:rgb(0%,0%,0%);stroke-opacity:1;stroke-miterlimit:10;" d="M 33.586914 51.563096 C 33.586914 51.839073 33.139258 52.063096 32.586914 52.063096 C 32.03457 52.063096 31.586914 51.839073 31.586914 51.563096 C 31.586914 51.286924 32.03457 51.063096 32.586914 51.063096 C 33.139258 51.063096 33.586914 51.286924 33.586914 51.563096 " transform="matrix(20,0,0,20,-70.5,28.9998)"/>
 </g>
 </svg>

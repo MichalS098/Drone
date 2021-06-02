@@ -22,37 +22,37 @@ for the JavaScript code in this file
 */
 var NAVTREE =
 [
-  [ "Dragonfly", "index.html", [
-    [ "Wizualizacja niektórych elementów misji Dragonfly", "index.html", [
-      [ "Charakterystyka misji Dragonfly", "index.html#charakterystyka", null ],
-      [ "Diagram przypadków użycia", "index.html#usecase-diagram", null ],
-      [ "Diagram podstawowych klas", "index.html#class-diagram", null ],
-      [ "Diagramy czynności dla wybranych metod", "index.html#activity-diagram", null ]
-    ] ],
-    [ "Klasy", "annotated.html", [
-      [ "Lista klas", "annotated.html", "annotated_dup" ],
-      [ "Hierarchia klas", "hierarchy.html", "hierarchy" ],
-      [ "Składowe klas", "functions.html", [
-        [ "Wszystko", "functions.html", null ],
-        [ "Funkcje", "functions_func.html", null ],
-        [ "Zmienne", "functions_vars.html", null ]
+  [ "Dron DragonFly", "index.html", [
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ],
+      [ "Namespace Members", "namespacemembers.html", [
+        [ "All", "namespacemembers.html", null ],
+        [ "Functions", "namespacemembers_func.html", null ],
+        [ "Typedefs", "namespacemembers_type.html", null ],
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
-    [ "Pliki", "files.html", [
-      [ "Lista plików", "files.html", "files_dup" ],
-      [ "Składowe plików", "globals.html", [
-        [ "Wszystko", "globals.html", null ],
-        [ "Funkcje", "globals_func.html", null ],
-        [ "Zmienne", "globals_vars.html", null ],
-        [ "Definicje", "globals_defs.html", null ]
+    [ "Classes", "annotated.html", [
+      [ "Class List", "annotated.html", "annotated_dup" ],
+      [ "Class Index", "classes.html", null ],
+      [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
+      [ "Class Members", "functions.html", [
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
+        [ "Variables", "functions_vars.html", null ]
       ] ]
+    ] ],
+    [ "Files", "files.html", [
+      [ "File List", "files.html", "files_dup" ]
     ] ]
   ] ]
 ];
 
 var NAVTREEINDEX =
 [
-"a00020.html"
+"_drone_8hh_source.html",
+"namespace_pz_g.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

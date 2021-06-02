@@ -1,6 +1,7 @@
 #pragma once
 
 #include <string>
+#include <iostream>
 #include "Vector.hh"
 
 /**
@@ -14,6 +15,8 @@ class GeometricFigure{
     std::string _finalFig_fileName;
     Vector<3>   _scale;
 public:
+    Vector<3> _position;
+    char _elemType;
     /**
      * @brief Funkcja zwraca zapisaną nazwe pliku wzorcowego obiektu.
      * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
@@ -41,6 +44,8 @@ public:
      * @param scale - Wektor 3 elementowy 
      */
     void setScale(const Vector<3>& scale) {_scale=scale;}
+
+    void printPosition() const {std::cout<<"("<<_position<<")";}
 };
 
 

@@ -53,9 +53,11 @@ int main(){
 			}
 			case 'd':{
 				sceneOfDrones.makeNewElement();
+				break;
 			}
 			case 'u':{
 				sceneOfDrones.deleteElement();
+				break;
 			}
 			case 'm':{
 				printMenu();

@@ -1,8 +1,8 @@
-digraph "Graficzna hierarchia klas"
+digraph "Graphical Class Hierarchy"
 {
  // LATEX_PDF_SIZE
-  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
-  node [fontname="FreeSans",fontsize="10",shape=record];
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
   rankdir="LR";
-  Node0 [label="Scene",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00092.html",tooltip="Klasa definiująca scene zawierającą dwa drony."];
+  Node0 [label="PzG::AtrybutyRysowania",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_atrybuty_rysowania.html",tooltip="Modeluje zestaw informacji będący atrybutami rysowania."];
 }

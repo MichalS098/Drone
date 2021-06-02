@@ -13,7 +13,8 @@
  * z rysowaniem planowanej ścieżki.
  */
 class Scene{
-    std::list<GeometricFigure*> _lstOfElements;       
+    std::list<GeometricFigure*> _lstOfElements;
+    unsigned int                _numberOfElements;
     Drone                       _droneArray[2];
     unsigned int                _ID_of_active_Drone;
     PzG::LaczeDoGNUPlota&       _lacze;
@@ -25,5 +26,6 @@ public:
     void droneFlightAnimation();
     void makeNewElement();
     void deleteElement();
+    std::string makeElementFileName(unsigned int ID) const;
 };
 
