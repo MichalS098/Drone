@@ -15,8 +15,6 @@ class GeometricFigure{
     std::string _finalFig_fileName;
     Vector<3>   _scale;
 public:
-    Vector<3> _position;
-    char _elemType;
     /**
      * @brief Funkcja zwraca zapisaną nazwe pliku wzorcowego obiektu.
      * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
@@ -45,7 +43,18 @@ public:
      */
     void setScale(const Vector<3>& scale) {_scale=scale;}
 
-    void printPosition() const {std::cout<<"("<<_position<<")";}
+    /**
+     * @brief Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.
+     */
+    virtual Vector<3> getPosition() const {return Vector<3>({0.0,0.0,0.0});}
+
+    /**
+     * @brief Funkcja wirtualna pozwalająca na odczytanie 
+     *        typu elementu klas pochodnych.
+     * 
+     * @return const char* Nazwa typu obiektu.
+     */
+    virtual const char* getType() const {return "Klasa bazowa";}
 };
 
 

@@ -3,6 +3,7 @@
 #include "Plateau.hh"
 #define AMOUNT_OF_VERTICES 4    //wierzchołki
 #define AMOUNT_OF_EDGES 5       //krawędzie
+#define CUBE_SAMPLE_FILE "bryly_wzorcowe/szescian.dat"
 
 using namespace std;
 
@@ -15,14 +16,13 @@ using namespace std;
  * @param[in] pos Wektor położenia początkowego (definiowany jako wektor
  *                przesunięcia wzorcowego prostopadłościanu)
  * @param[in] scale Wektor skali figury.
- * @return Zwraca true jeśli udało się otworzyć pliki i stworzyć płaskowyż
- *         lub false jeśli operacja się nie powiodła.
+ * @param[in] id Numer id nowego elementu.
  */
-Plateau::Plateau(const Vector<3>& pos, const Vector<3>& scale, string refFile, string finalFile){
+Plateau::Plateau(const Vector<3>& pos, const Vector<3>& scale, unsigned int id): _position{pos}, _ID{id}{
+    string finalFile=makeFilePlateau(id);
     this->enterFileName_finalFig(finalFile);
-    this->enterFileName_refFig(refFile);
+    this->enterFileName_refFig(CUBE_SAMPLE_FILE);
     this->setScale(scale);
-    _position={pos};
     ifstream refFileStream{this->takeFileName_refFig()};
     ofstream finalFileStream{this->takeFileName_finalFig()};
     if (!refFileStream.is_open()) {
@@ -49,4 +49,18 @@ Plateau::Plateau(const Vector<3>& pos, const Vector<3>& scale, string refFile, s
         }
         finalFileStream << endl; // Dodatkowa linia oddzielająca krawędzie
     }
+}
+
+
+/**
+ * @brief Funkcja tworzy nazwe pliku dla nowego elementu.
+ * 
+ * Funkcja tworzy nazwe pliku dla nowego elementu na podstawie
+ * ilości elementów tzn. numeru id.
+ * @return string Zwracana nazwa nowego pliku dla elementu.
+ */
+string makeFilePlateau(unsigned int id){
+	ostringstream nameStream;
+    nameStream<<"dat/PlikWlasciwy_Plaskowyz"<<id<<".dat";
+    return nameStream.str();
 }

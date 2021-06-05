@@ -7,10 +7,7 @@
 #define FIRST_DRONE_COLOR 3 //niebieski
 #define SECOND_DRONE_COLOR 3 //niebieski
 #define UNIT_SCALE 1,1,1
-#define SHARP_HILL_FILE "dat/PlikWlasciwy_GoraZOstrymSzczytem.dat"
-#define LONG_RIDGE_HILL_FILE "dat/PlikWlasciwy_GoraZDlugaGrania.dat"
-#define PLATEAU_FILE "dat/PlikWlasciwy_Plaskowyz.dat"
-#define CUBE_SAMPLE_FILE "bryly_wzorcowe/szescian.dat"
+
 using namespace std;
 
 
@@ -20,6 +17,8 @@ using namespace std;
  * Konstruktor sceny, inicjalizujący scenę referencją do łącza do gnuplota,
  * tworząc dwa drony z wprowadzonymi na sztywno pozycjami początkowymi.
  * Ustawia również początkowo pierwszego drona jako aktywnego drona.
+ * 
+ * @param[in] Lacze Łącze do GNUPLOT'a.
  */
 Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
 {
@@ -32,18 +31,20 @@ Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
     _droneArray[1].calcAndSave_DroneCoords();
 
 	//Płaskowyż
-	Plateau plt(Vector<3>({70,30,6}), Vector<3>({20,16,12}), CUBE_SAMPLE_FILE, PLATEAU_FILE);
-	_lacze.DodajNazwePliku(PLATEAU_FILE);
-	_lstOfElements.push_back(&plt);
+	Plateau *plt = new Plateau(Vector<3>({70,30,6}), Vector<3>({20,16,12}), 1);
+	_lacze.DodajNazwePliku(plt->takeFileName_finalFig().c_str());
+	_lstOfElements.push_back(plt);
+	_numberOfElements[0]=1;
 	//Góra z długą granią
-	LongRidgeHill lrg(Vector<3>({80,140,8}), Vector<3>({20,18,16}), CUBE_SAMPLE_FILE, LONG_RIDGE_HILL_FILE);
-	_lacze.DodajNazwePliku(LONG_RIDGE_HILL_FILE);
-	_lstOfElements.push_back(&lrg);
+	LongRidgeHill *lrg = new LongRidgeHill(Vector<3>({80,140,8}), Vector<3>({20,18,16}), 1);
+	_lacze.DodajNazwePliku(lrg->takeFileName_finalFig().c_str());
+	_lstOfElements.push_back(lrg);
+	_numberOfElements[1]=1;
 	//Góra z ostrym szczytem
-	SharpTopHill sth(Vector<3>({150,70,10}), Vector<3>({20,20,20}), CUBE_SAMPLE_FILE, SHARP_HILL_FILE);
-	_lacze.DodajNazwePliku(SHARP_HILL_FILE);
-	_lstOfElements.push_back(&sth);
-	_numberOfElements=3;
+	SharpTopHill *sth = new SharpTopHill(Vector<3>({150,70,10}), Vector<3>({20,20,20}), 1);
+	_lacze.DodajNazwePliku(sth->takeFileName_finalFig().c_str());
+	_lstOfElements.push_back(sth);
+	_numberOfElements[2]=1;
 }
 
 
@@ -131,20 +132,6 @@ void Scene::droneFlightAnimation(){
 
 
 /**
- * @brief Funkcja tworzy nazwe pliku dla nowego elementu.
- * 
- * Funkcja tworzy nazwe pliku dla nowego elementu na podstawie
- * ilości elementów tzn. zmiennej obiektu scena _numberOfElements.
- * @return string Zwracana nazwa nowego pliku dla elementu.
- */
-string Scene::makeElementFileName(unsigned int ID) const{
-	ostringstream nameStream;
-    nameStream<<"dat/PlikNowyElementPowierzchni"<<ID<<".dat";
-    return nameStream.str();
-}
-
-
-/**
  * @brief Funkcja dodaje nowy element powierzchni.
  * 
  * Funkcja dodaje nowy element powierzchni, pytając użytkownika
@@ -167,30 +154,27 @@ void Scene::makeNewElement(){
 	cout<<"Wprowadz wspolrzedne: x, y>";	
 	cin>>xPos>>yPos;
 	position=Vector<3>({xPos,yPos,scale[2]/2});
-
+	
 	switch (elementType){
 	case 1:{
-		_numberOfElements++;
-		string fileName = makeElementFileName(_numberOfElements);
-		SharpTopHill sth(position, scale, CUBE_SAMPLE_FILE, fileName);
-		_lacze.DodajNazwePliku(fileName.c_str());
-		_lstOfElements.push_back(&sth);
+		_numberOfElements[1]++;
+		SharpTopHill *sth = new SharpTopHill(position, scale, _numberOfElements[1]);
+		_lacze.DodajNazwePliku(sth->takeFileName_finalFig().c_str());
+		_lstOfElements.push_back(sth);
 		break;
 	}
 	case 2:{
-		_numberOfElements++;
-		string fileName = makeElementFileName(_numberOfElements);
-		LongRidgeHill lrg(position, scale, CUBE_SAMPLE_FILE, fileName);
-		_lacze.DodajNazwePliku(fileName.c_str());
-		_lstOfElements.push_back(&lrg);
+		_numberOfElements[2]++;
+		LongRidgeHill *lrg = new LongRidgeHill(position, scale, _numberOfElements[2]);
+		_lacze.DodajNazwePliku(lrg->takeFileName_finalFig().c_str());
+		_lstOfElements.push_back(lrg);
 		break;
 	}
 	case 3:{
-		_numberOfElements++;
-		string fileName = makeElementFileName(_numberOfElements);
-		Plateau plt(position, scale, CUBE_SAMPLE_FILE, fileName);
-		_lacze.DodajNazwePliku(fileName.c_str());
-		_lstOfElements.push_back(&plt);
+		_numberOfElements[0]++;
+		Plateau *plt = new Plateau(position, scale, _numberOfElements[0]);
+		_lacze.DodajNazwePliku(plt->takeFileName_finalFig().c_str());
+		_lstOfElements.push_back(plt);
 		break;
 	}
 	default:
@@ -210,20 +194,19 @@ void Scene::makeNewElement(){
  */
 void Scene::deleteElement(){
 	unsigned int k{0}, elemNumber{0};
-	//cout<<endl<<"Wybierz element powierzchni do usuniecia:"<<endl;
-
-	//for(const GeometricFigure* fig : _lstOfElements){  			
-	//	cout<<++k<<" - ";
-	//	cout<<fig->takeElemPosition()<<fig->takeType()<<endl;
-	//}
-	
+	cout<<endl<<"Wybierz element powierzchni do usuniecia:"<<endl;
+	//Wypisanie wszystkich elementów
+	for(const GeometricFigure* fig : _lstOfElements){  			
+		cout<<++k<<" - ";
+		cout<<fig->getPosition()<<fig->getType()<<endl;
+	}
 	cout<<"Podaj numer elementu> ";
 	cin>>elemNumber;
 	list<GeometricFigure*>::iterator iter = _lstOfElements.begin();
-	advance(iter, (elemNumber-1));			//przesuwa wskaźnik "elemNumber-1" razy 
-	_lstOfElements.erase(iter);				//usuwa element z listy
-	string fileName = makeElementFileName(elemNumber);	//tworzy nazwe pliku usunietego elementu
-	_lacze.UsunNazwePliku(fileName.c_str());			//usuwa plik tego elementu z lącza
+	advance(iter, (elemNumber-1));						//przesuwa wskaźnik "elemNumber-1" razy 
+	GeometricFigure* fig = *iter;						//kopiuje wskaznik na ten element zeby dostac dostep do jego nazwy pliku
+	_lstOfElements.erase(iter);							//usuwa element z listy
+	_lacze.UsunNazwePliku(fig->takeFileName_finalFig().c_str());	//usuwa plik tego elementu z lącza
 	_lacze.Rysuj();
 	cout<<"Element poprawnie usunięty"<<endl;
 }
