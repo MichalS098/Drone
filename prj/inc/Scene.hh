@@ -16,12 +16,12 @@ class Scene{
     /**
      * @brief Lista dwukierunkowa przechowująca elementu sceny (przeszkody).
      */
-    std::list<GeometricFigure*> _lstOfElements;
+    std::list<std::shared_ptr<GeometricFigure>> _lstOfElements;
     /**
-     * @brief tablica zawierajaca ilosc powstalych elementow sceny,
-     * _numberOfElements[0] - ilosc plaskowyzy,
-     * _numberOfElements[1] - ilosc gor z ostrym szczytem,
-     * _numberOfElements[2] - ilosc gor z dluga grania.
+     * @brief tablica zawierajaca ilosc powstalych elementow sceny,            
+     * _numberOfElements[0] - ilosc plaskowyzy,                  
+     * _numberOfElements[1] - ilosc gor z ostrym szczytem,                   
+     * _numberOfElements[2] - ilosc gor z dluga grania.                
      */
     unsigned int                _numberOfElements[3]; 
     Drone                       _droneArray[2];
@@ -33,8 +33,23 @@ public:
     Drone& useActiveDrone();
     void printPositionOfActiveDrone() const;
     void droneFlightAnimation();
-    void makeNewElement();
+    void makeNewElement(const Vector<3>& pos, const Vector<3> scale, unsigned int type);
     void deleteElement();
-    void freeMemoryFromList();
+    
+    /**
+     * @brief Zwraca pierwszy element z listy Obiektow sceny.
+     * @return const std::shared_ptr<GeometricFigure>& Pierwszy element na liście.
+     */
+    inline const std::shared_ptr<GeometricFigure>& takeFirstElemFromList() {return *_lstOfElements.begin();}
+    /**
+     * @brief Zwraca ostatni element z listy Obiektow sceny.
+     * @return const std::shared_ptr<GeometricFigure>& Ostatni element na liście.
+     */
+    inline const std::shared_ptr<GeometricFigure>& takeLastElemFromList() {return *_lstOfElements.end();}
+    /**
+     * @brief Funkcja dodaje element typu figura geometryczna na liste.
+     * @param[in] elem inteligentny wskaźnik na typ GeometricFigure.
+     */
+    inline void addElementToList(std::shared_ptr<GeometricFigure>& elem) {_lstOfElements.push_back(elem);}
 };
 

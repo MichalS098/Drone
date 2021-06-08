@@ -30,22 +30,27 @@ Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
 	_droneArray[1].makeDrone(secondDroneInitialPosition, scale, 2, Lacze, SECOND_DRONE_COLOR);
     _droneArray[1].calcAndSave_DroneCoords();
 
+	shared_ptr<GeometricFigure> GeoFig_Ptr;
+	
 	//Płaskowyż
-	Plateau *plt = new Plateau(Vector<3>({70,30,6}), Vector<3>({20,16,12}), 1);
-	_lacze.DodajNazwePliku(plt->takeFileName_finalFig().c_str());
-	_lstOfElements.push_back(plt);
+	shared_ptr<Plateau> plt_Ptr = make_shared<Plateau>(Vector<3>({70,30,6}), Vector<3>({20,16,12}), 1);
+	_lacze.DodajNazwePliku(plt_Ptr->takeFileName_finalFig().c_str());
+	GeoFig_Ptr = plt_Ptr;
+	addElementToList(GeoFig_Ptr);
 	_numberOfElements[0]=1;
 
 	//Góra z długą granią
-	LongRidgeHill *lrg = new LongRidgeHill(Vector<3>({80,140,8}), Vector<3>({20,18,16}), 1);
-	_lacze.DodajNazwePliku(lrg->takeFileName_finalFig().c_str());
-	_lstOfElements.push_back(lrg);
+	shared_ptr<LongRidgeHill> lrg_Ptr = make_shared<LongRidgeHill>(Vector<3>({80,140,8}), Vector<3>({20,18,16}), 1);
+	_lacze.DodajNazwePliku(lrg_Ptr->takeFileName_finalFig().c_str());
+	GeoFig_Ptr = lrg_Ptr;
+	addElementToList(GeoFig_Ptr);
 	_numberOfElements[1]=1;
 
 	//Góra z ostrym szczytem
-	SharpTopHill *sth = new SharpTopHill(Vector<3>({150,70,10}), Vector<3>({20,20,20}), 1);
-	_lacze.DodajNazwePliku(sth->takeFileName_finalFig().c_str());
-	_lstOfElements.push_back(sth);
+	shared_ptr<SharpTopHill> sth_Ptr = make_shared<SharpTopHill>(Vector<3>({150,70,10}), Vector<3>({20,20,20}), 1);
+	_lacze.DodajNazwePliku(sth_Ptr->takeFileName_finalFig().c_str());
+	GeoFig_Ptr = sth_Ptr;
+	addElementToList(GeoFig_Ptr);
 	_numberOfElements[2]=1;
 }
 
@@ -136,47 +141,35 @@ void Scene::droneFlightAnimation(){
 /**
  * @brief Funkcja dodaje nowy element powierzchni.
  * 
- * Funkcja dodaje nowy element powierzchni, pytając użytkownika
- * o rodzaj tego elementu, jego skale i współrzędne położenia.
+ * @param pos Wektor pozycji nowego elementu.
+ * @param scale Wektor skali nowego elementu.
+ * @param type Typ nowego elementu będący liczbą int wybraną przez użytkownika.
  */
-void Scene::makeNewElement(){
-	unsigned int elementType{0};
-	Vector<3> scale, position;
-	double xPos, yPos;
-	cout<<"Wybierz rodzaj powierzchniowego elementu"<<endl<<endl;
-	cout<<"\t1 - Gora z ostrym szczytem"<<endl;
-	cout<<"\t2 - Gora z grania"<<endl;
-	cout<<"\t3 - Plaskowyz"<<endl<<endl;
-	cout<<"Wprowadz numer typu elementu> ";
-	cin>>elementType;
-	cout<<endl<<endl<<endl<<"Podaj skale wzdluz kolejnych osi OX, OY, OZ."<<endl;
-	cout<<"Wprowadz skale> ";
-	cin>>scale;
-	cout<<endl<<"Wprowadz wspolrzedne srodka podstawy x,y."<<endl;
-	cout<<"Wprowadz wspolrzedne: x, y>";	
-	cin>>xPos>>yPos;
-	position=Vector<3>({xPos,yPos,scale[2]/2});
-	
-	switch (elementType){
+void Scene::makeNewElement(const Vector<3>& pos, const Vector<3> scale, unsigned int type){
+	shared_ptr<GeometricFigure> GeoFig_Ptr;
+	switch (type){
 	case 1:{
 		_numberOfElements[1]++;
-		SharpTopHill *sth = new SharpTopHill(position, scale, _numberOfElements[1]);
-		_lacze.DodajNazwePliku(sth->takeFileName_finalFig().c_str());
-		_lstOfElements.push_back(sth);
+		shared_ptr<SharpTopHill> sth_Ptr = make_shared<SharpTopHill>(pos,scale,_numberOfElements[1]);
+		_lacze.DodajNazwePliku(sth_Ptr->takeFileName_finalFig().c_str());
+		GeoFig_Ptr = sth_Ptr;
+		addElementToList(GeoFig_Ptr);
 		break;
 	}
 	case 2:{
 		_numberOfElements[2]++;
-		LongRidgeHill *lrg = new LongRidgeHill(position, scale, _numberOfElements[2]);
-		_lacze.DodajNazwePliku(lrg->takeFileName_finalFig().c_str());
-		_lstOfElements.push_back(lrg);
+		shared_ptr<LongRidgeHill> lrg_Ptr = make_shared<LongRidgeHill>(pos,scale,_numberOfElements[2]);
+		_lacze.DodajNazwePliku(lrg_Ptr->takeFileName_finalFig().c_str());
+		GeoFig_Ptr = lrg_Ptr;
+		addElementToList(GeoFig_Ptr);
 		break;
 	}
 	case 3:{
 		_numberOfElements[0]++;
-		Plateau *plt = new Plateau(position, scale, _numberOfElements[0]);
-		_lacze.DodajNazwePliku(plt->takeFileName_finalFig().c_str());
-		_lstOfElements.push_back(plt);
+		shared_ptr<Plateau> plt_Ptr = make_shared<Plateau>(pos,scale,_numberOfElements[0]);
+		_lacze.DodajNazwePliku(plt_Ptr->takeFileName_finalFig().c_str());
+		GeoFig_Ptr = plt_Ptr;
+		addElementToList(GeoFig_Ptr);
 		break;
 	}
 	default:
@@ -198,15 +191,15 @@ void Scene::deleteElement(){
 	unsigned int k{0}, elemNumber{0};
 	cout<<endl<<"Wybierz element powierzchni do usuniecia:"<<endl;
 	//Wypisanie wszystkich elementów
-	for(const GeometricFigure* fig : _lstOfElements){  			
+	for(const shared_ptr<GeometricFigure>& fig : _lstOfElements){  			
 		cout<<++k<<" - ";
 		cout<<fig->getPosition()<<fig->getType()<<endl;
 	}
 	cout<<"Podaj numer elementu> ";
 	cin>>elemNumber;
-	list<GeometricFigure*>::iterator iter = _lstOfElements.begin();
+	list<shared_ptr<GeometricFigure>>::iterator iter = _lstOfElements.begin();
 	advance(iter, (elemNumber-1));						//przesuwa wskaźnik "elemNumber-1" razy 
-	GeometricFigure* fig = *iter;						//kopiuje wskaznik na ten element zeby dostac dostep do jego nazwy pliku
+	shared_ptr<GeometricFigure> fig = *iter;						//kopiuje wskaznik na ten element zeby dostac dostep do jego nazwy pliku
 	_lstOfElements.erase(iter);							//usuwa element z listy
 	_lacze.UsunNazwePliku(fig->takeFileName_finalFig().c_str());	//usuwa plik tego elementu z lącza
 	_lacze.Rysuj();

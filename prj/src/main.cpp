@@ -7,6 +7,7 @@
 #include "lacze_do_gnuplota.hh"
 #include "Drone.hh"
 #include "Scene.hh"
+#include "UserInterface.hh"
 
 using namespace std;
 
@@ -15,8 +16,6 @@ unsigned int Vector<T>::VECTOR_OBJECT_COUNTER=0;
 template<unsigned int T> 
 unsigned int Vector<T>::VECTOR_OBJECT_SUM=0;
 void printNumberOfVectors();
-void printMenu();
-
 
 int main(){
     PzG::LaczeDoGNUPlota  Lacze;
@@ -52,7 +51,7 @@ int main(){
 				break;
 			}
 			case 'd':{
-				sceneOfDrones.makeNewElement();
+				additionOfNewElement(sceneOfDrones);
 				break;
 			}
 			case 'u':{
@@ -86,17 +85,4 @@ int main(){
 void printNumberOfVectors(){
 	cout<<"\tAktualna ilość obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_COUNTER<<endl;
 	cout<<"\tIlość stworzonych obiektów Vector<3>: "<<Vector<3>::VECTOR_OBJECT_SUM<<endl<<endl;
-}
-
-/**
- * @brief Funkcja wypisuje na stdout menu dla użytkownika
- * 
- */
-void printMenu(){
-	cout<<"\ta - wybierz aktywnego drona"<<endl;
-	cout<<"\tp - zadaj parametry przelotu"<<endl;
-	cout<<"\td - dodaj element powierzchni"<<endl;
-	cout<<"\tu - usun element powierzchni"<<endl;
-	cout<<"\tm - wyswietl menu"<<endl<<endl;
-	cout<<"\tk - zakoncz dzialanie programu"<<endl<<endl;
 }
