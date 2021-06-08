@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_330',['x',['../class_pz_g_1_1_wektor2f.html#aacbc07ae23c748a3378c09353b0b3c4c',1,'PzG::Wektor2f']]]
+  ['elem_493',['elem',['../class_matrix.html#aa6f5b76982ebbe53fb61e32064336802',1,'Matrix::elem()'],['../class_vector.html#af02e032b35d5f3c0da8c9b793cc05bba',1,'Vector::elem()']]]
 ];

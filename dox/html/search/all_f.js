@@ -1,13 +1,14 @@
 var searchData=
 [
-  ['scaleup_90',['scaleUp',['../class_geometric_figure.html#a13bd49360e3bb199f3324d70c6922200',1,'GeometricFigure']]],
-  ['scene_91',['Scene',['../class_scene.html',1,'Scene'],['../class_scene.html#ae6b47a946500a1d904bce5c8cef80066',1,'Scene::Scene()']]],
-  ['setscale_92',['setScale',['../class_geometric_figure.html#a7087635eb3f456f70de8d4cc8db589c7',1,'GeometricFigure']]],
-  ['sharptophill_93',['SharpTopHill',['../class_sharp_top_hill.html',1,'SharpTopHill'],['../class_sharp_top_hill.html#a54aacbc4f010fea6cfbd486de24b4979',1,'SharpTopHill::SharpTopHill()']]],
-  ['size_94',['size',['../class_matrix.html#a3a952058b788b08f01c07c0154e7ebc2',1,'Matrix::size()'],['../class_vector.html#a196e9eedc9a88a48f64e69e39405fa72',1,'Vector::size()']]],
-  ['skalax_95',['SkalaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4b1eb252fd785a5aeff938e7b2dce2b1',1,'PzG::LaczeDoGNUPlota']]],
-  ['skalaz_96',['SkalaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a44f922ccbc508d6cd7809c669238dae3',1,'PzG::LaczeDoGNUPlota']]],
-  ['sr_5fciagly_97',['SR_Ciagly',['../namespace_pz_g.html#a53d89f50686ddd39301f9706cc1247dca22656aba69ada1776d9522ff83f70546',1,'PzG']]],
-  ['sr_5fpunktowy_98',['SR_Punktowy',['../namespace_pz_g.html#a53d89f50686ddd39301f9706cc1247dca307cba9b5669189418e9d595f0cc83a4',1,'PzG']]],
-  ['sr_5fpunktowyniejednorodny_99',['SR_PunktowyNiejednorodny',['../namespace_pz_g.html#a53d89f50686ddd39301f9706cc1247dca9c1082d7a4a130423bc49dd41e257317',1,'PzG']]]
+  ['planinitialflightpath_143',['planInitialFlightPath',['../class_drone.html#ad3b6c1aeee762f41433c407d7f447c55',1,'Drone']]],
+  ['plateau_144',['Plateau',['../class_plateau.html',1,'Plateau'],['../class_plateau.html#acba7004c1d1d29978efef83e30b10f4f',1,'Plateau::Plateau()']]],
+  ['plateau_2ecpp_145',['Plateau.cpp',['../_plateau_8cpp.html',1,'']]],
+  ['plateau_2ehh_146',['Plateau.hh',['../_plateau_8hh.html',1,'']]],
+  ['pokazos_5fox_147',['PokazOs_OX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a11421d7c67deab6b7524cc492407e897',1,'PzG::LaczeDoGNUPlota::PokazOs_OX(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ae112972af57167c3b053bf922bce6bbf',1,'PzG::LaczeDoGNUPlota::PokazOs_OX() const']]],
+  ['pokazos_5foy_148',['PokazOs_OY',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7c3db909b266fc30808e86406c04b516',1,'PzG::LaczeDoGNUPlota::PokazOs_OY(bool Pokaz)'],['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a7298f469f6932f5c808dcf620650b4b8',1,'PzG::LaczeDoGNUPlota::PokazOs_OY() const']]],
+  ['printmenu_149',['printMenu',['../main_8cpp.html#ab13e858612c64eeef73aff1d8a03945e',1,'main.cpp']]],
+  ['printnumberofvectors_150',['printNumberOfVectors',['../main_8cpp.html#a55555416eceaaba3a1c33e685468bc1c',1,'main.cpp']]],
+  ['printpositionofactivedrone_151',['printPositionOfActiveDrone',['../class_scene.html#a1f6a88fe6e29d15a33efb57bdf6515df',1,'Scene']]],
+  ['przeslijdognuplota_152',['PrzeslijDoGNUPlota',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a5063854b7232a7951d120a21df63f2b7',1,'PzG::LaczeDoGNUPlota']]],
+  ['pzg_153',['PzG',['../namespace_pz_g.html',1,'']]]
 ];

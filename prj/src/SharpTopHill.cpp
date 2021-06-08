@@ -12,7 +12,6 @@ using namespace std;
 /**
  * @brief Konstruktor tworzy góre z ostrym szczytem.
  * 
- * 
  * Funkcja tworzy góre z ostrym szczytem, obliczając nowe współrzędne na podstawie 
  * współrzędnych z pliku wzorcowego i zapisuje je do pliku roboczego. 
  * @param[in] pos Wektor położenia początkowego (definiowany jako wektor

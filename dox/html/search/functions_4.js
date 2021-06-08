@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['infoplikudorysowania_209',['InfoPlikuDoRysowania',['../class_pz_g_1_1_info_pliku_do_rysowania.html#a42f5a6ba16403a4364158fa46176ff7a',1,'PzG::InfoPlikuDoRysowania']]],
-  ['infopunktydorysowania_210',['InfoPunktyDoRysowania',['../class_pz_g_1_1_info_punkty_do_rysowania.html#aed0725576cd5cf0ac01fc2e528e2c85b',1,'PzG::InfoPunktyDoRysowania']]],
-  ['inicjalizuj_211',['Inicjalizuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a200ce6bdb980c314a9eafe49e8f2dd5e',1,'PzG::LaczeDoGNUPlota']]]
+  ['enterfilename_5ffinalfig_325',['enterFileName_finalFig',['../class_geometric_figure.html#af49f8284d2602735778f2fba2f7ed66b',1,'GeometricFigure']]],
+  ['enterfilename_5freffig_326',['enterFileName_refFig',['../class_geometric_figure.html#acb5c4e7d778e447edc1889aaacd0397c',1,'GeometricFigure']]],
+  ['enterorientationangle_327',['enterOrientationAngle',['../class_hexagonal_prism.html#aeaad0901d39f7197c4d82e75b922992f',1,'HexagonalPrism::enterOrientationAngle()'],['../class_rectangular.html#ae6e2fcf4202f98bb2f2a8e58ad0ff6df',1,'Rectangular::enterOrientationAngle()']]],
+  ['enterposition_328',['enterPosition',['../class_hexagonal_prism.html#a74b131b8cc512d19a3873b9399b2a93c',1,'HexagonalPrism']]]
 ];

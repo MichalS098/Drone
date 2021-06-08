@@ -4,7 +4,7 @@
 #include "Plateau.hh"
 #include "LongRidgeHill.hh"
 #include "SharpTopHill.hh"
-#define FIRST_DRONE_COLOR 3 //niebieski
+#define FIRST_DRONE_COLOR 3  //niebieski
 #define SECOND_DRONE_COLOR 3 //niebieski
 #define UNIT_SCALE 1,1,1
 
@@ -35,11 +35,13 @@ Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
 	_lacze.DodajNazwePliku(plt->takeFileName_finalFig().c_str());
 	_lstOfElements.push_back(plt);
 	_numberOfElements[0]=1;
+
 	//Góra z długą granią
 	LongRidgeHill *lrg = new LongRidgeHill(Vector<3>({80,140,8}), Vector<3>({20,18,16}), 1);
 	_lacze.DodajNazwePliku(lrg->takeFileName_finalFig().c_str());
 	_lstOfElements.push_back(lrg);
 	_numberOfElements[1]=1;
+
 	//Góra z ostrym szczytem
 	SharpTopHill *sth = new SharpTopHill(Vector<3>({150,70,10}), Vector<3>({20,20,20}), 1);
 	_lacze.DodajNazwePliku(sth->takeFileName_finalFig().c_str());
@@ -210,3 +212,4 @@ void Scene::deleteElement(){
 	_lacze.Rysuj();
 	cout<<"Element poprawnie usunięty"<<endl;
 }
+

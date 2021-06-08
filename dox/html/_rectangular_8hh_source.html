@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Dron DragonFly: /home/michal/Desktop/dron/Dron/prj/inc/Rectangular.hh Source File</title>
+<title>Dron DragonFly: Rectangular.hh Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="dragonfly-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Dron DragonFly
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -87,29 +87,34 @@ $(document).ready(function(){initNavTree('_rectangular_8hh_source.html',''); ini
 <div class="title">Rectangular.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<a href="_rectangular_8hh.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160; </div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;Vector.hh&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;GeometricFigure.hh&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_vector_8hh.html">Vector.hh</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_geometric_figure_8hh.html">GeometricFigure.hh</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="class_rectangular.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_rectangular.html">Rectangular</a>: <span class="keyword">public</span> <a class="code" href="class_geometric_figure.html">GeometricFigure</a>{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;3&gt;</a>   _position;      </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">double</span>      _orientationAngle;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_rectangular.html#a75b142b83795aac72f2838e53a8a4693">   15</a></span>&#160;    <a class="code" href="class_vector.html">Vector&lt;3&gt;</a>   <a class="code" href="class_rectangular.html#a75b142b83795aac72f2838e53a8a4693">_position</a>;      </div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="class_rectangular.html#a1ade9eb47c2672c5de44f65598d4d96d">   16</a></span>&#160;    <span class="keywordtype">double</span>      <a class="code" href="class_rectangular.html#a1ade9eb47c2672c5de44f65598d4d96d">_orientationAngle</a>;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;3&gt;</a> <a class="code" href="class_rectangular.html#aeed69a140973c313b9dee29b458df0d0">transfToParentCoordSys</a>(<span class="keyword">const</span> <a class="code" href="class_vector.html">Vector&lt;3&gt;</a>&amp; apex) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> enterOrientationAngle(<span class="keywordtype">double</span> angle) {_orientationAngle=angle;}</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_rectangular.html#ae6e2fcf4202f98bb2f2a8e58ad0ff6df">   19</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_rectangular.html#ae6e2fcf4202f98bb2f2a8e58ad0ff6df">enterOrientationAngle</a>(<span class="keywordtype">double</span> angle) {<a class="code" href="class_rectangular.html#a1ade9eb47c2672c5de44f65598d4d96d">_orientationAngle</a>=angle;}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
-<div class="ttc" id="aclass_geometric_figure_html"><div class="ttname"><a href="class_geometric_figure.html">GeometricFigure</a></div><div class="ttdoc">Klasa Bazowa opisujaca figure geometryczna.</div><div class="ttdef"><b>Definition:</b> GeometricFigure.hh:13</div></div>
-<div class="ttc" id="aclass_rectangular_html_aeed69a140973c313b9dee29b458df0d0"><div class="ttname"><a href="class_rectangular.html#aeed69a140973c313b9dee29b458df0d0">Rectangular::transfToParentCoordSys</a></div><div class="ttdeci">Vector&lt; 3 &gt; transfToParentCoordSys(const Vector&lt; 3 &gt; &amp;apex) const</div><div class="ttdoc">Funkcja przekształca zadany wierzchołek do układu współrzędnych rodzica.</div><div class="ttdef"><b>Definition:</b> Rectangular.cpp:13</div></div>
-<div class="ttc" id="aclass_rectangular_html"><div class="ttname"><a href="class_rectangular.html">Rectangular</a></div><div class="ttdoc">Klasa pochodna klasy figury geometrycznej definiująca prostopadłościan.</div><div class="ttdef"><b>Definition:</b> Rectangular.hh:14</div></div>
+<div class="ttc" id="aclass_rectangular_html_a75b142b83795aac72f2838e53a8a4693"><div class="ttname"><a href="class_rectangular.html#a75b142b83795aac72f2838e53a8a4693">Rectangular::_position</a></div><div class="ttdeci">Vector&lt; 3 &gt; _position</div><div class="ttdef"><b>Definition:</b> <a href="_rectangular_8hh_source.html#l00015">Rectangular.hh:15</a></div></div>
+<div class="ttc" id="aclass_geometric_figure_html"><div class="ttname"><a href="class_geometric_figure.html">GeometricFigure</a></div><div class="ttdoc">Klasa Bazowa opisujaca figure geometryczna.</div><div class="ttdef"><b>Definition:</b> <a href="_geometric_figure_8hh_source.html#l00013">GeometricFigure.hh:13</a></div></div>
+<div class="ttc" id="aclass_rectangular_html_aeed69a140973c313b9dee29b458df0d0"><div class="ttname"><a href="class_rectangular.html#aeed69a140973c313b9dee29b458df0d0">Rectangular::transfToParentCoordSys</a></div><div class="ttdeci">Vector&lt; 3 &gt; transfToParentCoordSys(const Vector&lt; 3 &gt; &amp;apex) const</div><div class="ttdoc">Funkcja przekształca zadany wierzchołek do układu współrzędnych rodzica.</div><div class="ttdef"><b>Definition:</b> <a href="_rectangular_8cpp_source.html#l00013">Rectangular.cpp:13</a></div></div>
+<div class="ttc" id="a_geometric_figure_8hh_html"><div class="ttname"><a href="_geometric_figure_8hh.html">GeometricFigure.hh</a></div></div>
+<div class="ttc" id="a_vector_8hh_html"><div class="ttname"><a href="_vector_8hh.html">Vector.hh</a></div></div>
+<div class="ttc" id="aclass_rectangular_html"><div class="ttname"><a href="class_rectangular.html">Rectangular</a></div><div class="ttdoc">Klasa pochodna klasy figury geometrycznej definiująca prostopadłościan.</div><div class="ttdef"><b>Definition:</b> <a href="_rectangular_8hh_source.html#l00014">Rectangular.hh:14</a></div></div>
 <div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector&lt; 3 &gt;</a></div></div>
+<div class="ttc" id="aclass_rectangular_html_ae6e2fcf4202f98bb2f2a8e58ad0ff6df"><div class="ttname"><a href="class_rectangular.html#ae6e2fcf4202f98bb2f2a8e58ad0ff6df">Rectangular::enterOrientationAngle</a></div><div class="ttdeci">void enterOrientationAngle(double angle)</div><div class="ttdef"><b>Definition:</b> <a href="_rectangular_8hh_source.html#l00019">Rectangular.hh:19</a></div></div>
+<div class="ttc" id="aclass_rectangular_html_a1ade9eb47c2672c5de44f65598d4d96d"><div class="ttname"><a href="class_rectangular.html#a1ade9eb47c2672c5de44f65598d4d96d">Rectangular::_orientationAngle</a></div><div class="ttdeci">double _orientationAngle</div><div class="ttdef"><b>Definition:</b> <a href="_rectangular_8hh_source.html#l00016">Rectangular.hh:16</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_4aa64b0872d36146e049722e293482e3.html">prj</a></li><li class="navelem"><a class="el" href="dir_72345776cd6700fb0dedb8f1faaa0c00.html">inc</a></li><li class="navelem"><b>Rectangular.hh</b></li>
+    <li class="navelem"><a class="el" href="dir_4aa64b0872d36146e049722e293482e3.html">prj</a></li><li class="navelem"><a class="el" href="dir_72345776cd6700fb0dedb8f1faaa0c00.html">inc</a></li><li class="navelem"><a class="el" href="_rectangular_8hh.html">Rectangular.hh</a></li>
     <li class="footer">Generated by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>

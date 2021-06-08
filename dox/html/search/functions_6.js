@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['lenght_213',['lenght',['../class_vector.html#a1993bbd5d869d5a7ab4a6762bfc9d61b',1,'Vector']]],
-  ['longridgehill_214',['LongRidgeHill',['../class_long_ridge_hill.html#aa54e3a58159ee3619b3da16f4e5ce5c8',1,'LongRidgeHill']]]
+  ['infoplikudorysowania_332',['InfoPlikuDoRysowania',['../class_pz_g_1_1_info_pliku_do_rysowania.html#a42f5a6ba16403a4364158fa46176ff7a',1,'PzG::InfoPlikuDoRysowania']]],
+  ['infopunktydorysowania_333',['InfoPunktyDoRysowania',['../class_pz_g_1_1_info_punkty_do_rysowania.html#aed0725576cd5cf0ac01fc2e528e2c85b',1,'PzG::InfoPunktyDoRysowania']]],
+  ['inicjalizuj_334',['Inicjalizuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a200ce6bdb980c314a9eafe49e8f2dd5e',1,'PzG::LaczeDoGNUPlota']]]
 ];

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="dragonfly-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Dron DragonFly
-   &#160;<span id="projectnumber">1.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
   </td>
  </tr>
@@ -86,6 +86,8 @@ $(document).ready(function(){initNavTree('class_drone.html',''); initResizable()
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_drone-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Drone Class Reference</div>  </div>
@@ -96,6 +98,12 @@ $(document).ready(function(){initNavTree('class_drone.html',''); initResizable()
  <a href="class_drone.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="_drone_8hh_source.html">Drone.hh</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Drone:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 -->
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -105,9 +113,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3b6c1aeee762f41433c407d7f447c55"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ad3b6c1aeee762f41433c407d7f447c55">planInitialFlightPath</a> (double flightHeight, double turnAngle, double flightLenght, <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;lacze)</td></tr>
 <tr class="memdesc:ad3b6c1aeee762f41433c407d7f447c55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja planuje początkową ścieżkę lotu drona.  <a href="class_drone.html#ad3b6c1aeee762f41433c407d7f447c55">More...</a><br /></td></tr>
 <tr class="separator:ad3b6c1aeee762f41433c407d7f447c55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9a5bd25edd22674eca21a31e4093d09"><td class="memItemLeft" align="right" valign="top"><a id="ac9a5bd25edd22674eca21a31e4093d09"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ac9a5bd25edd22674eca21a31e4093d09">deleteFlightPath</a> (<a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;lacze) const</td></tr>
-<tr class="memdesc:ac9a5bd25edd22674eca21a31e4093d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja usuwa powstałą wcześniej ścieżkę lotu drona. <br /></td></tr>
+<tr class="memitem:ac9a5bd25edd22674eca21a31e4093d09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ac9a5bd25edd22674eca21a31e4093d09">deleteFlightPath</a> (<a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;lacze) const</td></tr>
+<tr class="memdesc:ac9a5bd25edd22674eca21a31e4093d09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja usuwa powstałą wcześniej ścieżkę lotu drona.  <a href="class_drone.html#ac9a5bd25edd22674eca21a31e4093d09">More...</a><br /></td></tr>
 <tr class="separator:ac9a5bd25edd22674eca21a31e4093d09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab0ce8612935678e534dd5b2e8c822919"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ab0ce8612935678e534dd5b2e8c822919">makeVerticalFlight</a> (double height, <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;Lacze)</td></tr>
 <tr class="memdesc:ab0ce8612935678e534dd5b2e8c822919"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja przemieszcza drona w kierunku pionowym wzdłuż osi z.  <a href="class_drone.html#ab0ce8612935678e534dd5b2e8c822919">More...</a><br /></td></tr>
@@ -124,8 +131,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a1273bbb14776b0a7a6a5777d252ef674"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a1273bbb14776b0a7a6a5777d252ef674">calcAndSave_DroneCoords</a> () const</td></tr>
 <tr class="memdesc:a1273bbb14776b0a7a6a5777d252ef674"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja oblicza i zapisuje współrzędne globalne drona do plików.  <a href="class_drone.html#a1273bbb14776b0a7a6a5777d252ef674">More...</a><br /></td></tr>
 <tr class="separator:a1273bbb14776b0a7a6a5777d252ef674"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37a3e693aed550ee5265d4ade78415ab"><td class="memItemLeft" align="right" valign="top"><a id="a37a3e693aed550ee5265d4ade78415ab"></a>
-<a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>takeDronePosition</b> () const</td></tr>
+<tr class="memitem:a37a3e693aed550ee5265d4ade78415ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a37a3e693aed550ee5265d4ade78415ab">takeDronePosition</a> () const</td></tr>
 <tr class="separator:a37a3e693aed550ee5265d4ade78415ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -136,11 +142,67 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a63b11fe22ddf9bf8227fa69494ec5fd1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a63b11fe22ddf9bf8227fa69494ec5fd1">makeFlight</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;direction, double flightLenght, <a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;lacze)</td></tr>
 <tr class="memdesc:a63b11fe22ddf9bf8227fa69494ec5fd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wykonuje lot drona.  <a href="class_drone.html#a63b11fe22ddf9bf8227fa69494ec5fd1">More...</a><br /></td></tr>
 <tr class="separator:a63b11fe22ddf9bf8227fa69494ec5fd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab442971f657dc563ddcae50c65629e24"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ab442971f657dc563ddcae50c65629e24">calcAndSave_BodyCoords</a> () const</td></tr>
+<tr class="memdesc:ab442971f657dc563ddcae50c65629e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja oblicza i zapisuje współrzędne globalne korpusu do plików.  <a href="class_drone.html#ab442971f657dc563ddcae50c65629e24">More...</a><br /></td></tr>
+<tr class="separator:ab442971f657dc563ddcae50c65629e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1066d32282694e4f58db5dfe3ad03ba1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a1066d32282694e4f58db5dfe3ad03ba1">calcAndSave_RotorCoords</a> (const <a class="el" href="class_hexagonal_prism.html">HexagonalPrism</a> &amp;rotor) const</td></tr>
+<tr class="memdesc:a1066d32282694e4f58db5dfe3ad03ba1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja oblicza i zapisuje współrzędne globalne rotora do plików.  <a href="class_drone.html#a1066d32282694e4f58db5dfe3ad03ba1">More...</a><br /></td></tr>
+<tr class="separator:a1066d32282694e4f58db5dfe3ad03ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa48dcce41ca6e230f200df927ee028e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#aa48dcce41ca6e230f200df927ee028e3">rotateRotor</a> (double angle)</td></tr>
+<tr class="memdesc:aa48dcce41ca6e230f200df927ee028e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja odpowiadająca za animacje obrotu wirników drona.  <a href="class_drone.html#aa48dcce41ca6e230f200df927ee028e3">More...</a><br /></td></tr>
+<tr class="separator:aa48dcce41ca6e230f200df927ee028e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4933ce96ba41ca93e13e925bfcf64428"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a4933ce96ba41ca93e13e925bfcf64428">_position</a></td></tr>
+<tr class="separator:a4933ce96ba41ca93e13e925bfcf64428"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac43d2c7d72e13455199e5e47a24b7604"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ac43d2c7d72e13455199e5e47a24b7604">_orientationAngle</a></td></tr>
+<tr class="separator:ac43d2c7d72e13455199e5e47a24b7604"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95ca9d4ab1ab95eca63c1a6c54b683be"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_rectangular.html">Rectangular</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a95ca9d4ab1ab95eca63c1a6c54b683be">_droneBody</a></td></tr>
+<tr class="separator:a95ca9d4ab1ab95eca63c1a6c54b683be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a053ca3d32a77b74a8657a0bef125cadf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_hexagonal_prism.html">HexagonalPrism</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a053ca3d32a77b74a8657a0bef125cadf">_droneRotor</a> [4]</td></tr>
+<tr class="separator:a053ca3d32a77b74a8657a0bef125cadf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2696760c9c885e9c651cc31bfc36e84b"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a2696760c9c885e9c651cc31bfc36e84b">_ID</a></td></tr>
+<tr class="separator:a2696760c9c885e9c651cc31bfc36e84b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Klasa definiująca drona. </p>
-<p>Klasa opisująca drona na podstawie jego korpusu będącego obiektem typu prostopadłościan, jego 4 rotorów będących graniastosłupami foremnymi o podstawie sześciokąta, oraz kąta orientacji, oraz wektora położenia. </p>
+<div class="textblock"><p>Klasa opisująca drona na podstawie jego korpusu będącego obiektem typu prostopadłościan, jego 4 rotorów będących graniastosłupami foremnymi o podstawie sześciokąta, oraz kąta orientacji, oraz wektora położenia. </p>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8hh_source.html#l00016">16</a> of file <a class="el" href="_drone_8hh_source.html">Drone.hh</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab442971f657dc563ddcae50c65629e24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab442971f657dc563ddcae50c65629e24">&#9670;&nbsp;</a></span>calcAndSave_BodyCoords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Drone::calcAndSave_BodyCoords </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true - Operacja udana </dd>
+<dd>
+false - Błąd operacji </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00073">73</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+
+</div>
+</div>
 <a id="a1273bbb14776b0a7a6a5777d252ef674"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1273bbb14776b0a7a6a5777d252ef674">&#9670;&nbsp;</a></span>calcAndSave_DroneCoords()</h2>
 
@@ -155,11 +217,54 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Funkcja oblicza i zapisuje współrzędne globalne drona do plików. </p>
 <dl class="section return"><dt>Returns</dt><dd>true - Operacja udana </dd>
 <dd>
 false - Błąd operacji </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00152">152</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a1066d32282694e4f58db5dfe3ad03ba1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1066d32282694e4f58db5dfe3ad03ba1">&#9670;&nbsp;</a></span>calcAndSave_RotorCoords()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Drone::calcAndSave_RotorCoords </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_hexagonal_prism.html">HexagonalPrism</a> &amp;&#160;</td>
+          <td class="paramname"><em>rotor</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rotor</td><td>- jeden z 4 rotorów drona, którego współrzędne będą przeliczane </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true - Operacja udana </dd>
+<dd>
+false - Błąd operacji </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00113">113</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -188,8 +293,6 @@ false - Błąd operacji </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Funkcja przemieszcza drona wokol wlasnej osi o podany kat. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">angle</td><td>- kąt obrotu </td></tr>
@@ -200,6 +303,52 @@ false - Błąd operacji </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true - zwraca kiedy operacja się powiedzie </dd>
 <dd>
 false - kiedy operacja się nie powiedzie </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00305">305</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 -->
+</div>
+</div>
+
+</div>
+</div>
+<a id="ac9a5bd25edd22674eca21a31e4093d09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9a5bd25edd22674eca21a31e4093d09">&#9670;&nbsp;</a></span>deleteFlightPath()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Drone::deleteFlightPath </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;&#160;</td>
+          <td class="paramname"><em>lacze</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00228">228</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 4 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 5 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -246,8 +395,6 @@ false - kiedy operacja się nie powiedzie </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Funkcja inicjalizuje Drona. </p>
 <p>Funkcja inicjalizuje drona poprzez, przypisanie jego atrybutom (prostopadłościanowi oraz rotorom) ich nazwy plików właściwych oraz wzorcowych. Funkcja dodaje odrazu nazwy tych plików do łącza do GNU-PLOT'a. Ustawia również domyślny kolor rysowanego drona, jego pozycje początkową, skale wielkości oraz jego ID. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ID</td><td>- id Drona </td></tr>
@@ -258,6 +405,20 @@ false - kiedy operacja się nie powiedzie </dd></dl>
   </table>
   </dd>
 </dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00036">36</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 6 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 7 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -300,8 +461,6 @@ false - kiedy operacja się nie powiedzie </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>Funkcja wykonuje lot drona. </p>
 <p>Funkcja wykonuje lot drona w odpowiednim kierunku (direction) na odpowiedniom długość (flightLenght). </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">direction</td><td>Kierunek lotu drona. </td></tr>
@@ -313,6 +472,14 @@ false - kiedy operacja się nie powiedzie </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true Kiedy operacja się powiedzie. </dd>
 <dd>
 false Kiedy operacja się nie powiedzie. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00252">252</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 8 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -341,8 +508,6 @@ false Kiedy operacja się nie powiedzie. </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Funkcja przemieszcza drona do przodu. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flightLenght</td><td>- długość na jaką ma polecieć dron </td></tr>
@@ -353,6 +518,20 @@ false Kiedy operacja się nie powiedzie. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true - zwraca kiedy operacja się powiedzie </dd>
 <dd>
 false - kiedy operacja się nie powiedzie </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00285">285</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 9 -->
+</div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 10 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -381,8 +560,6 @@ false - kiedy operacja się nie powiedzie </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Funkcja przemieszcza drona w kierunku pionowym wzdłuż osi z. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">flightHeight</td><td>- Wielkość zmiany położenia wysokości </td></tr>
@@ -393,6 +570,14 @@ false - kiedy operacja się nie powiedzie </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>true - zwraca kiedy operacja się powiedzie </dd>
 <dd>
 false - kiedy operacja się nie powiedzie </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="_drone_8cpp_source.html#l00326">326</a> of file <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 11 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -433,97 +618,3 @@ false - kiedy operacja się nie powiedzie </dd></dl>
         </tr>
       </table>
 </div><div class="memdoc">
-
-<p>Funkcja planuje początkową ścieżkę lotu drona. </p>
-<p>Funkcja tworzy ścieżkę lotu drona dla zadanego kąta i długości lotu i zapisuje współrzędne jej punktów w wektorze PunktySciezki</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">turnAngle</td><td>- Kąt obrotu w stopniach </td></tr>
-    <tr><td class="paramname">flightLenght</td><td>- Długość ścieżki </td></tr>
-    <tr><td class="paramname">flightHeight</td><td>- wysokosc lotu </td></tr>
-    <tr><td class="paramname">Lacze</td><td>- lacze do GNUPlota <br  />
- </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aadefef0ff5b551bcd18f5a2504b39923"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadefef0ff5b551bcd18f5a2504b39923">&#9670;&nbsp;</a></span>tiltForward()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Drone::tiltForward </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_pz_g_1_1_lacze_do_g_n_u_plota.html">PzG::LaczeDoGNUPlota</a> &amp;&#160;</td>
-          <td class="paramname"><em>Lacze</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Funkcja pochyla drona w kierunku lotu. </p>
-<p>NIE WIEM CO TO </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Lacze</td><td>- lacze do GNUPlota </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a2fd7489f927b46b0fffa68400998f938"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2fd7489f927b46b0fffa68400998f938">&#9670;&nbsp;</a></span>transfToParentCoordSys()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; Drone::transfToParentCoordSys </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>apex</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Funkcja przekształca zadany wierzchołek do układu współrzędnych rodzica. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">apex</td><td>- Wierzchołek do przekształcenia </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="class_vector.html">Vector&lt;3&gt;</a> - Przekształcony wierzchołek </dd></dl>
-
-</div>
-</div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/michal/Desktop/dron/Dron/prj/inc/<a class="el" href="_drone_8hh_source.html">Drone.hh</a></li>
-<li>/home/michal/Desktop/dron/Dron/prj/src/Drone.cpp</li>
-</ul>
-</div><!-- contents -->
-</div><!-- doc-content -->
-<!-- start footer part -->
-<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
-  <ul>
-    <li class="navelem"><a class="el" href="class_drone.html">Drone</a></li>
-    <li class="footer">Generated by
-    <a href="http://www.doxygen.org/index.html">
-    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
-  </ul>
-</div>
-</body>
-</html>

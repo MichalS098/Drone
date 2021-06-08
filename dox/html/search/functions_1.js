@@ -1,8 +1,6 @@
 var searchData=
 [
-  ['calcandsave_5fdronecoords_189',['calcAndSave_DroneCoords',['../class_drone.html#a1273bbb14776b0a7a6a5777d252ef674',1,'Drone']]],
-  ['changedroneorientation_190',['changeDroneOrientation',['../class_drone.html#af13b8aacbf7d640cf684c172541d47c0',1,'Drone']]],
-  ['czyjestplik_191',['CzyJestPlik',['../namespace_pz_g.html#ae1aad0c681853d7e47da4cdfccefc102',1,'PzG']]],
-  ['czypolaczeniejestzainicjowane_192',['CzyPolaczenieJestZainicjowane',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#af8be8aeb3b1b524fab67d4411cba5b9e',1,'PzG::LaczeDoGNUPlota']]],
-  ['czywyswietlackomunikaty_193',['CzyWyswietlacKomunikaty',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a5e4f3a226ed36f7110032d802d84847c',1,'PzG::LaczeDoGNUPlota']]]
+  ['budujpreambule_5f2d_302',['BudujPreambule_2D',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#add41e4bb92ccf9991b1cb15699f8c3d6',1,'PzG::LaczeDoGNUPlota']]],
+  ['budujpreambule_5f3d_303',['BudujPreambule_3D',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ae3b2f34035fdfbbcab696057022341ab',1,'PzG::LaczeDoGNUPlota']]],
+  ['budujpreambulepoleceniarysowania_304',['BudujPreambulePoleceniaRysowania',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a087d906ddd4b2e3db32ef61ce4cd5e60',1,'PzG::LaczeDoGNUPlota']]]
 ];

@@ -13,14 +13,17 @@
  * z rysowaniem planowanej ścieżki.
  */
 class Scene{
+    /**
+     * @brief Lista dwukierunkowa przechowująca elementu sceny (przeszkody).
+     */
     std::list<GeometricFigure*> _lstOfElements;
-
-    //tablica zawierajaca ilosc powstalych elementow sceny
-    // 0 - ilosc plaskowyzy
-    // 1 - ilosc gor z ostrym szczytem
-    // 2 - ilosc gor z dluga grania
+    /**
+     * @brief tablica zawierajaca ilosc powstalych elementow sceny,
+     * _numberOfElements[0] - ilosc plaskowyzy,
+     * _numberOfElements[1] - ilosc gor z ostrym szczytem,
+     * _numberOfElements[2] - ilosc gor z dluga grania.
+     */
     unsigned int                _numberOfElements[3]; 
-    
     Drone                       _droneArray[2];
     unsigned int                _ID_of_active_Drone;
     PzG::LaczeDoGNUPlota&       _lacze;
@@ -32,5 +35,6 @@ public:
     void droneFlightAnimation();
     void makeNewElement();
     void deleteElement();
+    void freeMemoryFromList();
 };
 
