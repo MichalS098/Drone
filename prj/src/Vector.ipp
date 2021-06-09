@@ -154,6 +154,16 @@ void Vector<T>::operator=(const Vector<T>& v){
 	for(int i=0; i<size(); ++i){
 		elem[i]=v[i];
 	}
+	VECTOR_OBJECT_COUNTER++;
+}
+
+template<unsigned int T>
+Vector<T>::Vector(const Vector<T>& v){
+	if(size()!=v.size()) throw std::invalid_argument("Cannot assing vector with different size");
+	for(int i=0; i<size(); ++i){
+		elem[i]=v[i];
+	}
+	VECTOR_OBJECT_COUNTER++;
 }
 
 /**

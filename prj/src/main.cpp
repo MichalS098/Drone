@@ -12,9 +12,9 @@
 using namespace std;
 
 template<unsigned int T>
-unsigned int Vector<T>::VECTOR_OBJECT_COUNTER=0;
+long int Vector<T>::VECTOR_OBJECT_COUNTER=0;
 template<unsigned int T> 
-unsigned int Vector<T>::VECTOR_OBJECT_SUM=0;
+unsigned long int Vector<T>::VECTOR_OBJECT_SUM=0;
 void printNumberOfVectors();
 
 int main(){

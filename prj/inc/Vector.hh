@@ -18,8 +18,8 @@ public:
 
 	//Zmienna stworzona na potrzebe zliczania obiektow Vector
 	//w zadaniu
-	static unsigned int VECTOR_OBJECT_COUNTER;
-	static unsigned int VECTOR_OBJECT_SUM;
+	static long int VECTOR_OBJECT_COUNTER;
+	static unsigned long int VECTOR_OBJECT_SUM;
 
   	Vector();
   	Vector(const std::initializer_list<double>& lst);
@@ -48,11 +48,11 @@ public:
   	double operator*(const Vector<T>& v) const;
   	Vector<T> operator&(const Vector<T>& v) const;   //overloading operator & for vector product
 	Vector<T> operator*(const double& multiplier) const;
-
   	void operator=(const Vector<T>& v);
-	Vector(const Vector<T>&) = default;
-	Vector(Vector<T>&&) = default;
-	Vector<T>& operator=(Vector<T>&&) = default;
+	Vector(const Vector<T>& v);
+
+	Vector(Vector<T>&& v) = default;
+	Vector<T>& operator=(Vector<T>&& v) = default;
 };
 
 template<unsigned int T>
