@@ -5,7 +5,7 @@ var class_drone =
     [ "calcAndSave_DroneCoords", "class_drone.html#a1273bbb14776b0a7a6a5777d252ef674", null ],
     [ "calcAndSave_RotorCoords", "class_drone.html#a1066d32282694e4f58db5dfe3ad03ba1", null ],
     [ "changeDroneOrientation", "class_drone.html#af13b8aacbf7d640cf684c172541d47c0", null ],
-    [ "checkIfPlaceIsAvaliable", "class_drone.html#a05ec31a18d83b2f0d3062b69ef3f8360", null ],
+    [ "checkIfPlaceIsAvaliable", "class_drone.html#aeb77decc4b54c415f9ef485e0f193816", null ],
     [ "deleteFlightPath", "class_drone.html#ac9a5bd25edd22674eca21a31e4093d09", null ],
     [ "getPosition", "class_drone.html#ab07bd13f578594946da79fb1f8ffb707", null ],
     [ "getType", "class_drone.html#aca3bc8efef79f398f5b7b2a370d8d9c1", null ],

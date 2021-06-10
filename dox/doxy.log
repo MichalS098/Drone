@@ -1,0 +1,380 @@
+warning: The selected output language "polish" has not been updated
+since release 1.8.2.  As a result some sentences may appear in English.
+
+/home/michal/Desktop/dron/Dron/prj/inc/lacze_do_gnuplota.hh:74: warning: unexpected command endverbatim
+/home/michal/Desktop/dron/Dron/prj/inc/lacze_do_gnuplota.hh:86: warning: unexpected command endverbatim
+/home/michal/Desktop/dron/Dron/prj/inc/lacze_do_gnuplota.hh:552: warning: return value 'true' of PzG::LaczeDoGNUPlota::UtworzProcesPotomny has multiple documentation sections
+/home/michal/Desktop/dron/Dron/prj/inc/lacze_do_gnuplota.hh:552: warning: return value 'false' of PzG::LaczeDoGNUPlota::UtworzProcesPotomny has multiple documentation sections
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_rectangular__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_rectangular__inherit__graph.svg"'
+sh: 1: dot: not found
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a7fa4e775e1aee74869fae174c567c2a6_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a7fa4e775e1aee74869fae174c567c2a6_cgraph.svg"'
+dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_aa517ec4aaf54f2d343f685f4dbc51d12_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_aa517ec4aaf54f2d343f685f4dbc51d12_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/lacze__do__gnuplota_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/lacze__do__gnuplota_8cpp__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_drone_grid_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_drone_grid_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a893715299fcaeeb95b4f2f41f0b7eaba_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a893715299fcaeeb95b4f2f41f0b7eaba_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a57edbbfcea7c17a1869f9e0539f5eaea_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a57edbbfcea7c17a1869f9e0539f5eaea_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism__inherit__graph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone__coll__graph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_sharp_top_hill__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_sharp_top_hill__inherit__graph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a200ce6bdb980c314a9eafe49e8f2dd5e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a200ce6bdb980c314a9eafe49e8f2dd5e_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure__inherit__graph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ab3286408bb2ca5c5382e721b40d07f4f_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ab3286408bb2ca5c5382e721b40d07f4f_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_7.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_7.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh_a5c27cb7e40c60f7addda5657b30bef12_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh_a5c27cb7e40c60f7addda5657b30bef12_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh_ab13e858612c64eeef73aff1d8a03945e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh_ab13e858612c64eeef73aff1d8a03945e_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ad3d7607946b82aa941d786dcd086d27e_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ad3d7607946b82aa941d786dcd086d27e_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh__dep__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/lacze__do__gnuplota_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/lacze__do__gnuplota_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_obstacle_grid__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_obstacle_grid__coll__graph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a169c311f0e0b6ffadcd44e91e749f72d_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a169c311f0e0b6ffadcd44e91e749f72d_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_sharp_top_hill_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_sharp_top_hill_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_6.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_6.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_ae6b9705e199ad695b61b4e902eaf0d6c_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_ae6b9705e199ad695b61b4e902eaf0d6c_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a18cd7faad7325343107a93db114cb290_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a18cd7faad7325343107a93db114cb290_cgraph.svg"'
+dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_hexagonal_prism-6_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_hexagonal_prism-6_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a065f5b8402737cc62b0ad4f66d028335_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a065f5b8402737cc62b0ad4f66d028335_cgraph.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_drone_grid_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_drone_grid_8cpp__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_ad3b6c1aeee762f41433c407d7f447c55_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_ad3b6c1aeee762f41433c407d7f447c55_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_vector_8ipp_afbee8685eba8033e340917640a7909d8_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_vector_8ipp_afbee8685eba8033e340917640a7909d8_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_plateau__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_plateau__coll__graph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8cpp_a88a900c011a5122ce37ec8eb259904c0_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8cpp_a88a900c011a5122ce37ec8eb259904c0_icgraph.svg"'
+sh: 1: error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_a37a3e693aed550ee5265d4ade78415ab_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_a37a3e693aed550ee5265d4ade78415ab_icgraph.svg"'
+dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_a9f0f08bb69dca9c12e7f55c165c6223e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_a9f0f08bb69dca9c12e7f55c165c6223e_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_rectangular_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_rectangular_8cpp__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_sharp_top_hill__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_sharp_top_hill__coll__graph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_hexagonal_prism-6_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_hexagonal_prism-6_8cpp__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_matrix_8ipp_a2317d4101ee5164b72e47e21ca850856_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_matrix_8ipp_a2317d4101ee5164b72e47e21ca850856_cgraph.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_af4b140eb03bc10b6fd816fad63f8372e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_af4b140eb03bc10b6fd816fad63f8372e_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a07ded887eab08d7cc7bb4a92f5ab54b3_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a07ded887eab08d7cc7bb4a92f5ab54b3_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure_aa023df7264e3ed4bba5900767084a6f1_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure_aa023df7264e3ed4bba5900767084a6f1_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone__inherit__graph.svg"'
+sh: 1: dot: not found
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_plateau_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_plateau_8cpp__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_ab0ce8612935678e534dd5b2e8c822919_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_ab0ce8612935678e534dd5b2e8c822919_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_ad045dbcdcb99b8ab9f79a177ea3d2fc0_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_ad045dbcdcb99b8ab9f79a177ea3d2fc0_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a80edeb736c353cf64715f16e6a81ee1b_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a80edeb736c353cf64715f16e6a81ee1b_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_long_ridge_hill_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_long_ridge_hill_8cpp__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_aaeaffcc06a59181214cf38467a4b28d6_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_aaeaffcc06a59181214cf38467a4b28d6_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene__coll__graph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_sharp_top_hill_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_sharp_top_hill_8hh__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_aa815ce8ec16e12fc246cf422e562869e_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_aa815ce8ec16e12fc246cf422e562869e_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_afef0ce71ec071c41994719872b9113e0_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_afef0ce71ec071c41994719872b9113e0_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_aa010184f31b26bb561b42f22438b821e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_aa010184f31b26bb561b42f22438b821e_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_grid__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_grid__coll__graph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a7227cb39c785b1c746b6bb5515c0b781_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a7227cb39c785b1c746b6bb5515c0b781_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_af13b8aacbf7d640cf684c172541d47c0_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_af13b8aacbf7d640cf684c172541d47c0_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_drone_grid_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_drone_grid_8hh__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/graph_legend.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/graph_legend.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_matrix_af1b6bc1d726bf699d5cab7a1dd6bf8c3_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_matrix_af1b6bc1d726bf699d5cab7a1dd6bf8c3_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a54c6e9cf9ab2eae479451fd953c2717c_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a54c6e9cf9ab2eae479451fd953c2717c_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a3927f83244df8a7245e105150a9fb3b2_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a3927f83244df8a7245e105150a9fb3b2_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_vector_8ipp_a5c27cb7e40c60f7addda5657b30bef12_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_vector_8ipp_a5c27cb7e40c60f7addda5657b30bef12_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh_afbee8685eba8033e340917640a7909d8_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh_afbee8685eba8033e340917640a7909d8_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a1dbbb2b86fb13b8632e6bad9df2a82e3_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a1dbbb2b86fb13b8632e6bad9df2a82e3_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_rectangular_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_rectangular_8hh__dep__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh_a09711a47c9e3d962d711f9081d6d486c_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh_a09711a47c9e3d962d711f9081d6d486c_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_rectangular_aeed69a140973c313b9dee29b458df0d0_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_rectangular_aeed69a140973c313b9dee29b458df0d0_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_accf89b973c76b08d23d3c3eb0bc48935_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_accf89b973c76b08d23d3c3eb0bc48935_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure__coll__graph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure_a13bd49360e3bb199f3324d70c6922200_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure_a13bd49360e3bb199f3324d70c6922200_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp_af1775f251a1d11787b7374363c23b92e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp_af1775f251a1d11787b7374363c23b92e_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_af6dae612960cbc73fa4e3dd098f315e6_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_af6dae612960cbc73fa4e3dd098f315e6_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ac48fed259e4ebf93072e3111264c9433_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ac48fed259e4ebf93072e3111264c9433_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_drone_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_drone_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a065f5b8402737cc62b0ad4f66d028335_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a065f5b8402737cc62b0ad4f66d028335_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a169c311f0e0b6ffadcd44e91e749f72d_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a169c311f0e0b6ffadcd44e91e749f72d_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not founderror: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_a63b11fe22ddf9bf8227fa69494ec5fd1_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_a63b11fe22ddf9bf8227fa69494ec5fd1_cgraph.svg"'
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a9f64d84045ed54664807420e755a1ec5_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a9f64d84045ed54664807420e755a1ec5_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp_ab13e858612c64eeef73aff1d8a03945e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp_ab13e858612c64eeef73aff1d8a03945e_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_obstacle_grid_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_obstacle_grid_8cpp__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_vector_a1993bbd5d869d5a7ab4a6762bfc9d61b_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_vector_a1993bbd5d869d5a7ab4a6762bfc9d61b_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_long_ridge_hill_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_long_ridge_hill_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a3a952058b788b08f01c07c0154e7ebc2_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a3a952058b788b08f01c07c0154e7ebc2_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_object__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_object__inherit__graph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_4aa64b0872d36146e049722e293482e3_dep.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/dir_4aa64b0872d36146e049722e293482e3_dep.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_vector_8ipp__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_vector_8ipp__dep__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_obstacle_grid_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_obstacle_grid_8hh__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_rectangular_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_rectangular_8hh__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh__dep__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a963eeeba41fea78ad1ad107baf8d4b36_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a963eeeba41fea78ad1ad107baf8d4b36_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_a2ac97706124b14072715ecf3f07e82b4_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_a2ac97706124b14072715ecf3f07e82b4_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_drone_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_drone_8hh__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_ac9a5bd25edd22674eca21a31e4093d09_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_ac9a5bd25edd22674eca21a31e4093d09_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/main_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/main_8cpp__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/main_8cpp_a55555416eceaaba3a1c33e685468bc1c_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/main_8cpp_a55555416eceaaba3a1c33e685468bc1c_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_afef0ce71ec071c41994719872b9113e0_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_afef0ce71ec071c41994719872b9113e0_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_a1066d32282694e4f58db5dfe3ad03ba1_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_a1066d32282694e4f58db5dfe3ad03ba1_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_af13b8aacbf7d640cf684c172541d47c0_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_af13b8aacbf7d640cf684c172541d47c0_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_pliku_do_rysowania_a4245bff195e0d6d382ed7d776b5ad645_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_pliku_do_rysowania_a4245bff195e0d6d382ed7d776b5ad645_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_1.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_1.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_long_ridge_hill_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_long_ridge_hill_8hh__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_0.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_0.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_ad045dbcdcb99b8ab9f79a177ea3d2fc0_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_ad045dbcdcb99b8ab9f79a177ea3d2fc0_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_obstacle_grid__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_obstacle_grid__inherit__graph.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_ae1aad0c681853d7e47da4cdfccefc102_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_ae1aad0c681853d7e47da4cdfccefc102_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_scene_object_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_scene_object_8hh__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_aee10e48fe1b9fba6e2897b4ccfa27aef_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_aee10e48fe1b9fba6e2897b4ccfa27aef_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_accf89b973c76b08d23d3c3eb0bc48935_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_accf89b973c76b08d23d3c3eb0bc48935_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_scene_object_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_scene_object_8cpp__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_plateau__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_plateau__inherit__graph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ae92c65357bf682478cc68f77885b61d8_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ae92c65357bf682478cc68f77885b61d8_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure_ac059240fa3036150851f57a4592cba7d_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_geometric_figure_ac059240fa3036150851f57a4592cba7d_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_matrix_8ipp__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_matrix_8ipp__dep__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a9c91987dfc869d6fcea96205c581daef_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a9c91987dfc869d6fcea96205c581daef_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_72345776cd6700fb0dedb8f1faaa0c00_dep.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/dir_72345776cd6700fb0dedb8f1faaa0c00_dep.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_a7ca4eef2d276f14861c963465a1bbde9_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_a7ca4eef2d276f14861c963465a1bbde9_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism_abb41201ef93212c4e720cb9e0ad63473_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism_abb41201ef93212c4e720cb9e0ad63473_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_scene_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_scene_8hh__dep__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_punkty_do_rysowania_a191cbd40cc4a1cffbee988618f3dc258_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_punkty_do_rysowania_a191cbd40cc4a1cffbee988618f3dc258_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_ad3b6c1aeee762f41433c407d7f447c55_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_ad3b6c1aeee762f41433c407d7f447c55_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_5.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_5.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_af6dae612960cbc73fa4e3dd098f315e6_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_af6dae612960cbc73fa4e3dd098f315e6_cgraph.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_scene_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_scene_8hh__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a5100a047b8a1490dcaa6f6bcc338862a_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a5100a047b8a1490dcaa6f6bcc338862a_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_vector_a196e9eedc9a88a48f64e69e39405fa72_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_vector_a196e9eedc9a88a48f64e69e39405fa72_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_pliku_do_rysowania_a714aaa4c8e7bbd167ccbb1e797ca158c_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_pliku_do_rysowania_a714aaa4c8e7bbd167ccbb1e797ca158c_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a2d86a4987883b400d579f8b26bc06da6_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a2d86a4987883b400d579f8b26bc06da6_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_ab3daa9c0ad0882f041651a87b4d2660a_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_ab3daa9c0ad0882f041651a87b4d2660a_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_plateau_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_plateau_8hh__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a7227cb39c785b1c746b6bb5515c0b781_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a7227cb39c785b1c746b6bb5515c0b781_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_4.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_4.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_grid__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_grid__inherit__graph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_plateau_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_plateau_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a85d3a77f67c2724ba3675bc3ef05eb81_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a85d3a77f67c2724ba3675bc3ef05eb81_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_matrix_8ipp_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_matrix_8ipp_a8483aa9f8e99f4a9e89e244b2baff8a0_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh__dep__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_scene_object_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_scene_object_8hh__dep__incl.svg"'
+sh: 1: dot: not found
+sh: 1: sh: 1: dot: not founddot: not found
+
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a29f5e5b048a278b4c032b6d9275d0826_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a29f5e5b048a278b4c032b6d9275d0826_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a5d53870de4161dd855b327b3f5d1df9c_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a5d53870de4161dd855b327b3f5d1df9c_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh_af1775f251a1d11787b7374363c23b92e_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh_af1775f251a1d11787b7374363c23b92e_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a7fa4e775e1aee74869fae174c567c2a6_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a7fa4e775e1aee74869fae174c567c2a6_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_ab068535b4d2f755c394557d1da72a4eb_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_ab068535b4d2f755c394557d1da72a4eb_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh_ad6d8fe908dfe65d46dd956f7385624a5_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8hh_ad6d8fe908dfe65d46dd956f7385624a5_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_vector_8hh__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_scene_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_scene_8cpp__incl.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_3.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_3.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_long_ridge_hill__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_long_ridge_hill__coll__graph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/lacze__do__gnuplota_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/lacze__do__gnuplota_8hh__incl.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+sh: 1: sh: 1: sh: 1: dot: not founddot: not founddot: not found
+
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_sharp_top_hill_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_sharp_top_hill_8cpp__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_ab3daa9c0ad0882f041651a87b4d2660a_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_ab3daa9c0ad0882f041651a87b4d2660a_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism__coll__graph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/dir_400757c3a0df52e783ed9699284f29ce_dep.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/dir_400757c3a0df52e783ed9699284f29ce_dep.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh_a2317d4101ee5164b72e47e21ca850856_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_matrix_8hh_a2317d4101ee5164b72e47e21ca850856_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_af254c0ec10632593fe72bc3670e1a982_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_af254c0ec10632593fe72bc3670e1a982_cgraph.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8cpp_ad93f6a50164d6899208c36f9db679d82_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8cpp_ad93f6a50164d6899208c36f9db679d82_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism_abb41201ef93212c4e720cb9e0ad63473_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_hexagonal_prism_abb41201ef93212c4e720cb9e0ad63473_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_ac9a5bd25edd22674eca21a31e4093d09_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_ac9a5bd25edd22674eca21a31e4093d09_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_a85f1665049d64618e1ac1d18c000ff76_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_atrybuty_rysowania_a85f1665049d64618e1ac1d18c000ff76_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_2.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_2.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_punkty_do_rysowania__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_punkty_do_rysowania__coll__graph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh__dep__incl.svg"'
+sh: 1: sh: 1: dot: not founddot: not found
+
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a263a9dba2ef8030028a48217a183ecdf_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_a263a9dba2ef8030028a48217a183ecdf_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_aa815ce8ec16e12fc246cf422e562869e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_aa815ce8ec16e12fc246cf422e562869e_icgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a84049eb06754dee345cff0bcd59ba6dd_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_matrix_a84049eb06754dee345cff0bcd59ba6dd_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_9.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_9.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_aadefef0ff5b551bcd18f5a2504b39923_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_aadefef0ff5b551bcd18f5a2504b39923_cgraph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a85d3a77f67c2724ba3675bc3ef05eb81_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/namespace_pz_g_a85d3a77f67c2724ba3675bc3ef05eb81_icgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_drone_a2fd7489f927b46b0fffa68400998f938_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_drone_a2fd7489f927b46b0fffa68400998f938_cgraph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_pliku_do_rysowania_af5c256daaa945a31a1f137c9b429bc37_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_info_pliku_do_rysowania_af5c256daaa945a31a1f137c9b429bc37_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_long_ridge_hill__inherit__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_long_ridge_hill__inherit__graph.svg"'
+sh: 1: dot: not found
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh_af1775f251a1d11787b7374363c23b92e_icgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8hh_af1775f251a1d11787b7374363c23b92e_icgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_8.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/inherit_graph_8.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_obstacle_grid_8hh__dep__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_obstacle_grid_8hh__dep__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_geometric_figure_8cpp__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp_af1775f251a1d11787b7374363c23b92e_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_user_interface_8cpp_af1775f251a1d11787b7374363c23b92e_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ac9b77a032e256c3143b984509a8b4bb5_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_pz_g_1_1_lacze_do_g_n_u_plota_ac9b77a032e256c3143b984509a8b4bb5_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_rectangular__coll__graph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_rectangular__coll__graph.svg"'
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_drone_8cpp__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_drone_8cpp__incl.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/class_scene_aa517ec4aaf54f2d343f685f4dbc51d12_cgraph.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/class_scene_aa517ec4aaf54f2d343f685f4dbc51d12_cgraph.svg"'
+sh: 1: dot: not found
+error: Problems running dot: exit code=127, command='dot', arguments='"/home/michal/Desktop/dron/Dron/dox/html/_hexagonal_prism-6_8hh__incl.dot" -Tsvg -o "/home/michal/Desktop/dron/Dron/dox/html/_hexagonal_prism-6_8hh__incl.svg"'
+error: Failed to rename file /home/michal/Desktop/dron/Dron/dox/html/_drone_8cpp__incl.svg to /home/michal/Desktop/dron/Dron/dox/html/_drone_8cpp__incl.svg.tmp!

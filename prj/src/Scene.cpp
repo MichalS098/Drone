@@ -1,9 +1,12 @@
+#include <cmath>
 #include <iterator>
 #include "Vector.hh"
 #include "Scene.hh"
 #include "Plateau.hh"
 #include "LongRidgeHill.hh"
 #include "SharpTopHill.hh"
+#include "DroneGrid.hh"
+#include "ObstacleGrid.hh"
 #define FIRST_DRONE_COLOR 3  //niebieski
 #define SECOND_DRONE_COLOR 3 //niebieski
 #define UNIT_SCALE 1,1,1
@@ -220,3 +223,20 @@ void Scene::deleteElement(){
 	cout<<"Element poprawnie usunięty"<<endl;
 }
 
+
+/**
+ * @brief Funkcja sprawdza czy dane prostokąty się przecinają.
+ * 
+ * Funkcja sprawdza czy dane prostokąty się przecinają na podstawie 
+ * 2 przeciwległych wierzchołków, dwóch prostokątów, podanych jako wektory położenia.
+ * Współrzędna z wektorów nie ma znaczenia.
+ * @param p1 Wektor położenia lewego dolnego wierzchołka pierwszego prostokąta.
+ * @param p2 Wektor położenia górnego prawego wierzchołka pierwszego prostokąta.
+ * @param p3 Wektor położenia lewego dolnego wierzchołka drugiego prostokąta.
+ * @param p4 Wektor położenia górnego prawego wierzchołka drugiego prostokąta.
+ * @return true Jeśli prostokąty się przecinają.
+ * @return false Jeśli prostokąty się nie przecinają.
+ */
+bool checkIfRectanglesIntersect(Vector<3> p1, Vector<3> p2, Vector<3> p3, Vector<3> p4){
+	
+}

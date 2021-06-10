@@ -57,7 +57,7 @@ public:
      */
     virtual const char* getType() const override {return "Klasa bazowa";}
 
-    virtual bool checkIfPlaceIsAvaliable() const override;
+    virtual bool checkIfPlaceIsAvaliable(const SceneObject& obj) const override;
 };
 
 

@@ -11,8 +11,8 @@ dat:
 	mkdir dat
 
 
-./${APP}: obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o obj/Plateau.o obj/SharpTopHill.o obj/LongRidgeHill.o obj/UserInterface.o obj/SceneObject.o
-	g++ -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o obj/Plateau.o obj/SharpTopHill.o obj/LongRidgeHill.o obj/UserInterface.o obj/SceneObject.o
+./${APP}: obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o obj/Plateau.o obj/SharpTopHill.o obj/LongRidgeHill.o obj/UserInterface.o obj/SceneObject.o obj/DroneGrid.o obj/ObstacleGrid.o
+	g++ -o ./${APP} obj/main.o obj/lacze_do_gnuplota.o obj/Drone.o obj/Scene.o obj/Rectangular.o obj/HexagonalPrism-6.o obj/GeometricFigure.o obj/Plateau.o obj/SharpTopHill.o obj/LongRidgeHill.o obj/UserInterface.o obj/SceneObject.o obj/DroneGrid.o obj/ObstacleGrid.o
 
 obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh inc/Drone.hh inc/Scene.hh inc/UserInterface.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/main.o src/main.cpp
@@ -20,7 +20,7 @@ obj/main.o: src/main.cpp inc/lacze_do_gnuplota.hh inc/Drone.hh inc/Scene.hh inc/
 obj/Drone.o: src/Drone.cpp inc/Drone.hh inc/SceneObject.hh inc/Rectangular.hh inc/lacze_do_gnuplota.hh inc/HexagonalPrism-6.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh 
 	g++  -Iinc -W -Wall -pedantic -c -o obj/Drone.o src/Drone.cpp
 
-obj/Scene.o: src/Scene.cpp inc/Scene.hh inc/Drone.hh inc/lacze_do_gnuplota.hh inc/Plateau.hh inc/SharpTopHill.hh inc/LongRidgeHill.hh inc/GeometricFigure.hh inc/SceneObject.hh
+obj/Scene.o: src/Scene.cpp inc/Scene.hh inc/Drone.hh inc/lacze_do_gnuplota.hh inc/Plateau.hh inc/SharpTopHill.hh inc/LongRidgeHill.hh inc/GeometricFigure.hh inc/SceneObject.hh inc/DroneGrid.hh inc/ObstacleGrid.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/Scene.o src/Scene.cpp
 
 obj/Rectangular.o: src/Rectangular.cpp inc/Rectangular.hh inc/Vector.hh inc/GeometricFigure.hh inc/Matrix.hh inc/SceneObject.hh 
@@ -49,6 +49,12 @@ obj/UserInterface.o: src/UserInterface.cpp inc/UserInterface.hh inc/Scene.hh inc
 
 obj/SceneObject.o: src/SceneObject.cpp inc/SceneObject.hh
 	g++  -Iinc -W -Wall -pedantic -c -o obj/SceneObject.o src/SceneObject.cpp
+
+obj/DroneGrid.o: src/DroneGrid.cpp inc/DroneGrid.hh inc/SceneObject.hh inc/Vector.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/DroneGrid.o src/DroneGrid.cpp
+
+obj/ObstacleGrid.o: src/ObstacleGrid.cpp inc/ObstacleGrid.hh inc/SceneObject.hh inc/Vector.hh
+	g++  -Iinc -W -Wall -pedantic -c -o obj/ObstacleGrid.o src/ObstacleGrid.cpp
 
 clean:
 	rm -f obj/* ./${APP} core.* core

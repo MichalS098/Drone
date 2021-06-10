@@ -14,7 +14,7 @@ public:
      * @return true Zwraca jeśli miejsce jest puste
      * @return false Zwraca jeśli miejsce jest zajete
      */
-    virtual bool checkIfPlaceIsAvaliable() const = 0;
+    virtual bool checkIfPlaceIsAvaliable(const SceneObject& obj) const = 0;
     /**
      * @brief Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.
      */

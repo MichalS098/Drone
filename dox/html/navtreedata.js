@@ -65,7 +65,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_drone_8cpp.html",
-"class_pz_g_1_1_lacze_do_g_n_u_plota.html#a833aa8994b9913786f920ec8c259731f"
+"class_pz_g_1_1_lacze_do_g_n_u_plota.html#a29f5e5b048a278b4c032b6d9275d0826"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

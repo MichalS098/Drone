@@ -57,3 +57,5 @@ public:
     inline void addElementToList(std::shared_ptr<SceneObject>& elem) {_lstOfObjects.push_back(elem);}
 };
 
+
+bool checkIfRectanglesIntersect(Vector<3> p1, Vector<3> p2, Vector<3> p3, Vector<3> p4);

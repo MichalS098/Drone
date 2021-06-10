@@ -85,7 +85,8 @@ $(document).ready(function(){initNavTree('_scene_8hh.html',''); initResizable();
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Komponenty</a>  </div>
+<a href="#nested-classes">Komponenty</a> &#124;
+<a href="#func-members">Funkcje</a>  </div>
   <div class="headertitle">
 <div class="title">Dokumentacja pliku Scene.hh</div>  </div>
 </div><!--header-->
@@ -116,7 +117,68 @@ Komponenty</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html">Scene</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Klasa definiująca scene zawierającą dwa drony.  <a href="class_scene.html#details">Więcej...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Funkcje</h2></td></tr>
+<tr class="memitem:a01e7087bca9eb203caf9afff7760b41d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_scene_8hh.html#a01e7087bca9eb203caf9afff7760b41d">checkIfRectanglesIntersect</a> (<a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p1, <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p2, <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p3, <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p4)</td></tr>
+<tr class="memdesc:a01e7087bca9eb203caf9afff7760b41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja sprawdza czy dane prostokąty się przecinają.  <a href="_scene_8hh.html#a01e7087bca9eb203caf9afff7760b41d">Więcej...</a><br /></td></tr>
+<tr class="separator:a01e7087bca9eb203caf9afff7760b41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Dokumentacja funkcji</h2>
+<a id="a01e7087bca9eb203caf9afff7760b41d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01e7087bca9eb203caf9afff7760b41d">&#9670;&nbsp;</a></span>checkIfRectanglesIntersect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkIfRectanglesIntersect </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
+          <td class="paramname"><em>p1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
+          <td class="paramname"><em>p2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
+          <td class="paramname"><em>p3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
+          <td class="paramname"><em>p4</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Funkcja sprawdza czy dane prostokąty się przecinają na podstawie 2 przeciwległych wierzchołków, dwóch prostokątów, podanych jako wektory położenia. Współrzędna z wektorów nie ma znaczenia. </p><dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p1</td><td>Wektor położenia lewego dolnego wierzchołka pierwszego prostokąta. </td></tr>
+    <tr><td class="paramname">p2</td><td>Wektor położenia górnego prawego wierzchołka pierwszego prostokąta. </td></tr>
+    <tr><td class="paramname">p3</td><td>Wektor położenia lewego dolnego wierzchołka drugiego prostokąta. </td></tr>
+    <tr><td class="paramname">p4</td><td>Wektor położenia górnego prawego wierzchołka drugiego prostokąta. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Zwraca</dt><dd>true Jeśli prostokąty się przecinają. </dd>
+<dd>
+false Jeśli prostokąty się nie przecinają. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00240">240</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

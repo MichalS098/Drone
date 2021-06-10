@@ -370,4 +370,4 @@ bool Drone::tiltForward(PzG::LaczeDoGNUPlota& Lacze){
  * @return true 
  * @return false 
  */
-bool Drone::checkIfPlaceIsAvaliable() const{return 1;}
+bool Drone::checkIfPlaceIsAvaliable(const SceneObject& obj) const{return 1;}

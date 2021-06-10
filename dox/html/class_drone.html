@@ -140,9 +140,9 @@ Metody publiczne</h2></td></tr>
 <tr class="separator:a1273bbb14776b0a7a6a5777d252ef674"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37a3e693aed550ee5265d4ade78415ab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a37a3e693aed550ee5265d4ade78415ab">takeDronePosition</a> () const</td></tr>
 <tr class="separator:a37a3e693aed550ee5265d4ade78415ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05ec31a18d83b2f0d3062b69ef3f8360"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#a05ec31a18d83b2f0d3062b69ef3f8360">checkIfPlaceIsAvaliable</a> () const override</td></tr>
-<tr class="memdesc:a05ec31a18d83b2f0d3062b69ef3f8360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja czysto wirtualna definiująca sprawdzanie czy miejsce lądowania jest puste.  <a href="class_drone.html#a05ec31a18d83b2f0d3062b69ef3f8360">Więcej...</a><br /></td></tr>
-<tr class="separator:a05ec31a18d83b2f0d3062b69ef3f8360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb77decc4b54c415f9ef485e0f193816"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#aeb77decc4b54c415f9ef485e0f193816">checkIfPlaceIsAvaliable</a> (const <a class="el" href="class_scene_object.html">SceneObject</a> &amp;obj) const override</td></tr>
+<tr class="memdesc:aeb77decc4b54c415f9ef485e0f193816"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja sprawdza czy miejsce w którym dron się znajduję jest wolne.  <a href="class_drone.html#aeb77decc4b54c415f9ef485e0f193816">Więcej...</a><br /></td></tr>
+<tr class="separator:aeb77decc4b54c415f9ef485e0f193816"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab07bd13f578594946da79fb1f8ffb707"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_drone.html#ab07bd13f578594946da79fb1f8ffb707">getPosition</a> () const override</td></tr>
 <tr class="memdesc:ab07bd13f578594946da79fb1f8ffb707"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.  <a href="class_drone.html#ab07bd13f578594946da79fb1f8ffb707">Więcej...</a><br /></td></tr>
 <tr class="separator:ab07bd13f578594946da79fb1f8ffb707"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -408,8 +408,8 @@ Oto graf wywoływań tej funkcji:</div>
 
 </div>
 </div>
-<a id="a05ec31a18d83b2f0d3062b69ef3f8360"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a05ec31a18d83b2f0d3062b69ef3f8360">&#9670;&nbsp;</a></span>checkIfPlaceIsAvaliable()</h2>
+<a id="aeb77decc4b54c415f9ef485e0f193816"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb77decc4b54c415f9ef485e0f193816">&#9670;&nbsp;</a></span>checkIfPlaceIsAvaliable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -420,7 +420,8 @@ Oto graf wywoływań tej funkcji:</div>
         <tr>
           <td class="memname">bool Drone::checkIfPlaceIsAvaliable </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="class_scene_object.html">SceneObject</a> &amp;&#160;</td>
+          <td class="paramname"><em>obj</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -430,13 +431,13 @@ Oto graf wywoływań tej funkcji:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Zwraca</dt><dd>true Zwraca jeśli miejsce jest puste </dd>
+<dl class="section return"><dt>Zwraca</dt><dd>true </dd>
 <dd>
-false Zwraca jeśli miejsce jest zajete </dd></dl>
+false </dd></dl>
 
-<p>Implementuje <a class="el" href="class_scene_object.html#a11ceabb2f306464cf6ce538a0d90430b">SceneObject</a>.</p>
+<p>Implementuje <a class="el" href="class_scene_object.html#a550ffa1027da7369aaac1b2f7024a7a0">SceneObject</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="_drone_8cpp_source.html#l00366">366</a> pliku <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_drone_8cpp_source.html#l00373">373</a> pliku <a class="el" href="_drone_8cpp_source.html">Drone.cpp</a>.</p>
 
 </div>
 </div>

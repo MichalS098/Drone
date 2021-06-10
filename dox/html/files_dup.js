@@ -2,6 +2,10 @@ var files_dup =
 [
     [ "Drone.cpp", "_drone_8cpp.html", "_drone_8cpp" ],
     [ "Drone.hh", "_drone_8hh.html", "_drone_8hh" ],
+    [ "DroneGrid.cpp", "_drone_grid_8cpp.html", null ],
+    [ "DroneGrid.hh", "_drone_grid_8hh.html", [
+      [ "DroneGrid", "class_drone_grid.html", "class_drone_grid" ]
+    ] ],
     [ "GeometricFigure.cpp", "_geometric_figure_8cpp.html", "_geometric_figure_8cpp" ],
     [ "GeometricFigure.hh", "_geometric_figure_8hh.html", "_geometric_figure_8hh" ],
     [ "HexagonalPrism-6.cpp", "_hexagonal_prism-6_8cpp.html", null ],
@@ -15,6 +19,10 @@ var files_dup =
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "Matrix.hh", "_matrix_8hh.html", "_matrix_8hh" ],
     [ "Matrix.ipp", "_matrix_8ipp.html", "_matrix_8ipp" ],
+    [ "ObstacleGrid.cpp", "_obstacle_grid_8cpp.html", null ],
+    [ "ObstacleGrid.hh", "_obstacle_grid_8hh.html", [
+      [ "ObstacleGrid", "class_obstacle_grid.html", "class_obstacle_grid" ]
+    ] ],
     [ "Plateau.cpp", "_plateau_8cpp.html", "_plateau_8cpp" ],
     [ "Plateau.hh", "_plateau_8hh.html", "_plateau_8hh" ],
     [ "Rectangular.cpp", "_rectangular_8cpp.html", null ],
@@ -22,9 +30,7 @@ var files_dup =
       [ "Rectangular", "class_rectangular.html", "class_rectangular" ]
     ] ],
     [ "Scene.cpp", "_scene_8cpp.html", "_scene_8cpp" ],
-    [ "Scene.hh", "_scene_8hh.html", [
-      [ "Scene", "class_scene.html", "class_scene" ]
-    ] ],
+    [ "Scene.hh", "_scene_8hh.html", "_scene_8hh" ],
     [ "SceneObject.cpp", "_scene_object_8cpp.html", null ],
     [ "SceneObject.hh", "_scene_object_8hh.html", [
       [ "SceneObject", "class_scene_object.html", "class_scene_object" ]

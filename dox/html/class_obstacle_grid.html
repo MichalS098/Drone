@@ -1,0 +1,306 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.17"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Dron DragonFly: Dokumentacja klasy ObstacleGrid</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="dragonfly-icon.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Dron DragonFly
+   &#160;<span id="projectnumber">0.3</span>
+   </div>
+   <div id="projectbrief">Projekt Dron</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.17 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Szukaj');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('class_obstacle_grid.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Metody publiczne</a> &#124;
+<a href="#pri-attribs">Atrybuty prywatne</a> &#124;
+<a href="class_obstacle_grid-members.html">Lista wszystkich składowych</a>  </div>
+  <div class="headertitle">
+<div class="title">Dokumentacja klasy ObstacleGrid</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p>Klasa definiuje siatke przeszkody i metody z nią związane służące do przechowywania skali przeszkody oraz położenia przeszkody. Klasa wykorzystywana jest przy sprawdzaniu czy położenie lądowania jest wolne.  
+ <a href="class_obstacle_grid.html#details">Więcej...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>&gt;</code></p>
+<div class="dynheader">
+Diagram dziedziczenia dla ObstacleGrid</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 -->
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
+<div class="dynheader">
+Diagram współpracy dla ObstacleGrid:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 -->
+</div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legenda</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Metody publiczne</h2></td></tr>
+<tr class="memitem:adacef27012a479ff8e76273da385cdd5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_grid.html#adacef27012a479ff8e76273da385cdd5">ObstacleGrid</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;pos, const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;scale)</td></tr>
+<tr class="separator:adacef27012a479ff8e76273da385cdd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac139b9971d0b99fa9294236942074235"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_grid.html#ac139b9971d0b99fa9294236942074235">getPosition</a> () const override</td></tr>
+<tr class="memdesc:ac139b9971d0b99fa9294236942074235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.  <a href="class_obstacle_grid.html#ac139b9971d0b99fa9294236942074235">Więcej...</a><br /></td></tr>
+<tr class="separator:ac139b9971d0b99fa9294236942074235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad33f2d2d8f404b6de6cba89e6b6c7856"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_grid.html#ad33f2d2d8f404b6de6cba89e6b6c7856">getScale</a> () const</td></tr>
+<tr class="separator:ad33f2d2d8f404b6de6cba89e6b6c7856"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_scene_object"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_scene_object')"><img src="closed.png" alt="-"/>&#160;Metody publiczne dziedziczone z <a class="el" href="class_scene_object.html">SceneObject</a></td></tr>
+<tr class="memitem:a550ffa1027da7369aaac1b2f7024a7a0 inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a550ffa1027da7369aaac1b2f7024a7a0">checkIfPlaceIsAvaliable</a> (const <a class="el" href="class_scene_object.html">SceneObject</a> &amp;obj) const =0</td></tr>
+<tr class="memdesc:a550ffa1027da7369aaac1b2f7024a7a0 inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja czysto wirtualna definiująca sprawdzanie czy miejsce lądowania jest puste.  <a href="class_scene_object.html#a550ffa1027da7369aaac1b2f7024a7a0">Więcej...</a><br /></td></tr>
+<tr class="separator:a550ffa1027da7369aaac1b2f7024a7a0 inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40b17f34fc79a30b4f9f4099492b1c67 inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a40b17f34fc79a30b4f9f4099492b1c67">getType</a> () const</td></tr>
+<tr class="memdesc:a40b17f34fc79a30b4f9f4099492b1c67 inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na odczytanie typu elementu klas pochodnych.  <a href="class_scene_object.html#a40b17f34fc79a30b4f9f4099492b1c67">Więcej...</a><br /></td></tr>
+<tr class="separator:a40b17f34fc79a30b4f9f4099492b1c67 inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11bd2a08305b682b32f70f3d3a162780 inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a11bd2a08305b682b32f70f3d3a162780">takeFileName_refFig</a> () const</td></tr>
+<tr class="memdesc:a11bd2a08305b682b32f70f3d3a162780 inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na zwrócenie nazwy pliku wzorcowego.  <a href="class_scene_object.html#a11bd2a08305b682b32f70f3d3a162780">Więcej...</a><br /></td></tr>
+<tr class="separator:a11bd2a08305b682b32f70f3d3a162780 inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9bbbed9f49c11f3916801740d935114 inherit pub_methods_class_scene_object"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ac9bbbed9f49c11f3916801740d935114">takeFileName_finalFig</a> () const</td></tr>
+<tr class="memdesc:ac9bbbed9f49c11f3916801740d935114 inherit pub_methods_class_scene_object"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na zwrócenie nazwy pliku finalnego.  <a href="class_scene_object.html#ac9bbbed9f49c11f3916801740d935114">Więcej...</a><br /></td></tr>
+<tr class="separator:ac9bbbed9f49c11f3916801740d935114 inherit pub_methods_class_scene_object"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Atrybuty prywatne</h2></td></tr>
+<tr class="memitem:adc9a971dfe8566c4f5889d03d8f56dee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_grid.html#adc9a971dfe8566c4f5889d03d8f56dee">_ObstaclePosition</a></td></tr>
+<tr class="separator:adc9a971dfe8566c4f5889d03d8f56dee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa942bdd9a5c4b10b1226f2e64689992b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_obstacle_grid.html#aa942bdd9a5c4b10b1226f2e64689992b">_ObstacleScale</a></td></tr>
+<tr class="separator:aa942bdd9a5c4b10b1226f2e64689992b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
+<div class="textblock">
+<p class="definition">Definicja w linii <a class="el" href="_obstacle_grid_8hh_source.html#l00010">10</a> pliku <a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>.</p>
+</div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
+<a id="adacef27012a479ff8e76273da385cdd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adacef27012a479ff8e76273da385cdd5">&#9670;&nbsp;</a></span>ObstacleGrid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ObstacleGrid::ObstacleGrid </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>pos</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>scale</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_obstacle_grid_8hh_source.html#l00014">14</a> pliku <a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="ac139b9971d0b99fa9294236942074235"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac139b9971d0b99fa9294236942074235">&#9670;&nbsp;</a></span>getPosition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="class_vector.html">Vector</a>&lt;3&gt; ObstacleGrid::getPosition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplementowana z <a class="el" href="class_scene_object.html#a38b2b5a88a9584465febe7bb1de2c8f1">SceneObject</a>.</p>
+
+<p class="definition">Definicja w linii <a class="el" href="_obstacle_grid_8hh_source.html#l00015">15</a> pliku <a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>.</p>
+
+</div>
+</div>
+<a id="ad33f2d2d8f404b6de6cba89e6b6c7856"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad33f2d2d8f404b6de6cba89e6b6c7856">&#9670;&nbsp;</a></span>getScale()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector.html">Vector</a>&lt;3&gt; ObstacleGrid::getScale </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_obstacle_grid_8hh_source.html#l00016">16</a> pliku <a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Dokumentacja atrybutów składowych</h2>
+<a id="adc9a971dfe8566c4f5889d03d8f56dee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc9a971dfe8566c4f5889d03d8f56dee">&#9670;&nbsp;</a></span>_ObstaclePosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector.html">Vector</a>&lt;3&gt; ObstacleGrid::_ObstaclePosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_obstacle_grid_8hh_source.html#l00011">11</a> pliku <a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>.</p>
+
+</div>
+</div>
+<a id="aa942bdd9a5c4b10b1226f2e64689992b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa942bdd9a5c4b10b1226f2e64689992b">&#9670;&nbsp;</a></span>_ObstacleScale</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_vector.html">Vector</a>&lt;3&gt; ObstacleGrid::_ObstacleScale</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_obstacle_grid_8hh_source.html#l00012">12</a> pliku <a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>.</p>
+
+</div>
+</div>
+<hr/>Dokumentacja dla tej klasy została wygenerowana z pliku:<ul>
+<li><a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="class_obstacle_grid.html">ObstacleGrid</a></li>
+    <li class="footer">Wygenerowano przez
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.17 </li>
+  </ul>
+</div>
+</body>
+</html>

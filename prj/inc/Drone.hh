@@ -42,7 +42,7 @@ public:
     bool calcAndSave_DroneCoords() const;
     Vector<3> takeDronePosition() const {return _position;}
 
-    virtual bool checkIfPlaceIsAvaliable() const override;
+    virtual bool checkIfPlaceIsAvaliable(const SceneObject& obj) const override;
     virtual Vector<3> getPosition() const override{return _position;}
     virtual const char* getType() const override{return "Dron";}
 };

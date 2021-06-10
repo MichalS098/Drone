@@ -49,4 +49,4 @@ string makeBodyFileName(unsigned int droneNR){
 }
 
 
-bool GeometricFigure::checkIfPlaceIsAvaliable() const{return 1;}
+bool GeometricFigure::checkIfPlaceIsAvaliable(const SceneObject& obj) const{return 1;}
