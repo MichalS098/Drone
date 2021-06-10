@@ -1,0 +1,25 @@
+var class_drone =
+[
+    [ "Drone", "class_drone.html#af254c0ec10632593fe72bc3670e1a982", null ],
+    [ "calcAndSave_BodyCoords", "class_drone.html#ab442971f657dc563ddcae50c65629e24", null ],
+    [ "calcAndSave_DroneCoords", "class_drone.html#a1273bbb14776b0a7a6a5777d252ef674", null ],
+    [ "calcAndSave_RotorCoords", "class_drone.html#a1066d32282694e4f58db5dfe3ad03ba1", null ],
+    [ "changeDroneOrientation", "class_drone.html#af13b8aacbf7d640cf684c172541d47c0", null ],
+    [ "checkIfPlaceIsAvaliable", "class_drone.html#a05ec31a18d83b2f0d3062b69ef3f8360", null ],
+    [ "deleteFlightPath", "class_drone.html#ac9a5bd25edd22674eca21a31e4093d09", null ],
+    [ "getPosition", "class_drone.html#ab07bd13f578594946da79fb1f8ffb707", null ],
+    [ "getType", "class_drone.html#aca3bc8efef79f398f5b7b2a370d8d9c1", null ],
+    [ "makeFlight", "class_drone.html#a63b11fe22ddf9bf8227fa69494ec5fd1", null ],
+    [ "makeHorizontalFlight", "class_drone.html#af6dae612960cbc73fa4e3dd098f315e6", null ],
+    [ "makeVerticalFlight", "class_drone.html#ab0ce8612935678e534dd5b2e8c822919", null ],
+    [ "planInitialFlightPath", "class_drone.html#ad3b6c1aeee762f41433c407d7f447c55", null ],
+    [ "rotateRotor", "class_drone.html#aa48dcce41ca6e230f200df927ee028e3", null ],
+    [ "takeDronePosition", "class_drone.html#a37a3e693aed550ee5265d4ade78415ab", null ],
+    [ "tiltForward", "class_drone.html#aadefef0ff5b551bcd18f5a2504b39923", null ],
+    [ "transfToParentCoordSys", "class_drone.html#a2fd7489f927b46b0fffa68400998f938", null ],
+    [ "_droneBody", "class_drone.html#a95ca9d4ab1ab95eca63c1a6c54b683be", null ],
+    [ "_droneRotor", "class_drone.html#a053ca3d32a77b74a8657a0bef125cadf", null ],
+    [ "_ID", "class_drone.html#a2696760c9c885e9c651cc31bfc36e84b", null ],
+    [ "_orientationAngle", "class_drone.html#ac43d2c7d72e13455199e5e47a24b7604", null ],
+    [ "_position", "class_drone.html#a4933ce96ba41ca93e13e925bfcf64428", null ]
+];

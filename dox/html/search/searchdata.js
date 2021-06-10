@@ -3,13 +3,14 @@ var indexSectionsWithContent =
   0: "_abcdefghiklmnoprstuvwxyz~",
   1: "adghilmprsvw",
   2: "p",
-  3: "dghlmprsv",
+  3: "dghlmprsuv",
   4: "abcdegiklmoprstuvwxyz~",
   5: "_emnsvxy",
   6: "t",
   7: "t",
   8: "dst",
-  9: "acdfrsu"
+  9: "acdfrsu",
+  10: "w"
 };
 
 var indexSectionNames =
@@ -23,20 +24,22 @@ var indexSectionNames =
   6: "typedefs",
   7: "enums",
   8: "enumvalues",
-  9: "defines"
+  9: "defines",
+  10: "pages"
 };
 
 var indexSectionLabels =
 {
-  0: "All",
-  1: "Classes",
-  2: "Namespaces",
-  3: "Files",
-  4: "Functions",
-  5: "Variables",
-  6: "Typedefs",
-  7: "Enumerations",
-  8: "Enumerator",
-  9: "Macros"
+  0: "Wszystko",
+  1: "Klasy",
+  2: "Przestrzenie nazw",
+  3: "Pliki",
+  4: "Funkcje",
+  5: "Zmienne",
+  6: "Definicje typów",
+  7: "Wyliczenia",
+  8: "Wartości wyliczeń",
+  9: "Definicje",
+  10: "Strony"
 };
 

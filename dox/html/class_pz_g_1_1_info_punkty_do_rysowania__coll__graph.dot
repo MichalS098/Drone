@@ -1,0 +1,11 @@
+digraph "PzG::InfoPunktyDoRysowania"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="PzG::InfoPunktyDoRysowania",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Modeluje zestaw informacji o rysowanych punktach."];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _Atryb" ,fontname="Helvetica"];
+  Node2 [label="PzG::AtrybutyRysowania",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_atrybuty_rysowania.html",tooltip="Modeluje zestaw informacji będący atrybutami rysowania."];
+  Node3 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _PrzesEtykiety_WzgWspoPunktu\n_Wspolrz\n_PrzesEtykiety_WzgRozmPunktu\n_WspolrzEtykiety" ,fontname="Helvetica"];
+  Node3 [label="PzG::Wektor2f",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_wektor2f.html",tooltip="Klasa pomocnicza, pozwala modelować wektor dwuwymiarowy."];
+}

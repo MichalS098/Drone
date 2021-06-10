@@ -1,0 +1,14 @@
+digraph "PzG::WczytajListeRoznychPunktow"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="PzG::WczytajListeRoznych\lPunktow",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Wczytuje z pliku listę punktów."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PzG::AtrybutyRysowania\l::ZmienKolor",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_atrybuty_rysowania.html#ab068535b4d2f755c394557d1da72a4eb",tooltip="Zmienia kolor rysowania."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PzG::AtrybutyRysowania\l::ZmienRozmiar",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_atrybuty_rysowania.html#af4b140eb03bc10b6fd816fad63f8372e",tooltip="Zmienia rozmiar rysowania."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="PzG::AtrybutyRysowania\l::ZmienStyl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_atrybuty_rysowania.html#a2ac97706124b14072715ecf3f07e82b4",tooltip="Zmienia styl rysowania."];
+}

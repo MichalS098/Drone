@@ -1,0 +1,21 @@
+digraph "SceneObject"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="SceneObject",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Klasa obiekt sceny jest klasą bazową dla klas GeometricFigure, oraz Dron i pozwala na umieszczenie ty..."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Drone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_drone.html",tooltip="Klasa definiująca drona."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="GeometricFigure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_geometric_figure.html",tooltip="Klasa Bazowa opisujaca figure geometryczna."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="HexagonalPrism",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_hexagonal_prism.html",tooltip="Klasa pochodna klasy figury geometrycznej definiująca graniastosłup sześciokątny."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="LongRidgeHill",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_long_ridge_hill.html",tooltip="Klasa LongRidgeHill definiuje góre z długą granią."];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Plateau",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_plateau.html",tooltip="Klasa Plateau definiuje Płaskowyż."];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Rectangular",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_rectangular.html",tooltip="Klasa pochodna klasy figury geometrycznej definiująca prostopadłościan."];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="SharpTopHill",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sharp_top_hill.html",tooltip="Klasa SharpTopHill definiuje góre z ostrym szczytem."];
+}

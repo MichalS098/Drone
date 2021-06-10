@@ -5,6 +5,7 @@
 #include "Rectangular.hh"
 #include "HexagonalPrism-6.hh"
 #include "lacze_do_gnuplota.hh"
+#include "SceneObject.hh"
 
 /**
  * @brief Klasa definiująca drona.
@@ -13,7 +14,7 @@
  * prostopadłościan, jego 4 rotorów będących graniastosłupami foremnymi o podstawie sześciokąta, oraz
  * kąta orientacji, oraz wektora położenia.
  */
-class Drone{
+class Drone: public SceneObject{
     Vector<3>       _position;
     double          _orientationAngle;
     Rectangular     _droneBody;
@@ -27,8 +28,8 @@ protected:
     Vector<3> transfToParentCoordSys(const Vector<3>& apex) const;
     bool makeFlight(const Vector<3>& direction, double flightLenght, PzG::LaczeDoGNUPlota& lacze);
 public:
-    void makeDrone(const Vector<3>& position, const Vector<3>& scale,  
-                   unsigned int ID, PzG::LaczeDoGNUPlota& Lacze, int droneColor);
+    Drone(const Vector<3>& position, const Vector<3>& scale,  
+          unsigned int ID, PzG::LaczeDoGNUPlota& Lacze, int droneColor);
     void planInitialFlightPath(double flightHeight, double turnAngle,  
                                double flightLenght, PzG::LaczeDoGNUPlota& lacze);
     void deleteFlightPath(PzG::LaczeDoGNUPlota& lacze) const;
@@ -40,6 +41,10 @@ public:
 
     bool calcAndSave_DroneCoords() const;
     Vector<3> takeDronePosition() const {return _position;}
+
+    virtual bool checkIfPlaceIsAvaliable() const override;
+    virtual Vector<3> getPosition() const override{return _position;}
+    virtual const char* getType() const override{return "Dron";}
 };
 
 #define COMPUTATION_ERR 1e-8

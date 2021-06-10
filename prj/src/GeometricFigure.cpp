@@ -47,3 +47,6 @@ string makeBodyFileName(unsigned int droneNR){
     nameStream<<"dat/PlikWlasciwy_Dron"<<droneNR<<"_Korpus.dat";
     return nameStream.str();
 }
+
+
+bool GeometricFigure::checkIfPlaceIsAvaliable() const{return 1;}

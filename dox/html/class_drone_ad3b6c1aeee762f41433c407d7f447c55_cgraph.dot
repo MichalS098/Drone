@@ -1,0 +1,14 @@
+digraph "Drone::planInitialFlightPath"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="Drone::planInitialFlightPath",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Funkcja planuje początkową ścieżkę lotu drona."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PzG::LaczeDoGNUPlota\l::DodajNazwePliku",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#aa815ce8ec16e12fc246cf422e562869e",tooltip="Dodaje nazwę pliku."];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PzG::CzyJestPlik",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_pz_g.html#ae1aad0c681853d7e47da4cdfccefc102",tooltip="Funkcja pomocnicza, sprawdza czy plik o podanej nazwie jest na dysku."];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="makeRotationMatrix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_matrix_8hh.html#a8483aa9f8e99f4a9e89e244b2baff8a0",tooltip="Funkcja tworząca macierz obrotu."];
+}

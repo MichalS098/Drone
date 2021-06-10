@@ -1,0 +1,12 @@
+digraph "PzG::UsunOstatniaNazwePliku"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="PzG::UsunOstatniaNazwePliku",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Usuwa ostatnia nazwę pliku z listy plików do rysowania."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PzG::LaczeDoGNUPlota\l::UsunOstatniaNazwe_ListaGlobalna",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#ac9b77a032e256c3143b984509a8b4bb5",tooltip="Usuwa ostatnią nazwę pliku."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PzG::LaczeDoGNUPlota\l::UsunOstatniaNazwe_ListaLokalna",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a263a9dba2ef8030028a48217a183ecdf",tooltip="Usuwa ostatnią nazwę pliku."];
+}

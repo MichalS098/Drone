@@ -1,6 +1,5 @@
 digraph "HexagonalPrism-6.hh"
 {
- // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
@@ -23,4 +22,8 @@ digraph "HexagonalPrism-6.hh"
   Node9 [label="string",height=0.2,width=0.4,color="grey75", fillcolor="white", style="filled",tooltip=" "];
   Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="SceneObject.hh",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_scene_object_8hh.html",tooltip=" "];
+  Node10 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 -> Node9 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
 }

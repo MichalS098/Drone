@@ -1,16 +1,17 @@
 var searchData=
 [
-  ['deleteelement_312',['deleteElement',['../class_scene.html#aa517ec4aaf54f2d343f685f4dbc51d12',1,'Scene']]],
-  ['deleteflightpath_313',['deleteFlightPath',['../class_drone.html#ac9a5bd25edd22674eca21a31e4093d09',1,'Drone']]],
-  ['dodajdoetykiety_314',['DodajDoEtykiety',['../class_pz_g_1_1_info_punkty_do_rysowania.html#a94340d4c219b5469f79cd70cb1638aa3',1,'PzG::InfoPunktyDoRysowania']]],
-  ['dodajnazwepliku_315',['DodajNazwePliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#aa815ce8ec16e12fc246cf422e562869e',1,'PzG::LaczeDoGNUPlota']]],
-  ['dodajnazwepliku_5fjednakowepunkty_316',['DodajNazwePliku_JednakowePunkty',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ab3286408bb2ca5c5382e721b40d07f4f',1,'PzG::LaczeDoGNUPlota']]],
-  ['dodajnazwepliku_5flamana_317',['DodajNazwePliku_Lamana',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a5d53870de4161dd855b327b3f5d1df9c',1,'PzG::LaczeDoGNUPlota']]],
-  ['dodajnazwepliku_5fpunktyroznejwielkosci_318',['DodajNazwePliku_PunktyRoznejWielkosci',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a963eeeba41fea78ad1ad107baf8d4b36',1,'PzG::LaczeDoGNUPlota']]],
-  ['dopiszplikidopoleceniarysowania_319',['DopiszPlikiDoPoleceniaRysowania',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a25585ec3f1bd3b6bf42f374c38b8d237',1,'PzG::LaczeDoGNUPlota']]],
-  ['dopiszrysowaniepunktowzlisty_320',['DopiszRysowaniePunktowZListy',['../namespace_pz_g.html#a85d3a77f67c2724ba3675bc3ef05eb81',1,'PzG']]],
-  ['dopiszrysowaniezplikow_321',['DopiszRysowanieZPlikow',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ad3d7607946b82aa941d786dcd086d27e',1,'PzG::LaczeDoGNUPlota::DopiszRysowanieZPlikow()'],['../namespace_pz_g.html#aa010184f31b26bb561b42f22438b821e',1,'PzG::DopiszRysowanieZPlikow()']]],
-  ['dopiszrysowaniezroznychpunktow_322',['DopiszRysowanieZRoznychPunktow',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#aee10e48fe1b9fba6e2897b4ccfa27aef',1,'PzG::LaczeDoGNUPlota::DopiszRysowanieZRoznychPunktow()'],['../namespace_pz_g.html#a7227cb39c785b1c746b6bb5515c0b781',1,'PzG::DopiszRysowanieZRoznychPunktow()']]],
-  ['dopiszustawieniaetykiet_323',['DopiszUstawieniaEtykiet',['../namespace_pz_g.html#ae6b9705e199ad695b61b4e902eaf0d6c',1,'PzG']]],
-  ['droneflightanimation_324',['droneFlightAnimation',['../class_scene.html#ad045dbcdcb99b8ab9f79a177ea3d2fc0',1,'Scene']]]
+  ['deleteelement_330',['deleteElement',['../class_scene.html#aa517ec4aaf54f2d343f685f4dbc51d12',1,'Scene']]],
+  ['deleteflightpath_331',['deleteFlightPath',['../class_drone.html#ac9a5bd25edd22674eca21a31e4093d09',1,'Drone']]],
+  ['dodajdoetykiety_332',['DodajDoEtykiety',['../class_pz_g_1_1_info_punkty_do_rysowania.html#a94340d4c219b5469f79cd70cb1638aa3',1,'PzG::InfoPunktyDoRysowania']]],
+  ['dodajnazwepliku_333',['DodajNazwePliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#aa815ce8ec16e12fc246cf422e562869e',1,'PzG::LaczeDoGNUPlota']]],
+  ['dodajnazwepliku_5fjednakowepunkty_334',['DodajNazwePliku_JednakowePunkty',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ab3286408bb2ca5c5382e721b40d07f4f',1,'PzG::LaczeDoGNUPlota']]],
+  ['dodajnazwepliku_5flamana_335',['DodajNazwePliku_Lamana',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a5d53870de4161dd855b327b3f5d1df9c',1,'PzG::LaczeDoGNUPlota']]],
+  ['dodajnazwepliku_5fpunktyroznejwielkosci_336',['DodajNazwePliku_PunktyRoznejWielkosci',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a963eeeba41fea78ad1ad107baf8d4b36',1,'PzG::LaczeDoGNUPlota']]],
+  ['dopiszplikidopoleceniarysowania_337',['DopiszPlikiDoPoleceniaRysowania',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a25585ec3f1bd3b6bf42f374c38b8d237',1,'PzG::LaczeDoGNUPlota']]],
+  ['dopiszrysowaniepunktowzlisty_338',['DopiszRysowaniePunktowZListy',['../namespace_pz_g.html#a85d3a77f67c2724ba3675bc3ef05eb81',1,'PzG']]],
+  ['dopiszrysowaniezplikow_339',['DopiszRysowanieZPlikow',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ad3d7607946b82aa941d786dcd086d27e',1,'PzG::LaczeDoGNUPlota::DopiszRysowanieZPlikow()'],['../namespace_pz_g.html#aa010184f31b26bb561b42f22438b821e',1,'PzG::DopiszRysowanieZPlikow()']]],
+  ['dopiszrysowaniezroznychpunktow_340',['DopiszRysowanieZRoznychPunktow',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#aee10e48fe1b9fba6e2897b4ccfa27aef',1,'PzG::LaczeDoGNUPlota::DopiszRysowanieZRoznychPunktow()'],['../namespace_pz_g.html#a7227cb39c785b1c746b6bb5515c0b781',1,'PzG::DopiszRysowanieZRoznychPunktow()']]],
+  ['dopiszustawieniaetykiet_341',['DopiszUstawieniaEtykiet',['../namespace_pz_g.html#ae6b9705e199ad695b61b4e902eaf0d6c',1,'PzG']]],
+  ['drone_342',['Drone',['../class_drone.html#af254c0ec10632593fe72bc3670e1a982',1,'Drone']]],
+  ['droneflightanimation_343',['droneFlightAnimation',['../class_scene.html#ad045dbcdcb99b8ab9f79a177ea3d2fc0',1,'Scene']]]
 ];

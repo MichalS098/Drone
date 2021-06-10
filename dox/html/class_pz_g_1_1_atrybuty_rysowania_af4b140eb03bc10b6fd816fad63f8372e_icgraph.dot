@@ -1,0 +1,39 @@
+digraph "PzG::AtrybutyRysowania::ZmienRozmiar"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="PzG::AtrybutyRysowania\l::ZmienRozmiar",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Zmienia rozmiar rysowania."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="PzG::WczytajListeRoznych\lPunktow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_pz_g.html#a169c311f0e0b6ffadcd44e91e749f72d",tooltip="Wczytuje z pliku listę punktów."];
+  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="PzG::DopiszRysowanieZRoznych\lPunktow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$namespace_pz_g.html#a7227cb39c785b1c746b6bb5515c0b781",tooltip="Dodaje do listy rysowanych punktów, punkty o różnych rozmiarach."];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="PzG::LaczeDoGNUPlota\l::DopiszRysowanieZRoznychPunktow",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#aee10e48fe1b9fba6e2897b4ccfa27aef",tooltip="Tworzy listę parametrów umożliwiających rysowanie brył z plików."];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="PzG::LaczeDoGNUPlota\l::Rysuj",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335",tooltip="Generuje polecenie rysowania i przesyła je do gnuplota."];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="Drone::changeDroneOrientation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_drone.html#af13b8aacbf7d640cf684c172541d47c0",tooltip="Funkcja przemieszcza drona wokol wlasnej osi o podany kat."];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Scene::droneFlightAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#ad045dbcdcb99b8ab9f79a177ea3d2fc0",tooltip="Funkcja wykonuje animacje lotu drona."];
+  Node7 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="main",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4",tooltip=" "];
+  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Scene::deleteElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#aa517ec4aaf54f2d343f685f4dbc51d12",tooltip="Funkcja usuwa element ze sceny."];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node10 [label="Drone::makeFlight",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_drone.html#a63b11fe22ddf9bf8227fa69494ec5fd1",tooltip="Funkcja wykonuje lot drona."];
+  Node5 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node11 [label="Scene::makeNewElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#accf89b973c76b08d23d3c3eb0bc48935",tooltip="Funkcja dodaje nowy element powierzchni."];
+  Node11 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node12 [label="additionOfNewElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_user_interface_8cpp.html#af1775f251a1d11787b7374363c23b92e",tooltip="Funkcja pyta użytkownika o położenie oraz skale nowego elementu, oraz jaki to ma być element i wywołu..."];
+  Node12 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node13 [label="Scene::takeActiveDrone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#afef0ce71ec071c41994719872b9113e0",tooltip="Funkcja pozwala na wybranie przez użytkownika aktywnego drona."];
+  Node13 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 [label="Drone::tiltForward",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_drone.html#aadefef0ff5b551bcd18f5a2504b39923",tooltip="Funkcja pochyla drona w kierunku lotu."];
+}

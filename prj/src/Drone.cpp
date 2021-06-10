@@ -19,7 +19,7 @@ using namespace std;
 #define DRONE_ROTOR_SCALE 4.0
 
 /**
- * @brief Funkcja inicjalizuje Drona.
+ * @brief Konstruktor inicjalizujący Drona.
  * 
  * 
  * Funkcja inicjalizuje drona poprzez, przypisanie jego atrybutom 
@@ -27,14 +27,13 @@ using namespace std;
  * Funkcja dodaje odrazu nazwy tych plików do łącza do GNU-PLOT'a.
  * Ustawia również domyślny kolor rysowanego drona, jego pozycje początkową, skale wielkości
  * oraz jego ID.
- * @param ID    - id Drona
- * @param Lacze - Lacze do gnuplota 
- * @param position - pozycja początkowa drona
- * @param scale - skala rysowanego drona
- * @param droneColor - kolor rysowanego Drona
+ * @param[in] ID           - id Drona
+ * @param[in,out] Lacze    - Lacze do gnuplota 
+ * @param[in] position     - pozycja początkowa drona
+ * @param[in] scale        - skala rysowanego drona
+ * @param[in] droneColor   - kolor rysowanego Drona
  */
-void Drone::makeDrone(const Vector<3>& position, const Vector<3>& scale, 
-                      unsigned int ID, PzG::LaczeDoGNUPlota& Lacze, int droneColor)
+Drone::Drone(const Vector<3>& position, const Vector<3>& scale, unsigned int ID, PzG::LaczeDoGNUPlota& Lacze, int droneColor)
 {
     _ID=ID;
     _position=position;
@@ -183,7 +182,7 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
  * @param turnAngle    - Kąt obrotu w stopniach
  * @param flightLenght - Długość ścieżki
  * @param flightHeight - wysokosc lotu
- * @param Lacze        - lacze do GNUPlota       
+ * @param lacze        - lacze do GNUPlota       
  */
 void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota& lacze){
     Vector<3> vec;
@@ -337,7 +336,7 @@ bool Drone::makeVerticalFlight(double flightHeight, PzG::LaczeDoGNUPlota& Lacze)
  * Funkcja odpowiadająca za animacje obrotu wirników drona, 
  * obraca ona wszystkie 4 rotory drona o zadany kąt, uwzględniając zależność
  * że wirniki nie kręcą się wszystkie w jedną stronę.
- * @param rotor - rotor drona
+ * @param angle - Kąt obrotu
  */
 void Drone::rotateRotor(double angle){
     int k=0;
@@ -363,3 +362,12 @@ bool Drone::tiltForward(PzG::LaczeDoGNUPlota& Lacze){
     _orientationAngle -= 5;
     return true;
 }
+
+
+/**
+ * @brief Funkcja sprawdza czy miejsce w którym dron się znajduję jest wolne.
+ * 
+ * @return true 
+ * @return false 
+ */
+bool Drone::checkIfPlaceIsAvaliable() const{return 1;}

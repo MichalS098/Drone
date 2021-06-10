@@ -1,0 +1,24 @@
+digraph "Vector::size"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Vector::size",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Zwraca wielkosc/wymiar wektora w postaci liczby int."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Matrix::operator*",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_matrix.html#af1b6bc1d726bf699d5cab7a1dd6bf8c3",tooltip="Operacja mnozenia macierzy przez wektor."];
+  Node1 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="Vector\< 3 \>::operator*",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#adb225d66796be935edf07e7193770d42",tooltip="Operacja iloczynu skalarnego dla dwoch wektorow kazdy element wektora jest po kolei mnozony."];
+  Node1 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="Vector\< 3 \>::operator+",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#ae79eb7045bece9febfc2d648ed133085",tooltip="Podstawowa operacja dodawania dwoch wektorow tworzy ona trzeci wektor bedacy suma dwoch podanych."];
+  Node1 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="Vector\< 3 \>::operator-",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a4b12700ec49a57e2ddc7401d1ed09d84",tooltip="Operacja odejmowania wektorow, kazdy element wektora jest odejmowany po kolei."];
+  Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node6 [label="operator\<\<",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_vector_8ipp.html#afbee8685eba8033e340917640a7909d8",tooltip="Operacja wysylajaca wektor(jego wspolrzedne) na podany strumien os."];
+  Node1 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node7 [label="Vector\< 3 \>::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#a120322615fbb7f60ed865b7bf3888bab",tooltip="Operacja przypisania dla wektora."];
+  Node1 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node8 [label="operator\>\>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_vector_8ipp.html#a5c27cb7e40c60f7addda5657b30bef12",tooltip="Funkcja przeciazajaca operator wczytywania ze strumienia do wektora, wczytuje sekwencje obiektow zapi..."];
+  Node1 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node9 [label="Vector\< 3 \>::Vector",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html#aa1671acb623cf2259dd60cf81db4f56a",tooltip=" "];
+}

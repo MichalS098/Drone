@@ -3,6 +3,7 @@
 #include <string>
 #include <iostream>
 #include "Vector.hh"
+#include "SceneObject.hh"
 
 /**
  * @brief Klasa Bazowa opisujaca figure geometryczna
@@ -10,7 +11,7 @@
  * Klasa bazowa opisujaca figure geometryczna 
  * przechowuja nazwe pliku z wzorcowa figura oraz nazwe pliku z finalna figura         
  */
-class GeometricFigure{
+class GeometricFigure: public SceneObject{
     std::string _referenceFig_FileName;
     std::string _finalFig_fileName;
     Vector<3>   _scale;
@@ -19,13 +20,13 @@ public:
      * @brief Funkcja zwraca zapisaną nazwe pliku wzorcowego obiektu.
      * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
      */
-    const std::string& takeFileName_refFig() const {return _referenceFig_FileName;}
+    const std::string takeFileName_refFig() const override {return _referenceFig_FileName;}
 
     /**
      * @brief Funkcja zwraca zapisaną nazwe pliku finalnego/właściwego obiektu.
      * @return const std::string& - zwracana nazwa pliku .dat z zapisanymi współrzędnymi
      */
-    const std::string& takeFileName_finalFig() const {return _finalFig_fileName;}
+    const std::string takeFileName_finalFig() const override {return _finalFig_fileName;}
 
     /**
      * @brief Funkcje pozwalające na dostęp do zapisu nazwy pliku wzorcowego i 
@@ -46,7 +47,7 @@ public:
     /**
      * @brief Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.
      */
-    virtual Vector<3> getPosition() const {return Vector<3>({0.0,0.0,0.0});}
+    virtual Vector<3> getPosition() const override {return Vector<3>({0.0,0.0,0.0});}
 
     /**
      * @brief Funkcja wirtualna pozwalająca na odczytanie 
@@ -54,7 +55,9 @@ public:
      * 
      * @return const char* Nazwa typu obiektu.
      */
-    virtual const char* getType() const {return "Klasa bazowa";}
+    virtual const char* getType() const override {return "Klasa bazowa";}
+
+    virtual bool checkIfPlaceIsAvaliable() const override;
 };
 
 

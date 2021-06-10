@@ -146,7 +146,7 @@ Vector<T> Vector<T>::operator*(const double& multiplier) const{
 /**
  * @brief Operacja przypisania dla wektora
  * @tparam T, wielkosc wektora
- * @param v, wektor ktory przypisujemy do naszego obiektu  
+ * @param v wektor ktory przypisujemy do naszego obiektu  
  */
 template<unsigned int T>
 void Vector<T>::operator=(const Vector<T>& v){

@@ -1,6 +1,5 @@
 digraph "Drone::calcAndSave_RotorCoords"
 {
- // INTERACTIVE_SVG=YES
  // LATEX_PDF_SIZE
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
@@ -9,9 +8,9 @@ digraph "Drone::calcAndSave_RotorCoords"
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node2 [label="GeometricFigure::scaleUp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_geometric_figure.html#a13bd49360e3bb199f3324d70c6922200",tooltip="Funkcja przskalowuje wektor podany jako argument."];
   Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node3 [label="GeometricFigure::takeFile\lName_finalFig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_geometric_figure.html#a1cfe36287063fc265b38fce4bfd7e32d",tooltip="Funkcja zwraca zapisaną nazwe pliku finalnego/właściwego obiektu."];
+  Node3 [label="GeometricFigure::takeFile\lName_finalFig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_geometric_figure.html#ac059240fa3036150851f57a4592cba7d",tooltip="Funkcja zwraca zapisaną nazwe pliku finalnego/właściwego obiektu."];
   Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node4 [label="GeometricFigure::takeFile\lName_refFig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_geometric_figure.html#af4f5d691b7c7f0691a1811b98f7752b8",tooltip="Funkcja zwraca zapisaną nazwe pliku wzorcowego obiektu."];
+  Node4 [label="GeometricFigure::takeFile\lName_refFig",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_geometric_figure.html#aa023df7264e3ed4bba5900767084a6f1",tooltip="Funkcja zwraca zapisaną nazwe pliku wzorcowego obiektu."];
   Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node5 [label="HexagonalPrism::transfTo\lParentCoordSys",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_hexagonal_prism.html#abb41201ef93212c4e720cb9e0ad63473",tooltip="Funkcja przekształca zadany wierzchołek do układu współrzędnych rodzica."];
   Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

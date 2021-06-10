@@ -20,37 +20,44 @@ using namespace std;
  * 
  * @param[in] Lacze Łącze do GNUPLOT'a.
  */
-Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
-{
-    Vector<3> DroneInitialPosition({20,20,4});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
+Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}{
+	Vector<3> DroneInitialPosition({20,20,4});  //wysokosc poczatkowa 4 bo skala 8(zeby korpus byl nad ziemia)
 	Vector<3> secondDroneInitialPosition({50,70,4});
 	Vector<3> scale({UNIT_SCALE});
-    _droneArray[0].makeDrone(DroneInitialPosition, scale, 1, Lacze, FIRST_DRONE_COLOR);
-	_droneArray[0].calcAndSave_DroneCoords();
-	_droneArray[1].makeDrone(secondDroneInitialPosition, scale, 2, Lacze, SECOND_DRONE_COLOR);
-    _droneArray[1].calcAndSave_DroneCoords();
+    shared_ptr<SceneObject> sceneObjPtr;  	//inteligentny wskaźnik na obiekt sceny
+	shared_ptr<GeometricFigure> GeoFig_Ptr;	//inteligentny wskaźnik na figure geometryczną
+	// Tworze pierwszego drona
+	shared_ptr<Drone> firstDronePtr = make_shared<Drone>(DroneInitialPosition, scale, 1, Lacze, FIRST_DRONE_COLOR);
+	firstDronePtr->calcAndSave_DroneCoords();
+	_lstOfDrones.push_back(firstDronePtr);
+	sceneObjPtr = firstDronePtr;
+	addElementToList(sceneObjPtr);
+	// Tworze drugiego drona
+	shared_ptr<Drone> secondDronePtr = make_shared<Drone>(secondDroneInitialPosition, scale, 2, Lacze, SECOND_DRONE_COLOR);
+	secondDronePtr->calcAndSave_DroneCoords();
+	_lstOfDrones.push_back(secondDronePtr);
+	sceneObjPtr= secondDronePtr;
+	addElementToList(sceneObjPtr);
 
-	shared_ptr<GeometricFigure> GeoFig_Ptr;
-	
 	//Płaskowyż
 	shared_ptr<Plateau> plt_Ptr = make_shared<Plateau>(Vector<3>({70,30,6}), Vector<3>({20,16,12}), 1);
 	_lacze.DodajNazwePliku(plt_Ptr->takeFileName_finalFig().c_str());
-	GeoFig_Ptr = plt_Ptr;
-	addElementToList(GeoFig_Ptr);
+	sceneObjPtr = plt_Ptr;
+	addElementToList(sceneObjPtr);
 	_numberOfElements[0]=1;
 
 	//Góra z długą granią
 	shared_ptr<LongRidgeHill> lrg_Ptr = make_shared<LongRidgeHill>(Vector<3>({80,140,8}), Vector<3>({20,18,16}), 1);
 	_lacze.DodajNazwePliku(lrg_Ptr->takeFileName_finalFig().c_str());
-	GeoFig_Ptr = lrg_Ptr;
-	addElementToList(GeoFig_Ptr);
+	sceneObjPtr = lrg_Ptr;
+	addElementToList(sceneObjPtr);
 	_numberOfElements[1]=1;
 
 	//Góra z ostrym szczytem
 	shared_ptr<SharpTopHill> sth_Ptr = make_shared<SharpTopHill>(Vector<3>({150,70,10}), Vector<3>({20,20,20}), 1);
 	_lacze.DodajNazwePliku(sth_Ptr->takeFileName_finalFig().c_str());
-	GeoFig_Ptr = sth_Ptr;
-	addElementToList(GeoFig_Ptr);
+	sceneObjPtr = sth_Ptr;
+	addElementToList(sceneObjPtr);
 	_numberOfElements[2]=1;
 }
 
@@ -62,12 +69,12 @@ Scene::Scene(PzG::LaczeDoGNUPlota& Lacze): _ID_of_active_Drone{0}, _lacze{Lacze}
  */
 const Drone& Scene::takeActiveDrone(){
 	unsigned int droneID=0;
-	cout<<"1 - Polozenie (x,y): "<<_droneArray[0].takeDronePosition();
-	if(_ID_of_active_Drone==0) cout<<" <-- Dron aktywny";
-	cout<<endl;
-    cout<<"2 - Polozenie (x,y): "<<_droneArray[1].takeDronePosition();
-	if(_ID_of_active_Drone==1) cout<<" <-- Dron aktywny";
-	cout<<endl;
+	unsigned int k=1;
+	for(shared_ptr<Drone> dr : _lstOfDrones){
+		cout<<k++<<" - Polozenie (x,y): "<<dr->takeDronePosition();
+		if(_ID_of_active_Drone==k-2) cout<<" <-- Dron aktywny";
+		cout<<endl;
+	}
 	cout<<"Wprowadz numer aktywnego drona(1 lub 2)> ";
 	cin>>droneID;
 	_ID_of_active_Drone=droneID-1;
@@ -77,10 +84,14 @@ const Drone& Scene::takeActiveDrone(){
 		_lacze.UsunNazwePliku(makeRotorFileName(_ID_of_active_Drone+1, i));
 	}
 	_lacze.UsunNazwePliku(makeBodyFileName(_ID_of_active_Drone+1));
-	Vector<3> newPosition = _droneArray[_ID_of_active_Drone].takeDronePosition();
-	_droneArray[_ID_of_active_Drone].makeDrone(newPosition, Vector<3>{1,1,1},_ID_of_active_Drone+1, _lacze, 0);
+
+	list<shared_ptr<Drone>>::iterator iter = _lstOfDrones.begin();
+	advance(iter, (_ID_of_active_Drone));	
+	shared_ptr<Drone> activeDrone = *iter;
+	Vector<3> newPosition = activeDrone->takeDronePosition();
+	activeDrone = make_shared<Drone>(newPosition, Vector<3>{1,1,1},_ID_of_active_Drone+1, _lacze, 0);
     _lacze.Rysuj();
-	return _droneArray[_ID_of_active_Drone];
+	return *activeDrone.get();
 }
 
 
@@ -92,16 +103,19 @@ const Drone& Scene::takeActiveDrone(){
  * @return Drone& - zwracana jest referencja do używanego drona.
  */
 Drone& Scene::useActiveDrone(){
-	return _droneArray[_ID_of_active_Drone];
+	list<shared_ptr<Drone>>::iterator iter = _lstOfDrones.begin();
+	advance(iter, (_ID_of_active_Drone));	
+	shared_ptr<Drone> activeDrone = *iter;
+	return *activeDrone.get();
 }
 
 
 /**
  * @brief Funkcja wypisuje na stdout położenie aktywnego drona. 
  */
-void Scene::printPositionOfActiveDrone() const{
+void Scene::printPositionOfActiveDrone(){
     cout<<"\tPolozenie Drona aktywnego (x,y):"
-        <<_droneArray[_ID_of_active_Drone].takeDronePosition()<<endl;
+        <<useActiveDrone().takeDronePosition()<<endl;
 }
 
 
@@ -146,30 +160,30 @@ void Scene::droneFlightAnimation(){
  * @param type Typ nowego elementu będący liczbą int wybraną przez użytkownika.
  */
 void Scene::makeNewElement(const Vector<3>& pos, const Vector<3> scale, unsigned int type){
-	shared_ptr<GeometricFigure> GeoFig_Ptr;
+	shared_ptr<SceneObject> sceneObjectPtr;
 	switch (type){
 	case 1:{
 		_numberOfElements[1]++;
 		shared_ptr<SharpTopHill> sth_Ptr = make_shared<SharpTopHill>(pos,scale,_numberOfElements[1]);
 		_lacze.DodajNazwePliku(sth_Ptr->takeFileName_finalFig().c_str());
-		GeoFig_Ptr = sth_Ptr;
-		addElementToList(GeoFig_Ptr);
+		sceneObjectPtr = sth_Ptr;
+		addElementToList(sceneObjectPtr);
 		break;
 	}
 	case 2:{
 		_numberOfElements[2]++;
 		shared_ptr<LongRidgeHill> lrg_Ptr = make_shared<LongRidgeHill>(pos,scale,_numberOfElements[2]);
 		_lacze.DodajNazwePliku(lrg_Ptr->takeFileName_finalFig().c_str());
-		GeoFig_Ptr = lrg_Ptr;
-		addElementToList(GeoFig_Ptr);
+		sceneObjectPtr = lrg_Ptr;
+		addElementToList(sceneObjectPtr);
 		break;
 	}
 	case 3:{
 		_numberOfElements[0]++;
 		shared_ptr<Plateau> plt_Ptr = make_shared<Plateau>(pos,scale,_numberOfElements[0]);
 		_lacze.DodajNazwePliku(plt_Ptr->takeFileName_finalFig().c_str());
-		GeoFig_Ptr = plt_Ptr;
-		addElementToList(GeoFig_Ptr);
+		sceneObjectPtr = plt_Ptr;
+		addElementToList(sceneObjectPtr);
 		break;
 	}
 	default:
@@ -191,16 +205,16 @@ void Scene::deleteElement(){
 	unsigned int k{0}, elemNumber{0};
 	cout<<endl<<"Wybierz element powierzchni do usuniecia:"<<endl;
 	//Wypisanie wszystkich elementów
-	for(const shared_ptr<GeometricFigure>& fig : _lstOfElements){  			
+	for(const shared_ptr<SceneObject>& obj : _lstOfObjects){  			
 		cout<<++k<<" - ";
-		cout<<fig->getPosition()<<fig->getType()<<endl;
+		cout<<obj->getPosition()<<obj->getType()<<endl;
 	}
 	cout<<"Podaj numer elementu> ";
 	cin>>elemNumber;
-	list<shared_ptr<GeometricFigure>>::iterator iter = _lstOfElements.begin();
+	list<shared_ptr<SceneObject>>::iterator iter = _lstOfObjects.begin();
 	advance(iter, (elemNumber-1));						//przesuwa wskaźnik "elemNumber-1" razy 
-	shared_ptr<GeometricFigure> fig = *iter;						//kopiuje wskaznik na ten element zeby dostac dostep do jego nazwy pliku
-	_lstOfElements.erase(iter);							//usuwa element z listy
+	shared_ptr<SceneObject> fig = *iter;						//kopiuje wskaznik na ten element zeby dostac dostep do jego nazwy pliku
+	_lstOfObjects.erase(iter);							//usuwa element z listy
 	_lacze.UsunNazwePliku(fig->takeFileName_finalFig().c_str());	//usuwa plik tego elementu z lącza
 	_lacze.Rysuj();
 	cout<<"Element poprawnie usunięty"<<endl;

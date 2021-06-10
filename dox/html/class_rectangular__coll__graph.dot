@@ -1,0 +1,14 @@
+digraph "Rectangular"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="Rectangular",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Klasa pochodna klasy figury geometrycznej definiująca prostopadłościan."];
+  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="GeometricFigure",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_geometric_figure.html",tooltip="Klasa Bazowa opisujaca figure geometryczna."];
+  Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SceneObject",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene_object.html",tooltip="Klasa obiekt sceny jest klasą bazową dla klas GeometricFigure, oraz Dron i pozwala na umieszczenie ty..."];
+  Node4 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _scale" ,fontname="Helvetica"];
+  Node4 [label="Vector\< 3 \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_vector.html",tooltip=" "];
+  Node4 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" _position" ,fontname="Helvetica"];
+}
