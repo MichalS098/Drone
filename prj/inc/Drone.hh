@@ -20,6 +20,7 @@ class Drone: public SceneObject{
     Rectangular     _droneBody;
     HexagonalPrism  _droneRotor[4];
     unsigned int    _ID;
+    double          _radius;
 
     bool calcAndSave_BodyCoords() const;
     bool calcAndSave_RotorCoords(const HexagonalPrism& rotor) const;
@@ -30,7 +31,7 @@ protected:
 public:
     Drone(const Vector<3>& position, const Vector<3>& scale,  
           unsigned int ID, PzG::LaczeDoGNUPlota& Lacze, int droneColor);
-    void planInitialFlightPath(double flightHeight, double turnAngle,  
+    void planInitialFlightPath(double flightHeight, double turnAngle, Vector<3> initialPos, 
                                double flightLenght, PzG::LaczeDoGNUPlota& lacze);
     void deleteFlightPath(PzG::LaczeDoGNUPlota& lacze) const;
 
@@ -42,9 +43,10 @@ public:
     bool calcAndSave_DroneCoords() const;
     Vector<3> takeDronePosition() const {return _position;}
 
-    virtual bool checkIfPlaceIsAvaliable(const SceneObject& obj) const override;
+    virtual bool checkIfPlaceIsAvaliable(const Vector<3> &center, double radius) const override final;
     virtual Vector<3> getPosition() const override{return _position;}
     virtual const char* getType() const override{return "Dron";}
+    virtual double getRadius() const override{return _radius;};
 };
 
 #define COMPUTATION_ERR 1e-8

@@ -35,6 +35,7 @@ public:
     Scene(PzG::LaczeDoGNUPlota& lacze);
     const Drone& takeActiveDrone();
     Drone& useActiveDrone();
+    std::shared_ptr<Drone> takePointerToActiveDrone();
     void printPositionOfActiveDrone();
     void droneFlightAnimation();
 
@@ -55,7 +56,6 @@ public:
      * @param[in] elem inteligentny wskaźnik na typ Obiekt sceny.
      */
     inline void addElementToList(std::shared_ptr<SceneObject>& elem) {_lstOfObjects.push_back(elem);}
+
+    bool checkIfPlaceIsOccupied(const std::shared_ptr<Drone> &P_drone) const;
 };
-
-
-bool checkIfRectanglesIntersect(Vector<3> p1, Vector<3> p2, Vector<3> p3, Vector<3> p4);

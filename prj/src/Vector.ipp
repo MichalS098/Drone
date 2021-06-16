@@ -196,3 +196,18 @@ std::ostream& operator<<(std::ostream &os, const Vector<T>& v){
 	}
 	return os;
 }
+
+
+/**
+ * @brief Funkcja zwraca największa liczbe z wektora.
+ * 
+ * @return double Największa liczba w wektorze.
+ */
+template<unsigned int T>
+double Vector<T>::findMax() const{
+	int max{0};
+	for(int i=0; i<size(); ++i){
+		if(elem[i]>max) max=elem[i];
+	}
+	return max;
+}

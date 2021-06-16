@@ -50,6 +50,7 @@ public:
 	Vector<T> operator*(const double& multiplier) const;
   	void operator=(const Vector<T>& v);
 	Vector(const Vector<T>& v);
+	double findMax() const;
 
 	Vector(Vector<T>&& v) = default;
 	Vector<T>& operator=(Vector<T>&& v) = default;

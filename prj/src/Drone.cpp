@@ -17,6 +17,7 @@ using namespace std;
 
 #define DRONE_BODY_SCALE 8.0
 #define DRONE_ROTOR_SCALE 4.0
+#define DRONE_BODY_SIDE_LENGHT 1.1  // 1.1 poniewaz musimy uwzglednic wystajace rotory
 
 /**
  * @brief Konstruktor inicjalizujący Drona.
@@ -38,6 +39,7 @@ Drone::Drone(const Vector<3>& position, const Vector<3>& scale, unsigned int ID,
     _ID=ID;
     _position=position;
     _orientationAngle=0;
+    _radius=DRONE_BODY_SCALE * DRONE_BODY_SIDE_LENGHT * (sqrt(2)/2);   // r=a*sqrt(2)/2, a=1.1
     unsigned int index=0,index2=0;
     string fileName;
 
@@ -179,12 +181,13 @@ Vector<3> Drone::transfToParentCoordSys(const Vector<3>& apex) const{
  * Funkcja tworzy ścieżkę lotu drona dla zadanego kąta i długości
  * lotu i zapisuje współrzędne jej punktów w wektorze PunktySciezki
  * 
- * @param turnAngle    - Kąt obrotu w stopniach
- * @param flightLenght - Długość ścieżki
- * @param flightHeight - wysokosc lotu
- * @param lacze        - lacze do GNUPlota       
+ * @param[in] turnAngle    - Kąt obrotu w stopniach
+ * @param[in] initialPos   - położenie początkowe od którego będzie rysowana trasa
+ * @param[in] flightLenght - Długość ścieżki
+ * @param[in] flightHeight - wysokosc lotu
+ * @param[in,out] lacze    - lacze do GNUPlota       
  */
-void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double flightLenght, PzG::LaczeDoGNUPlota& lacze){
+void Drone::planInitialFlightPath(double flightHeight, double turnAngle, Vector<3> initialPos, double flightLenght, PzG::LaczeDoGNUPlota& lacze){
     Vector<3> vec;
     Vector<3> direction({(flightLenght>0.0 ? 1.0: -1.0), 0.0, 0.0});
     Vector<3> destination;
@@ -193,9 +196,9 @@ void Drone::planInitialFlightPath(double flightHeight, double turnAngle, double 
     makeRotationMatrix('z', turnAngle+_orientationAngle, rotationMatrix);
     
     direction = rotationMatrix * direction;
-    destination = _position + direction * flightLenght;
+    destination = initialPos + direction * flightLenght;
 
-    vec = _position;   
+    vec = initialPos;   
     vec[2] = 0;
     pathPoints.push_back(vec);
     vec[2] = (flightHeight+4);
@@ -347,27 +350,18 @@ void Drone::rotateRotor(double angle){
 }
 
 
-/** NIE WIEM CO TO
- * @brief Funkcja pochyla drona w kierunku lotu
- * 
- * @param Lacze - lacze do GNUPlota
- */
-bool Drone::tiltForward(PzG::LaczeDoGNUPlota& Lacze){
-    for (; _orientationAngle <= 20; _orientationAngle += 5) {
-        
-        if (!this->calcAndSave_DroneCoords()) return false;
-        usleep(100000);
-        Lacze.Rysuj();
-    }
-    _orientationAngle -= 5;
-    return true;
-}
-
-
 /**
- * @brief Funkcja sprawdza czy miejsce w którym dron się znajduję jest wolne.
- * 
- * @return true 
- * @return false 
+ * @brief Funkcja sprawdza czy miejsce zajmowane przez drona, pokrywa sie z 
+ *        okręgiem o parametrach podanych jako argumenty (położenie i promień).
+ * @retval true Jeśli miejsce jest wolne i okręgi się nie pokrywają.
+ * @retval false Jeśli miejsce jest zajęte i okręgi się pokrywają.
  */
-bool Drone::checkIfPlaceIsAvaliable(const SceneObject& obj) const{return 1;}
+bool Drone::checkIfPlaceIsAvaliable(const Vector<3> &center, double radius) const{
+    // odleglosc euklidesowa na plaszczyznie
+    double distanceBetweenCenters = sqrt( pow((center[0]-getPosition()[0]),2) + pow((center[1]-getPosition()[1]),2) ); 
+    double sumOfRadius            = radius+getRadius();
+    if(sumOfRadius<=distanceBetweenCenters){
+        return true;
+    }
+    return false;
+}

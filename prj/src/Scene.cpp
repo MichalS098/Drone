@@ -1,4 +1,5 @@
 #include <cmath>
+#include <unistd.h>
 #include <iterator>
 #include "Vector.hh"
 #include "Scene.hh"
@@ -114,6 +115,18 @@ Drone& Scene::useActiveDrone(){
 
 
 /**
+ * @brief Funkcja zwraca inteligentny wskaźnik na aktywnego drona z listy dronów.
+ * @return std::shared_ptr<Drone> zwracany wskaźnik na aktywnego drona. 
+ */
+shared_ptr<Drone> Scene::takePointerToActiveDrone(){
+	list<shared_ptr<Drone>>::iterator iter = _lstOfDrones.begin();
+	advance(iter, (_ID_of_active_Drone));	
+	shared_ptr<Drone> activeDrone = *iter;
+	return activeDrone;
+}
+
+
+/**
  * @brief Funkcja wypisuje na stdout położenie aktywnego drona. 
  */
 void Scene::printPositionOfActiveDrone(){
@@ -133,6 +146,8 @@ void Scene::droneFlightAnimation(){
 	double flightDirection;
 	double flightLenght;
 	double flightHeight;
+	Vector<3> initialPosition = useActiveDrone().getPosition();
+
 	cout<<"Podaj kierunek lotu (kat w stopniach)> ";
 	cin>>flightDirection;
 	cout<<"Podaj dlugosc lotu> ";
@@ -140,16 +155,26 @@ void Scene::droneFlightAnimation(){
 	cout<<"Podaj wysokosc lotu> ";
 	cin>>flightHeight; cout<<endl<<endl;
 
-	cout<<"Rysuje zaplanowana sciezke lotu..." <<endl<<endl<<endl<<endl;
-	useActiveDrone().planInitialFlightPath(flightHeight, flightDirection, flightLenght, _lacze);
+	cout<<"\tRysuje zaplanowana sciezke lotu..." <<endl<<endl<<endl<<endl;
+	useActiveDrone().planInitialFlightPath(flightHeight, flightDirection, initialPosition, flightLenght, _lacze);
   	_lacze.Rysuj();
-  	cout<<"Realizacja przelotu..." <<endl<<endl<<endl<<endl;
+  	cout<<"\tRealizacja przelotu..." <<endl<<endl<<endl<<endl;
 	useActiveDrone().makeVerticalFlight(flightHeight, 		 _lacze);
 	useActiveDrone().changeDroneOrientation(flightDirection, _lacze);
-
 	useActiveDrone().makeHorizontalFlight(flightLenght, 	 _lacze);
+
+	//sprawdzenie czy miejsce lądowania jest wolne
+	while( checkIfPlaceIsOccupied(this->takePointerToActiveDrone()) ){  //jeśli jest zajęte przeleć do przodu o 30:
+		flightLenght+=30;
+		usleep(1500000);
+		useActiveDrone().deleteFlightPath(_lacze);
+		useActiveDrone().planInitialFlightPath(flightHeight, 0, initialPosition, flightLenght, _lacze);
+		useActiveDrone().makeHorizontalFlight(30, _lacze);
+	}
+
+	cout<<":)  Ladowisko dostepne, rozpoczeto procedure ladowania" <<endl<<endl<<endl<<endl;
 	useActiveDrone().makeVerticalFlight(-flightHeight, 		 _lacze);
-  	cout<<endl<<"Dron wyladowal... " <<endl<<endl<<"Usuwam sciezke..."<<endl;
+  	cout<<endl<<"\tDron wyladowal... " <<endl<<endl<<"Usuwam sciezke..."<<endl;
 	useActiveDrone().deleteFlightPath(_lacze);
   	_lacze.Rysuj();
 }
@@ -158,9 +183,9 @@ void Scene::droneFlightAnimation(){
 /**
  * @brief Funkcja dodaje nowy element powierzchni.
  * 
- * @param pos Wektor pozycji nowego elementu.
- * @param scale Wektor skali nowego elementu.
- * @param type Typ nowego elementu będący liczbą int wybraną przez użytkownika.
+ * @param[in] pos Wektor pozycji nowego elementu.
+ * @param[in] scale Wektor skali nowego elementu.
+ * @param[in] type Typ nowego elementu będący liczbą int wybraną przez użytkownika.
  */
 void Scene::makeNewElement(const Vector<3>& pos, const Vector<3> scale, unsigned int type){
 	shared_ptr<SceneObject> sceneObjectPtr;
@@ -216,7 +241,7 @@ void Scene::deleteElement(){
 	cin>>elemNumber;
 	list<shared_ptr<SceneObject>>::iterator iter = _lstOfObjects.begin();
 	advance(iter, (elemNumber-1));						//przesuwa wskaźnik "elemNumber-1" razy 
-	shared_ptr<SceneObject> fig = *iter;						//kopiuje wskaznik na ten element zeby dostac dostep do jego nazwy pliku
+	shared_ptr<SceneObject> fig = *iter;				//kopiuje wskaznik na ten element zeby dostac dostep do jego nazwy pliku
 	_lstOfObjects.erase(iter);							//usuwa element z listy
 	_lacze.UsunNazwePliku(fig->takeFileName_finalFig().c_str());	//usuwa plik tego elementu z lącza
 	_lacze.Rysuj();
@@ -225,18 +250,21 @@ void Scene::deleteElement(){
 
 
 /**
- * @brief Funkcja sprawdza czy dane prostokąty się przecinają.
+ * @brief Funkcja sprawdza czy podany w argumencie dron koliduje z którymś elementem sceny. 
  * 
- * Funkcja sprawdza czy dane prostokąty się przecinają na podstawie 
- * 2 przeciwległych wierzchołków, dwóch prostokątów, podanych jako wektory położenia.
- * Współrzędna z wektorów nie ma znaczenia.
- * @param p1 Wektor położenia lewego dolnego wierzchołka pierwszego prostokąta.
- * @param p2 Wektor położenia górnego prawego wierzchołka pierwszego prostokąta.
- * @param p3 Wektor położenia lewego dolnego wierzchołka drugiego prostokąta.
- * @param p4 Wektor położenia górnego prawego wierzchołka drugiego prostokąta.
- * @return true Jeśli prostokąty się przecinają.
- * @return false Jeśli prostokąty się nie przecinają.
+ * @param[in] drone_Ptr Wskaźnik na drona, dla którego sprawdzamy czy jego aktualne położenie jest zajęte.
+ * @retval true Jeśli miejsce jest zajęte.
+ * @retval false Jeśli miejsce jest wolne.
  */
-bool checkIfRectanglesIntersect(Vector<3> p1, Vector<3> p2, Vector<3> p3, Vector<3> p4){
-	
+bool Scene::checkIfPlaceIsOccupied(const shared_ptr<Drone> &drone_Ptr) const {
+	for(const shared_ptr<SceneObject> &Obj : _lstOfObjects){
+		if(Obj==drone_Ptr){ continue; }
+		//Jeśli nieprawda że miejsce jest wolne to zwróć true
+		if( !Obj->checkIfPlaceIsAvaliable( drone_Ptr->getPosition(), drone_Ptr->getRadius() )) { 
+			cout<<":(  Ladowisko niedostepne!"<<endl;
+			cout<<":(  Wykryto element powierzchni:"<< Obj->getType() <<endl<<"Lot zostal wydluzony"<<endl<<endl<<endl<<endl;
+			return true; 
+		}
+	}
+	return false;
 }

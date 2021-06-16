@@ -56,8 +56,8 @@ public:
      * @return const char* Nazwa typu obiektu.
      */
     virtual const char* getType() const override {return "Klasa bazowa";}
-
-    virtual bool checkIfPlaceIsAvaliable(const SceneObject& obj) const override;
+    virtual double getRadius() const override {return 0.0;}
+    virtual bool checkIfPlaceIsAvaliable(const Vector<3> &center, double radius) const override{Vector<3> test=center*radius; return 1;}
 };
 
 

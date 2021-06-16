@@ -22,6 +22,7 @@ Plateau::Plateau(const Vector<3>& pos, const Vector<3>& scale, unsigned int id):
     this->enterFileName_finalFig(finalFile);
     this->enterFileName_refFig(CUBE_SAMPLE_FILE);
     this->setScale(scale);
+    _radius=scale.findMax() * sqrt(2)/2; 
     ifstream refFileStream{this->takeFileName_refFig()};
     ofstream finalFileStream{this->takeFileName_finalFig()};
     if (!refFileStream.is_open()) {
@@ -56,10 +57,28 @@ Plateau::Plateau(const Vector<3>& pos, const Vector<3>& scale, unsigned int id):
  * 
  * Funkcja tworzy nazwe pliku dla nowego elementu na podstawie
  * ilości elementów tzn. numeru id.
- * @return string Zwracana nazwa nowego pliku dla elementu.
+ * @retval string Zwracana nazwa nowego pliku dla elementu.
  */
 string makeFilePlateau(unsigned int id){
 	ostringstream nameStream;
     nameStream<<"dat/PlikWlasciwy_Plaskowyz"<<id<<".dat";
     return nameStream.str();
+}
+
+
+
+/**
+ * @brief Funkcja sprawdza czy miejsce zajmowane przez płaskowyż, pokrywa sie z 
+ *        okręgiem o parametrach podanych jako argumenty (położenie i promień).
+ * @retval true Jeśli miejsce jest wolne i okręgi się nie pokrywają.
+ * @retval false Jeśli miejsce jest zajęte i okręgi się pokrywają.
+ */
+bool Plateau::checkIfPlaceIsAvaliable(const Vector<3> &center, double radius) const{
+    // odleglosc euklidesowa na plaszczyznie
+    double distanceBetweenCenters = sqrt( pow((center[0]-getPosition()[0]),2) + pow((center[1]-getPosition()[1]),2) ); 
+    double sumOfRadius            = radius+getRadius();
+    if(sumOfRadius<=distanceBetweenCenters){
+        return true;
+    }
+    return false;
 }
