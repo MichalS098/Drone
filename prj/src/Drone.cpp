@@ -305,7 +305,8 @@ bool Drone::makeHorizontalFlight(double flightLenght, PzG::LaczeDoGNUPlota& Lacz
  * @return false - kiedy operacja się nie powiedzie
  */
 bool Drone::changeDroneOrientation(double angle, PzG::LaczeDoGNUPlota& Lacze){
-    for (; _orientationAngle <= angle; _orientationAngle += 5) {
+    double startingOrientationAngle = _orientationAngle;
+    for (; _orientationAngle <= startingOrientationAngle+angle; _orientationAngle += 5) {
         this->rotateRotor(4*_orientationAngle);
         if (!this->calcAndSave_DroneCoords()) return false;
         usleep(100000);

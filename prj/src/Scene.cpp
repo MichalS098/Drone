@@ -165,11 +165,11 @@ void Scene::droneFlightAnimation(){
 
 	//sprawdzenie czy miejsce lądowania jest wolne
 	while( checkIfPlaceIsOccupied(this->takePointerToActiveDrone()) ){  //jeśli jest zajęte przeleć do przodu o 30:
-		flightLenght+=30;
+		flightLenght+=20;
 		usleep(1500000);
 		useActiveDrone().deleteFlightPath(_lacze);
 		useActiveDrone().planInitialFlightPath(flightHeight, 0, initialPosition, flightLenght, _lacze);
-		useActiveDrone().makeHorizontalFlight(30, _lacze);
+		useActiveDrone().makeHorizontalFlight(20, _lacze);
 	}
 
 	cout<<":)  Ladowisko dostepne, rozpoczeto procedure ladowania" <<endl<<endl<<endl<<endl;
