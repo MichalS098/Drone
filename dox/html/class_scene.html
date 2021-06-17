@@ -115,6 +115,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a7ca4eef2d276f14861c963465a1bbde9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_drone.html">Drone</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a7ca4eef2d276f14861c963465a1bbde9">useActiveDrone</a> ()</td></tr>
 <tr class="memdesc:a7ca4eef2d276f14861c963465a1bbde9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja używa aktywnego drona.  <a href="class_scene.html#a7ca4eef2d276f14861c963465a1bbde9">Więcej...</a><br /></td></tr>
 <tr class="separator:a7ca4eef2d276f14861c963465a1bbde9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fb7a5ad22b15fa0d53f5de77ee3e9b1"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="class_drone.html">Drone</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#a9fb7a5ad22b15fa0d53f5de77ee3e9b1">takePointerToActiveDrone</a> ()</td></tr>
+<tr class="memdesc:a9fb7a5ad22b15fa0d53f5de77ee3e9b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwraca inteligentny wskaźnik na aktywnego drona z listy dronów.  <a href="class_scene.html#a9fb7a5ad22b15fa0d53f5de77ee3e9b1">Więcej...</a><br /></td></tr>
+<tr class="separator:a9fb7a5ad22b15fa0d53f5de77ee3e9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab3daa9c0ad0882f041651a87b4d2660a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#ab3daa9c0ad0882f041651a87b4d2660a">printPositionOfActiveDrone</a> ()</td></tr>
 <tr class="memdesc:ab3daa9c0ad0882f041651a87b4d2660a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wypisuje na stdout położenie aktywnego drona.  <a href="class_scene.html#ab3daa9c0ad0882f041651a87b4d2660a">Więcej...</a><br /></td></tr>
 <tr class="separator:ab3daa9c0ad0882f041651a87b4d2660a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -136,6 +139,9 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:aaeaffcc06a59181214cf38467a4b28d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aaeaffcc06a59181214cf38467a4b28d6">addElementToList</a> (std::shared_ptr&lt; <a class="el" href="class_scene_object.html">SceneObject</a> &gt; &amp;elem)</td></tr>
 <tr class="memdesc:aaeaffcc06a59181214cf38467a4b28d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja dodaje element typu figura geometryczna na liste.  <a href="class_scene.html#aaeaffcc06a59181214cf38467a4b28d6">Więcej...</a><br /></td></tr>
 <tr class="separator:aaeaffcc06a59181214cf38467a4b28d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1fee68d3132072b0e3539efe48303df"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene.html#aa1fee68d3132072b0e3539efe48303df">checkIfPlaceIsOccupied</a> (const std::shared_ptr&lt; <a class="el" href="class_drone.html">Drone</a> &gt; &amp;P_drone) const</td></tr>
+<tr class="memdesc:aa1fee68d3132072b0e3539efe48303df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja sprawdza czy podany w argumencie dron koliduje z którymś elementem sceny.  <a href="class_scene.html#aa1fee68d3132072b0e3539efe48303df">Więcej...</a><br /></td></tr>
+<tr class="separator:aa1fee68d3132072b0e3539efe48303df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atrybuty prywatne</h2></td></tr>
@@ -220,11 +226,51 @@ Atrybuty prywatne</h2></td></tr>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_8hh_source.html#l00057">57</a> pliku <a class="el" href="_scene_8hh_source.html">Scene.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_8hh_source.html#l00058">58</a> pliku <a class="el" href="_scene_8hh_source.html">Scene.hh</a>.</p>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
 <div class="center"><!-- SVG 1 -->
+</div>
+</div>
+
+</div>
+</div>
+<a id="aa1fee68d3132072b0e3539efe48303df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1fee68d3132072b0e3539efe48303df">&#9670;&nbsp;</a></span>checkIfPlaceIsOccupied()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int Scene::checkIfPlaceIsOccupied </td>
+          <td>(</td>
+          <td class="paramtype">const std::shared_ptr&lt; <a class="el" href="class_drone.html">Drone</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>P_drone</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parametry</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">drone_Ptr</td><td>Wskaźnik na drona, dla którego sprawdzamy czy jego aktualne położenie jest zajęte. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">1</td><td>Jeśli miejsce jest zajęte. </td></tr>
+    <tr><td class="paramname">2</td><td>Jeśli miejsce jest wolne. </td></tr>
+    <tr><td class="paramname">3</td><td>Jeśli miejsce zajmuje płaskowyż. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00278">278</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 -->
 </div>
 </div>
 
@@ -246,17 +292,17 @@ Oto graf wywoływań tej funkcji:</div>
 </div><div class="memdoc">
 <p>Funkcja usuwa wybrany przez użytkownika element ze sceny, jedno- cześnie usuwając nazwe jego pliku z łącza do gnuplota. </p>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00207">207</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00250">250</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 2 -->
+<div class="center"><!-- SVG 3 -->
 </div>
 </div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 3 -->
+<div class="center"><!-- SVG 4 -->
 </div>
 </div>
 
@@ -278,17 +324,17 @@ Oto graf wywoływań tej funkcji:</div>
 </div><div class="memdoc">
 <p>Pyta użytkownika o podanie długości lotu, kierunku lotu oraz jego wysokości, wywołuje funkcje rysującą planowaną ścieżke i wywołuje lot aktywnego drona. </p>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00132">132</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00144">144</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 4 -->
+<div class="center"><!-- SVG 5 -->
 </div>
 </div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 5 -->
+<div class="center"><!-- SVG 6 -->
 </div>
 </div>
 
@@ -327,24 +373,24 @@ Oto graf wywoływań tej funkcji:</div>
 </div><div class="memdoc">
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pos</td><td>Wektor pozycji nowego elementu. </td></tr>
-    <tr><td class="paramname">scale</td><td>Wektor skali nowego elementu. </td></tr>
-    <tr><td class="paramname">type</td><td>Typ nowego elementu będący liczbą int wybraną przez użytkownika. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pos</td><td>Wektor pozycji nowego elementu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">scale</td><td>Wektor skali nowego elementu. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>Typ nowego elementu będący liczbą int wybraną przez użytkownika. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00165">165</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00208">208</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 6 -->
+<div class="center"><!-- SVG 7 -->
 </div>
 </div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 7 -->
+<div class="center"><!-- SVG 8 -->
 </div>
 </div>
 
@@ -365,17 +411,17 @@ Oto graf wywoływań tej funkcji:</div>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00119">119</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00131">131</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 8 -->
+<div class="center"><!-- SVG 9 -->
 </div>
 </div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 9 -->
+<div class="center"><!-- SVG 10 -->
 </div>
 </div>
 
@@ -401,13 +447,13 @@ Oto graf wywoływań tej funkcji:</div>
 <div class="dynheader">
 Oto graf wywołań dla tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 10 -->
+<div class="center"><!-- SVG 11 -->
 </div>
 </div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 11 -->
+<div class="center"><!-- SVG 12 -->
 </div>
 </div>
 
@@ -437,7 +483,7 @@ Oto graf wywoływań tej funkcji:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Zwraca</dt><dd>const std::shared_ptr&lt;SceneObject&gt;&amp; Pierwszy element na liście. </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_8hh_source.html#l00047">47</a> pliku <a class="el" href="_scene_8hh_source.html">Scene.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_8hh_source.html#l00048">48</a> pliku <a class="el" href="_scene_8hh_source.html">Scene.hh</a>.</p>
 
 </div>
 </div>
@@ -465,7 +511,33 @@ Oto graf wywoływań tej funkcji:</div>
 </div><div class="memdoc">
 <dl class="section return"><dt>Zwraca</dt><dd>const std::shared_ptr&lt;SceneObject&gt;&amp; Ostatni element na liście. </dd></dl>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_8hh_source.html#l00052">52</a> pliku <a class="el" href="_scene_8hh_source.html">Scene.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_8hh_source.html#l00053">53</a> pliku <a class="el" href="_scene_8hh_source.html">Scene.hh</a>.</p>
+
+</div>
+</div>
+<a id="a9fb7a5ad22b15fa0d53f5de77ee3e9b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fb7a5ad22b15fa0d53f5de77ee3e9b1">&#9670;&nbsp;</a></span>takePointerToActiveDrone()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">shared_ptr&lt; <a class="el" href="class_drone.html">Drone</a> &gt; Scene::takePointerToActiveDrone </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Zwraca</dt><dd>std::shared_ptr&lt;Drone&gt; zwracany wskaźnik na aktywnego drona. </dd></dl>
+
+<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00120">120</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 13 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -489,7 +561,7 @@ Oto graf wywoływań tej funkcji:</div>
 <div class="dynheader">
 Oto graf wywoływań tej funkcji:</div>
 <div class="dyncontent">
-<div class="center"><!-- SVG 12 -->
+<div class="center"><!-- SVG 14 -->
 </div>
 </div>
 

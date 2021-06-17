@@ -85,21 +85,20 @@ $(document).ready(function(){initNavTree('_scene_8cpp.html',''); initResizable()
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Definicje</a> &#124;
-<a href="#func-members">Funkcje</a>  </div>
+<a href="#define-members">Definicje</a>  </div>
   <div class="headertitle">
 <div class="title">Dokumentacja pliku Scene.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<code>#include &lt;unistd.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
 <code>#include &lt;iterator&gt;</code><br />
 <code>#include &quot;<a class="el" href="_vector_8hh_source.html">Vector.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_scene_8hh_source.html">Scene.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_plateau_8hh_source.html">Plateau.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="_sharp_top_hill_8hh_source.html">SharpTopHill.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_drone_grid_8hh_source.html">DroneGrid.hh</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="_obstacle_grid_8hh_source.html">ObstacleGrid.hh</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Wykres zależności załączania dla Scene.cpp:</div>
 <div class="dyncontent">
@@ -117,12 +116,6 @@ Definicje</h2></td></tr>
 <tr class="separator:ae0f150262b052a824f4031c1531775bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3028beddd2009447c51c8e34f4aa435b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_scene_8cpp.html#a3028beddd2009447c51c8e34f4aa435b">UNIT_SCALE</a>&#160;&#160;&#160;1,1,1</td></tr>
 <tr class="separator:a3028beddd2009447c51c8e34f4aa435b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Funkcje</h2></td></tr>
-<tr class="memitem:a01e7087bca9eb203caf9afff7760b41d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_scene_8cpp.html#a01e7087bca9eb203caf9afff7760b41d">checkIfRectanglesIntersect</a> (<a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p1, <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p2, <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p3, <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; p4)</td></tr>
-<tr class="memdesc:a01e7087bca9eb203caf9afff7760b41d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja sprawdza czy dane prostokąty się przecinają.  <a href="_scene_8cpp.html#a01e7087bca9eb203caf9afff7760b41d">Więcej...</a><br /></td></tr>
-<tr class="separator:a01e7087bca9eb203caf9afff7760b41d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Dokumentacja definicji</h2>
 <a id="a05a5c13442ed4d5325d373ccc0ffa1ec"></a>
@@ -170,61 +163,6 @@ Funkcje</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00012">12</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Dokumentacja funkcji</h2>
-<a id="a01e7087bca9eb203caf9afff7760b41d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a01e7087bca9eb203caf9afff7760b41d">&#9670;&nbsp;</a></span>checkIfRectanglesIntersect()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool checkIfRectanglesIntersect </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
-          <td class="paramname"><em>p1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
-          <td class="paramname"><em>p2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
-          <td class="paramname"><em>p3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td>
-          <td class="paramname"><em>p4</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Funkcja sprawdza czy dane prostokąty się przecinają na podstawie 2 przeciwległych wierzchołków, dwóch prostokątów, podanych jako wektory położenia. Współrzędna z wektorów nie ma znaczenia. </p><dl class="params"><dt>Parametry</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">p1</td><td>Wektor położenia lewego dolnego wierzchołka pierwszego prostokąta. </td></tr>
-    <tr><td class="paramname">p2</td><td>Wektor położenia górnego prawego wierzchołka pierwszego prostokąta. </td></tr>
-    <tr><td class="paramname">p3</td><td>Wektor położenia lewego dolnego wierzchołka drugiego prostokąta. </td></tr>
-    <tr><td class="paramname">p4</td><td>Wektor położenia górnego prawego wierzchołka drugiego prostokąta. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Zwraca</dt><dd>true Jeśli prostokąty się przecinają. </dd>
-<dd>
-false Jeśli prostokąty się nie przecinają. </dd></dl>
-
-<p class="definition">Definicja w linii <a class="el" href="_scene_8cpp_source.html#l00240">240</a> pliku <a class="el" href="_scene_8cpp_source.html">Scene.cpp</a>.</p>
 
 </div>
 </div>

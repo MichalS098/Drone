@@ -1,0 +1,10 @@
+digraph "Plateau::getPosition"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="RL";
+  Node1 [label="Plateau::getPosition",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną."];
+  Node1 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="Plateau::checkIfPlaceIsAvaliable",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_plateau.html#a59cfff29a149da06984bcf954911c89a",tooltip="Funkcja sprawdza czy miejsce zajmowane przez płaskowyż, pokrywa sie z okręgiem o parametrach podanych..."];
+}

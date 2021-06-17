@@ -57,5 +57,5 @@ public:
      */
     inline void addElementToList(std::shared_ptr<SceneObject>& elem) {_lstOfObjects.push_back(elem);}
 
-    bool checkIfPlaceIsOccupied(const std::shared_ptr<Drone> &P_drone) const;
+    int checkIfPlaceIsOccupied(const std::shared_ptr<Drone> &P_drone) const;
 };

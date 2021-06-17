@@ -15,7 +15,7 @@ digraph "PzG::LaczeDoGNUPlota::DodajNazwePliku"
   Node5 [label="additionOfNewElement",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_user_interface_8cpp.html#af1775f251a1d11787b7374363c23b92e",tooltip="Funkcja pyta użytkownika o położenie oraz skale nowego elementu, oraz jaki to ma być element i wywołu..."];
   Node5 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node1 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node6 [label="Drone::planInitialFlightPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_drone.html#ad3b6c1aeee762f41433c407d7f447c55",tooltip="Funkcja planuje początkową ścieżkę lotu drona."];
+  Node6 [label="Drone::planInitialFlightPath",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_drone.html#aee0a10fadec453336f81e72e8820677c",tooltip="Funkcja planuje początkową ścieżkę lotu drona."];
   Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node7 [label="Scene::droneFlightAnimation",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_scene.html#ad045dbcdcb99b8ab9f79a177ea3d2fc0",tooltip="Funkcja wykonuje animacje lotu drona."];
   Node7 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];

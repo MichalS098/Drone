@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['typdostepudozasobu_551',['TypDostepuDoZasobu',['../namespace_pz_g.html#af74528dea7061dcb07cf44f315703cf4',1,'PzG']]],
-  ['typsposoburysowania_552',['TypSposobuRysowania',['../namespace_pz_g.html#a53d89f50686ddd39301f9706cc1247dc',1,'PzG']]],
-  ['typtryburysowania_553',['TypTrybuRysowania',['../namespace_pz_g.html#aef59d70a0ee2eab473790613c3628944',1,'PzG']]]
+  ['typdostepudozasobu_534',['TypDostepuDoZasobu',['../namespace_pz_g.html#af74528dea7061dcb07cf44f315703cf4',1,'PzG']]],
+  ['typsposoburysowania_535',['TypSposobuRysowania',['../namespace_pz_g.html#a53d89f50686ddd39301f9706cc1247dc',1,'PzG']]],
+  ['typtryburysowania_536',['TypTrybuRysowania',['../namespace_pz_g.html#aef59d70a0ee2eab473790613c3628944',1,'PzG']]]
 ];

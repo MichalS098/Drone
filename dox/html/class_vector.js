@@ -5,6 +5,7 @@ var class_vector =
     [ "~Vector", "class_vector.html#afd524fac19e6d3d69db5198ffe2952b0", null ],
     [ "Vector", "class_vector.html#aa1671acb623cf2259dd60cf81db4f56a", null ],
     [ "Vector", "class_vector.html#a95fff8dfff7d8061630c57d2ed2bc0bf", null ],
+    [ "findMax", "class_vector.html#a5ff1d370ad03a8653f0c75d4a58d6fe1", null ],
     [ "lenght", "class_vector.html#a1993bbd5d869d5a7ab4a6762bfc9d61b", null ],
     [ "operator&", "class_vector.html#a779a58dc409bbe0d10eddba27f2bc96e", null ],
     [ "operator*", "class_vector.html#a32f23dcd7b01f21cf1d6ad3f005ea3dc", null ],

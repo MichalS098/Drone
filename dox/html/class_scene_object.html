@@ -105,15 +105,18 @@ Diagram dziedziczenia dla SceneObject</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
-<tr class="memitem:a550ffa1027da7369aaac1b2f7024a7a0"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a550ffa1027da7369aaac1b2f7024a7a0">checkIfPlaceIsAvaliable</a> (const <a class="el" href="class_scene_object.html">SceneObject</a> &amp;obj) const =0</td></tr>
-<tr class="memdesc:a550ffa1027da7369aaac1b2f7024a7a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja czysto wirtualna definiująca sprawdzanie czy miejsce lądowania jest puste.  <a href="class_scene_object.html#a550ffa1027da7369aaac1b2f7024a7a0">Więcej...</a><br /></td></tr>
-<tr class="separator:a550ffa1027da7369aaac1b2f7024a7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9585404f0d457caf28713952a93fb90"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#ad9585404f0d457caf28713952a93fb90">checkIfPlaceIsAvaliable</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;center, double radius) const =0</td></tr>
+<tr class="memdesc:ad9585404f0d457caf28713952a93fb90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna, sprawdza czy miejsce zajmowane przez obiekt sceny, pokrywa sie z okręgiem o parametrach podanych jako argumenty (położenie i promień).  <a href="class_scene_object.html#ad9585404f0d457caf28713952a93fb90">Więcej...</a><br /></td></tr>
+<tr class="separator:ad9585404f0d457caf28713952a93fb90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38b2b5a88a9584465febe7bb1de2c8f1"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a38b2b5a88a9584465febe7bb1de2c8f1">getPosition</a> () const</td></tr>
 <tr class="memdesc:a38b2b5a88a9584465febe7bb1de2c8f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.  <a href="class_scene_object.html#a38b2b5a88a9584465febe7bb1de2c8f1">Więcej...</a><br /></td></tr>
 <tr class="separator:a38b2b5a88a9584465febe7bb1de2c8f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a40b17f34fc79a30b4f9f4099492b1c67"><td class="memItemLeft" align="right" valign="top">virtual const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a40b17f34fc79a30b4f9f4099492b1c67">getType</a> () const</td></tr>
 <tr class="memdesc:a40b17f34fc79a30b4f9f4099492b1c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na odczytanie typu elementu klas pochodnych.  <a href="class_scene_object.html#a40b17f34fc79a30b4f9f4099492b1c67">Więcej...</a><br /></td></tr>
 <tr class="separator:a40b17f34fc79a30b4f9f4099492b1c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e7cadeef06759215b1642cccc5cc577"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a2e7cadeef06759215b1642cccc5cc577">getRadius</a> () const</td></tr>
+<tr class="memdesc:a2e7cadeef06759215b1642cccc5cc577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwraca promień okręgu sceny.  <a href="class_scene_object.html#a2e7cadeef06759215b1642cccc5cc577">Więcej...</a><br /></td></tr>
+<tr class="separator:a2e7cadeef06759215b1642cccc5cc577"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11bd2a08305b682b32f70f3d3a162780"><td class="memItemLeft" align="right" valign="top">virtual const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_scene_object.html#a11bd2a08305b682b32f70f3d3a162780">takeFileName_refFig</a> () const</td></tr>
 <tr class="memdesc:a11bd2a08305b682b32f70f3d3a162780"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na zwrócenie nazwy pliku wzorcowego.  <a href="class_scene_object.html#a11bd2a08305b682b32f70f3d3a162780">Więcej...</a><br /></td></tr>
 <tr class="separator:a11bd2a08305b682b32f70f3d3a162780"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -125,8 +128,8 @@ Metody publiczne</h2></td></tr>
 <div class="textblock">
 <p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00010">10</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
 </div><h2 class="groupheader">Dokumentacja funkcji składowych</h2>
-<a id="a550ffa1027da7369aaac1b2f7024a7a0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a550ffa1027da7369aaac1b2f7024a7a0">&#9670;&nbsp;</a></span>checkIfPlaceIsAvaliable()</h2>
+<a id="ad9585404f0d457caf28713952a93fb90"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9585404f0d457caf28713952a93fb90">&#9670;&nbsp;</a></span>checkIfPlaceIsAvaliable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,9 +140,19 @@ Metody publiczne</h2></td></tr>
         <tr>
           <td class="memname">virtual bool SceneObject::checkIfPlaceIsAvaliable </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="class_scene_object.html">SceneObject</a> &amp;&#160;</td>
-          <td class="paramname"><em>obj</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
         </tr>
       </table>
   </td>
@@ -148,11 +161,15 @@ Metody publiczne</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Zwraca</dt><dd>true Zwraca jeśli miejsce jest puste </dd>
-<dd>
-false Zwraca jeśli miejsce jest zajete </dd></dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>Jeśli miejsce jest wolne i okręgi się nie pokrywają. </td></tr>
+    <tr><td class="paramname">false</td><td>Jeśli miejsce jest zajęte i okręgi się pokrywają. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Implementowany w <a class="el" href="class_geometric_figure.html#a303095176a1da1e95bfe37e1ff34e5fc">GeometricFigure</a> i <a class="el" href="class_drone.html#aeb77decc4b54c415f9ef485e0f193816">Drone</a>.</p>
+<p>Implementowany w <a class="el" href="class_drone.html#ae9bbd8dcddd9bee5e688565fb94f0ab5">Drone</a>, <a class="el" href="class_plateau.html#a59cfff29a149da06984bcf954911c89a">Plateau</a>, <a class="el" href="class_sharp_top_hill.html#a016502f9c97ed89adf91447b4b029d26">SharpTopHill</a>, <a class="el" href="class_long_ridge_hill.html#adbcc7b7bd0332b1f5990c2d65dcf9d86">LongRidgeHill</a> i <a class="el" href="class_geometric_figure.html#a41ab458c567e884ecd18bf8f3c122964">GeometricFigure</a>.</p>
 
 </div>
 </div>
@@ -178,10 +195,51 @@ false Zwraca jeśli miejsce jest zajete </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname"><a class="el" href="class_vector.html">Vector&lt;3&gt;</a></td><td>położenie </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Reimplementowana w <a class="el" href="class_geometric_figure.html#a72b0d8cd7b9d560d396bd6aae325dab0">GeometricFigure</a>, <a class="el" href="class_drone.html#ab07bd13f578594946da79fb1f8ffb707">Drone</a>, <a class="el" href="class_plateau.html#a9463efba20f5b9199ff3cf6815eb2be5">Plateau</a>, <a class="el" href="class_sharp_top_hill.html#a183ab4fc4be8d69b6e2b7898cddb86a4">SharpTopHill</a>, <a class="el" href="class_long_ridge_hill.html#ac9f20fc530003d3747398ff99fb01b34">LongRidgeHill</a>, <a class="el" href="class_drone_grid.html#a763485c5f88c5974f7213b41c16a9a19">DroneGrid</a> i <a class="el" href="class_obstacle_grid.html#ac139b9971d0b99fa9294236942074235">ObstacleGrid</a>.</p>
+<p>Reimplementowana w <a class="el" href="class_geometric_figure.html#a72b0d8cd7b9d560d396bd6aae325dab0">GeometricFigure</a>, <a class="el" href="class_drone.html#ab07bd13f578594946da79fb1f8ffb707">Drone</a>, <a class="el" href="class_plateau.html#a9463efba20f5b9199ff3cf6815eb2be5">Plateau</a>, <a class="el" href="class_sharp_top_hill.html#a183ab4fc4be8d69b6e2b7898cddb86a4">SharpTopHill</a> i <a class="el" href="class_long_ridge_hill.html#ac9f20fc530003d3747398ff99fb01b34">LongRidgeHill</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00021">21</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00023">23</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
+
+</div>
+</div>
+<a id="a2e7cadeef06759215b1642cccc5cc577"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e7cadeef06759215b1642cccc5cc577">&#9670;&nbsp;</a></span>getRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double SceneObject::getRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Zwracany</td><td>jest promień okręgu zajmowanego przez element sceny </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementowana w <a class="el" href="class_geometric_figure.html#a26832af41b92299ed3dd43679502c5f6">GeometricFigure</a>, <a class="el" href="class_drone.html#a432cdfb2b0342c62ceb610d7057bb781">Drone</a>, <a class="el" href="class_plateau.html#a8d3f5da9886c8334fc0201d0424aa8ee">Plateau</a>, <a class="el" href="class_sharp_top_hill.html#a52f0d492ad9ac9342d1a379e11808a28">SharpTopHill</a> i <a class="el" href="class_long_ridge_hill.html#ab04b47631e6fd0c333f00936c32bf993">LongRidgeHill</a>.</p>
+
+<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00038">38</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
 
 </div>
 </div>
@@ -207,11 +265,16 @@ false Zwraca jeśli miejsce jest zajete </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Zwraca</dt><dd>const char* Nazwa typu obiektu. </dd></dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">const</td><td>char* Nazwa typu obiektu. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplementowana w <a class="el" href="class_geometric_figure.html#ab4255eddb6a905bb4c74c2cc1fb654aa">GeometricFigure</a>, <a class="el" href="class_drone.html#aca3bc8efef79f398f5b7b2a370d8d9c1">Drone</a>, <a class="el" href="class_plateau.html#a5c31ca87bb54e89789db2bfcc6758930">Plateau</a>, <a class="el" href="class_sharp_top_hill.html#a48c9df179fe8062ccc8fb3c394963657">SharpTopHill</a> i <a class="el" href="class_long_ridge_hill.html#a37f33f89ebef85b0badfc7d26a482e2f">LongRidgeHill</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00029">29</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00031">31</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
 
 </div>
 </div>
@@ -237,11 +300,16 @@ false Zwraca jeśli miejsce jest zajete </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Zwraca</dt><dd>const std::string&amp; - zwracana nazwa pliku .dat z zapisanymi współrzędnymi </dd></dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">const</td><td>std::string&amp; - zwracana nazwa pliku .dat z zapisanymi współrzędnymi </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplementowana w <a class="el" href="class_geometric_figure.html#ac059240fa3036150851f57a4592cba7d">GeometricFigure</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00041">41</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00050">50</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
 
 </div>
 </div>
@@ -267,11 +335,16 @@ false Zwraca jeśli miejsce jest zajete </dd></dl>
   </tr>
 </table>
 </div><div class="memdoc">
-<dl class="section return"><dt>Zwraca</dt><dd>const std::string&amp; - zwracana nazwa pliku .dat z zapisanymi współrzędnymi </dd></dl>
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">const</td><td>std::string&amp; - zwracana nazwa pliku .dat z zapisanymi współrzędnymi </td></tr>
+  </table>
+  </dd>
+</dl>
 
 <p>Reimplementowana w <a class="el" href="class_geometric_figure.html#aa023df7264e3ed4bba5900767084a6f1">GeometricFigure</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00035">35</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_scene_object_8hh_source.html#l00044">44</a> pliku <a class="el" href="_scene_object_8hh_source.html">SceneObject.hh</a>.</p>
 
 </div>
 </div>

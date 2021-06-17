@@ -102,48 +102,64 @@ $(document).ready(function(){initNavTree('_plateau_8cpp_source.html',''); initRe
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    this-&gt;enterFileName_finalFig(finalFile);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    this-&gt;enterFileName_refFig(<a class="code" href="_plateau_8cpp.html#acf939f9643a0fc24e7e12b8054236102">CUBE_SAMPLE_FILE</a>);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    this-&gt;setScale(scale);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    ifstream refFileStream{this-&gt;takeFileName_refFig()};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ofstream finalFileStream{this-&gt;takeFileName_finalFig()};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">if</span> (!refFileStream.is_open()) {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;:( Niepowiodlo sie otwarcie pliku: &quot;</span> &lt;&lt; this-&gt;takeFileName_refFig() &lt;&lt; endl;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        exit(1);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span> (!finalFileStream.is_open()) {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;:( Niepowiodlo sie otwarcie pliku: &quot;</span> &lt;&lt; this-&gt;takeFileName_finalFig() &lt;&lt; endl;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        exit(1);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;3&gt;</a> apex;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> edge = 0; edge &lt; <a class="code" href="_plateau_8cpp.html#a723153dd1d158255884ff45075df7c39">AMOUNT_OF_EDGES</a>; ++edge) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> vertice = 0; vertice &lt; <a class="code" href="_plateau_8cpp.html#a38a8897bd39608da885010a044eb03e1">AMOUNT_OF_VERTICES</a>; ++vertice) {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            refFileStream &gt;&gt; apex;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">// transformacja wierzcholka </span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (refFileStream.fail()) exit(1);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;3; ++i){</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                apex[i]=apex[i]*scale[i];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            apex=apex+pos;    </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            finalFileStream &lt;&lt; apex &lt;&lt; endl;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">if</span> (finalFileStream.fail()) exit(1);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        finalFileStream &lt;&lt; endl; <span class="comment">// Dodatkowa linia oddzielająca krawędzie</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    _radius=scale.findMax() * sqrt(2)/2; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    ifstream refFileStream{this-&gt;takeFileName_refFig()};</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ofstream finalFileStream{this-&gt;takeFileName_finalFig()};</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">if</span> (!refFileStream.is_open()) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;:( Niepowiodlo sie otwarcie pliku: &quot;</span> &lt;&lt; this-&gt;takeFileName_refFig() &lt;&lt; endl;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span> (!finalFileStream.is_open()) {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        cerr &lt;&lt; <span class="stringliteral">&quot;:( Niepowiodlo sie otwarcie pliku: &quot;</span> &lt;&lt; this-&gt;takeFileName_finalFig() &lt;&lt; endl;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        exit(1);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_vector.html">Vector&lt;3&gt;</a> apex;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> edge = 0; edge &lt; <a class="code" href="_plateau_8cpp.html#a723153dd1d158255884ff45075df7c39">AMOUNT_OF_EDGES</a>; ++edge) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> vertice = 0; vertice &lt; <a class="code" href="_plateau_8cpp.html#a38a8897bd39608da885010a044eb03e1">AMOUNT_OF_VERTICES</a>; ++vertice) {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            refFileStream &gt;&gt; apex;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="comment">// transformacja wierzcholka </span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            <span class="keywordflow">if</span> (refFileStream.fail()) exit(1);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i=0; i&lt;3; ++i){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                apex[i]=apex[i]*scale[i];</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            apex=apex+pos;    </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            finalFileStream &lt;&lt; apex &lt;&lt; endl;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (finalFileStream.fail()) exit(1);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        finalFileStream &lt;&lt; endl; <span class="comment">// Dodatkowa linia oddzielająca krawędzie</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="_plateau_8cpp.html#ad0deec2a5ddff5c0d2d4cd4e0dcffbde">   61</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="_plateau_8cpp.html#ad0deec2a5ddff5c0d2d4cd4e0dcffbde">makeFilePlateau</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>){</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    ostringstream nameStream;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    nameStream&lt;&lt;<span class="stringliteral">&quot;dat/PlikWlasciwy_Plaskowyz&quot;</span>&lt;&lt;<span class="keywordtype">id</span>&lt;&lt;<span class="stringliteral">&quot;.dat&quot;</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> nameStream.str();</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="_plateau_8cpp.html#ad0deec2a5ddff5c0d2d4cd4e0dcffbde">   62</a></span>&#160;<span class="keywordtype">string</span> <a class="code" href="_plateau_8cpp.html#ad0deec2a5ddff5c0d2d4cd4e0dcffbde">makeFilePlateau</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span>){</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    ostringstream nameStream;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    nameStream&lt;&lt;<span class="stringliteral">&quot;dat/PlikWlasciwy_Plaskowyz&quot;</span>&lt;&lt;<span class="keywordtype">id</span>&lt;&lt;<span class="stringliteral">&quot;.dat&quot;</span>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> nameStream.str();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_plateau.html#a59cfff29a149da06984bcf954911c89a">   76</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="class_plateau.html#a59cfff29a149da06984bcf954911c89a">Plateau::checkIfPlaceIsAvaliable</a>(<span class="keyword">const</span> <a class="code" href="class_vector.html">Vector&lt;3&gt;</a> &amp;center, <span class="keywordtype">double</span> radius)<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">// odleglosc euklidesowa na plaszczyznie</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">double</span> distanceBetweenCenters = sqrt( pow((center[0]-<a class="code" href="class_plateau.html#a9463efba20f5b9199ff3cf6815eb2be5">getPosition</a>()[0]),2) + pow((center[1]-<a class="code" href="class_plateau.html#a9463efba20f5b9199ff3cf6815eb2be5">getPosition</a>()[1]),2) ); </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> sumOfRadius            = radius+<a class="code" href="class_plateau.html#a8d3f5da9886c8334fc0201d0424aa8ee">getRadius</a>();</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(sumOfRadius&lt;=distanceBetweenCenters){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="a_plateau_8cpp_html_a38a8897bd39608da885010a044eb03e1"><div class="ttname"><a href="_plateau_8cpp.html#a38a8897bd39608da885010a044eb03e1">AMOUNT_OF_VERTICES</a></div><div class="ttdeci">#define AMOUNT_OF_VERTICES</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8cpp_source.html#l00004">Plateau.cpp:4</a></div></div>
+<div class="ttc" id="aclass_plateau_html_a59cfff29a149da06984bcf954911c89a"><div class="ttname"><a href="class_plateau.html#a59cfff29a149da06984bcf954911c89a">Plateau::checkIfPlaceIsAvaliable</a></div><div class="ttdeci">virtual bool checkIfPlaceIsAvaliable(const Vector&lt; 3 &gt; &amp;center, double radius) const override final</div><div class="ttdoc">Funkcja sprawdza czy miejsce zajmowane przez płaskowyż, pokrywa sie z okręgiem o parametrach podanych...</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8cpp_source.html#l00076">Plateau.cpp:76</a></div></div>
 <div class="ttc" id="a_plateau_8hh_html"><div class="ttname"><a href="_plateau_8hh.html">Plateau.hh</a></div></div>
 <div class="ttc" id="a_plateau_8cpp_html_a723153dd1d158255884ff45075df7c39"><div class="ttname"><a href="_plateau_8cpp.html#a723153dd1d158255884ff45075df7c39">AMOUNT_OF_EDGES</a></div><div class="ttdeci">#define AMOUNT_OF_EDGES</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8cpp_source.html#l00005">Plateau.cpp:5</a></div></div>
 <div class="ttc" id="aclass_vector_html"><div class="ttname"><a href="class_vector.html">Vector&lt; 3 &gt;</a></div></div>
-<div class="ttc" id="a_plateau_8cpp_html_ad0deec2a5ddff5c0d2d4cd4e0dcffbde"><div class="ttname"><a href="_plateau_8cpp.html#ad0deec2a5ddff5c0d2d4cd4e0dcffbde">makeFilePlateau</a></div><div class="ttdeci">string makeFilePlateau(unsigned int id)</div><div class="ttdoc">Funkcja tworzy nazwe pliku dla nowego elementu.</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8cpp_source.html#l00061">Plateau.cpp:61</a></div></div>
+<div class="ttc" id="aclass_plateau_html_a9463efba20f5b9199ff3cf6815eb2be5"><div class="ttname"><a href="class_plateau.html#a9463efba20f5b9199ff3cf6815eb2be5">Plateau::getPosition</a></div><div class="ttdeci">virtual Vector&lt; 3 &gt; getPosition() const override</div><div class="ttdoc">Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8hh_source.html#l00021">Plateau.hh:21</a></div></div>
+<div class="ttc" id="a_plateau_8cpp_html_ad0deec2a5ddff5c0d2d4cd4e0dcffbde"><div class="ttname"><a href="_plateau_8cpp.html#ad0deec2a5ddff5c0d2d4cd4e0dcffbde">makeFilePlateau</a></div><div class="ttdeci">string makeFilePlateau(unsigned int id)</div><div class="ttdoc">Funkcja tworzy nazwe pliku dla nowego elementu.</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8cpp_source.html#l00062">Plateau.cpp:62</a></div></div>
 <div class="ttc" id="a_plateau_8cpp_html_acf939f9643a0fc24e7e12b8054236102"><div class="ttname"><a href="_plateau_8cpp.html#acf939f9643a0fc24e7e12b8054236102">CUBE_SAMPLE_FILE</a></div><div class="ttdeci">#define CUBE_SAMPLE_FILE</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8cpp_source.html#l00006">Plateau.cpp:6</a></div></div>
+<div class="ttc" id="aclass_plateau_html_a8d3f5da9886c8334fc0201d0424aa8ee"><div class="ttname"><a href="class_plateau.html#a8d3f5da9886c8334fc0201d0424aa8ee">Plateau::getRadius</a></div><div class="ttdeci">virtual double getRadius() const override</div><div class="ttdoc">Funkcja zwraca promień okręgu sceny.</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8hh_source.html#l00023">Plateau.hh:23</a></div></div>
 <div class="ttc" id="aclass_plateau_html_acba7004c1d1d29978efef83e30b10f4f"><div class="ttname"><a href="class_plateau.html#acba7004c1d1d29978efef83e30b10f4f">Plateau::Plateau</a></div><div class="ttdeci">Plateau(const Vector&lt; 3 &gt; &amp;pos, const Vector&lt; 3 &gt; &amp;scale, unsigned int id)</div><div class="ttdoc">Konstruktor tworzy płaskowyż.</div><div class="ttdef"><b>Definition:</b> <a href="_plateau_8cpp_source.html#l00020">Plateau.cpp:20</a></div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

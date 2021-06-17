@@ -1,0 +1,12 @@
+digraph "SharpTopHill::checkIfPlaceIsAvaliable"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="SharpTopHill::checkIfPlace\lIsAvaliable",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip="Funkcja sprawdza czy miejsce zajmowane przez górę, pokrywa sie z okręgiem o parametrach podanych jako..."];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="SharpTopHill::getPosition",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sharp_top_hill.html#a183ab4fc4be8d69b6e2b7898cddb86a4",tooltip="Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną."];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="SharpTopHill::getRadius",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_sharp_top_hill.html#a52f0d492ad9ac9342d1a379e11808a28",tooltip="Funkcja zwraca promień okręgu sceny."];
+}

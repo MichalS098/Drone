@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['ymax_473',['Ymax',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#ac54e4e7448ce3bd324efdc94a999f535',1,'PzG::LaczeDoGNUPlota']]],
-  ['ymin_474',['Ymin',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9352c0382bfaeaaba9f65399a7383164',1,'PzG::LaczeDoGNUPlota']]]
+  ['xmax_457',['Xmax',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a8e23479629af3df3d352b7839ae396b8',1,'PzG::LaczeDoGNUPlota']]],
+  ['xmin_458',['Xmin',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a66836c9749bf179420e4ca3e9447efd7',1,'PzG::LaczeDoGNUPlota']]]
 ];

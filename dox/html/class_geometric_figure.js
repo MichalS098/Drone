@@ -1,9 +1,10 @@
 var class_geometric_figure =
 [
-    [ "checkIfPlaceIsAvaliable", "class_geometric_figure.html#a303095176a1da1e95bfe37e1ff34e5fc", null ],
+    [ "checkIfPlaceIsAvaliable", "class_geometric_figure.html#a41ab458c567e884ecd18bf8f3c122964", null ],
     [ "enterFileName_finalFig", "class_geometric_figure.html#af49f8284d2602735778f2fba2f7ed66b", null ],
     [ "enterFileName_refFig", "class_geometric_figure.html#acb5c4e7d778e447edc1889aaacd0397c", null ],
     [ "getPosition", "class_geometric_figure.html#a72b0d8cd7b9d560d396bd6aae325dab0", null ],
+    [ "getRadius", "class_geometric_figure.html#a26832af41b92299ed3dd43679502c5f6", null ],
     [ "getType", "class_geometric_figure.html#ab4255eddb6a905bb4c74c2cc1fb654aa", null ],
     [ "scaleUp", "class_geometric_figure.html#a13bd49360e3bb199f3324d70c6922200", null ],
     [ "setScale", "class_geometric_figure.html#a7087635eb3f456f70de8d4cc8db589c7", null ],

@@ -1,10 +1,8 @@
 var searchData=
 [
-  ['scaleup_423',['scaleUp',['../class_geometric_figure.html#a13bd49360e3bb199f3324d70c6922200',1,'GeometricFigure']]],
-  ['scene_424',['Scene',['../class_scene.html#ae6b47a946500a1d904bce5c8cef80066',1,'Scene']]],
-  ['setscale_425',['setScale',['../class_geometric_figure.html#a7087635eb3f456f70de8d4cc8db589c7',1,'GeometricFigure']]],
-  ['sharptophill_426',['SharpTopHill',['../class_sharp_top_hill.html#a4a5ae20d8463d1001e9681c7af0bda42',1,'SharpTopHill']]],
-  ['size_427',['size',['../class_matrix.html#a3a952058b788b08f01c07c0154e7ebc2',1,'Matrix::size()'],['../class_vector.html#a196e9eedc9a88a48f64e69e39405fa72',1,'Vector::size()']]],
-  ['skalax_428',['SkalaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4b1eb252fd785a5aeff938e7b2dce2b1',1,'PzG::LaczeDoGNUPlota']]],
-  ['skalaz_429',['SkalaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a44f922ccbc508d6cd7809c669238dae3',1,'PzG::LaczeDoGNUPlota']]]
+  ['rotacjax_403',['RotacjaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#addf0b844f626f3f5220de70efcbbdbb3',1,'PzG::LaczeDoGNUPlota']]],
+  ['rotacjaz_404',['RotacjaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a9dac73754fab10644b287756003e9c79',1,'PzG::LaczeDoGNUPlota']]],
+  ['rotaterotor_405',['rotateRotor',['../class_drone.html#aa48dcce41ca6e230f200df927ee028e3',1,'Drone']]],
+  ['rysuj_406',['Rysuj',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a065f5b8402737cc62b0ad4f66d028335',1,'PzG::LaczeDoGNUPlota']]],
+  ['rysujdopliku_407',['RysujDoPliku',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#aacb7ae45d283c741fb330f27b132e1a3',1,'PzG::LaczeDoGNUPlota']]]
 ];

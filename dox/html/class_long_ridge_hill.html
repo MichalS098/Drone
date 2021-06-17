@@ -123,6 +123,12 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:ac9f20fc530003d3747398ff99fb01b34"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_long_ridge_hill.html#ac9f20fc530003d3747398ff99fb01b34">getPosition</a> () const override</td></tr>
 <tr class="memdesc:ac9f20fc530003d3747398ff99fb01b34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja wirtualna pozwalająca na wypisanie położenia przez klasę pochodną.  <a href="class_long_ridge_hill.html#ac9f20fc530003d3747398ff99fb01b34">Więcej...</a><br /></td></tr>
 <tr class="separator:ac9f20fc530003d3747398ff99fb01b34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab04b47631e6fd0c333f00936c32bf993"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_long_ridge_hill.html#ab04b47631e6fd0c333f00936c32bf993">getRadius</a> () const override</td></tr>
+<tr class="memdesc:ab04b47631e6fd0c333f00936c32bf993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwraca promień okręgu sceny.  <a href="class_long_ridge_hill.html#ab04b47631e6fd0c333f00936c32bf993">Więcej...</a><br /></td></tr>
+<tr class="separator:ab04b47631e6fd0c333f00936c32bf993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbcc7b7bd0332b1f5990c2d65dcf9d86"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_long_ridge_hill.html#adbcc7b7bd0332b1f5990c2d65dcf9d86">checkIfPlaceIsAvaliable</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;center, double radius) const override final</td></tr>
+<tr class="memdesc:adbcc7b7bd0332b1f5990c2d65dcf9d86"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja sprawdza czy miejsce zajmowane przez górę, pokrywa sie z okręgiem o parametrach podanych jako argumenty (położenie i promień).  <a href="class_long_ridge_hill.html#adbcc7b7bd0332b1f5990c2d65dcf9d86">Więcej...</a><br /></td></tr>
+<tr class="separator:adbcc7b7bd0332b1f5990c2d65dcf9d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_class_geometric_figure"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_geometric_figure')"><img src="closed.png" alt="-"/>&#160;Metody publiczne dziedziczone z <a class="el" href="class_geometric_figure.html">GeometricFigure</a></td></tr>
 <tr class="memitem:aa023df7264e3ed4bba5900767084a6f1 inherit pub_methods_class_geometric_figure"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_figure.html#aa023df7264e3ed4bba5900767084a6f1">takeFileName_refFig</a> () const override</td></tr>
 <tr class="memdesc:aa023df7264e3ed4bba5900767084a6f1 inherit pub_methods_class_geometric_figure"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja zwraca zapisaną nazwe pliku wzorcowego obiektu.  <a href="class_geometric_figure.html#aa023df7264e3ed4bba5900767084a6f1">Więcej...</a><br /></td></tr>
@@ -141,9 +147,6 @@ Metody publiczne</h2></td></tr>
 <tr class="memitem:a7087635eb3f456f70de8d4cc8db589c7 inherit pub_methods_class_geometric_figure"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_figure.html#a7087635eb3f456f70de8d4cc8db589c7">setScale</a> (const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;scale)</td></tr>
 <tr class="memdesc:a7087635eb3f456f70de8d4cc8db589c7 inherit pub_methods_class_geometric_figure"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja umożliwia ustawienie skali.  <a href="class_geometric_figure.html#a7087635eb3f456f70de8d4cc8db589c7">Więcej...</a><br /></td></tr>
 <tr class="separator:a7087635eb3f456f70de8d4cc8db589c7 inherit pub_methods_class_geometric_figure"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a303095176a1da1e95bfe37e1ff34e5fc inherit pub_methods_class_geometric_figure"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_geometric_figure.html#a303095176a1da1e95bfe37e1ff34e5fc">checkIfPlaceIsAvaliable</a> (const <a class="el" href="class_scene_object.html">SceneObject</a> &amp;obj) const override</td></tr>
-<tr class="memdesc:a303095176a1da1e95bfe37e1ff34e5fc inherit pub_methods_class_geometric_figure"><td class="mdescLeft">&#160;</td><td class="mdescRight">Funkcja czysto wirtualna definiująca sprawdzanie czy miejsce lądowania jest puste.  <a href="class_geometric_figure.html#a303095176a1da1e95bfe37e1ff34e5fc">Więcej...</a><br /></td></tr>
-<tr class="separator:a303095176a1da1e95bfe37e1ff34e5fc inherit pub_methods_class_geometric_figure"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atrybuty prywatne</h2></td></tr>
@@ -151,6 +154,8 @@ Atrybuty prywatne</h2></td></tr>
 <tr class="separator:a2fdf431f7aa9087bddac8c5b4d219a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05e02f49d2fa3e623bbdc1d6d40008df"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_long_ridge_hill.html#a05e02f49d2fa3e623bbdc1d6d40008df">_ID</a></td></tr>
 <tr class="separator:a05e02f49d2fa3e623bbdc1d6d40008df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bb847ae719cdd8c9d25329c36f6f95c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_long_ridge_hill.html#a9bb847ae719cdd8c9d25329c36f6f95c">_radius</a></td></tr>
+<tr class="separator:a9bb847ae719cdd8c9d25329c36f6f95c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
 <div class="textblock"><p>Klasa <a class="el" href="class_long_ridge_hill.html" title="Klasa LongRidgeHill definiuje góre z długą granią.">LongRidgeHill</a> definiuje góre z długą granią, jako klasa pochodna klasy <a class="el" href="class_geometric_figure.html" title="Klasa Bazowa opisujaca figure geometryczna.">GeometricFigure</a> czyli figura geometryczna. </p>
@@ -202,6 +207,59 @@ Atrybuty prywatne</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a id="adbcc7b7bd0332b1f5990c2d65dcf9d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbcc7b7bd0332b1f5990c2d65dcf9d86">&#9670;&nbsp;</a></span>checkIfPlaceIsAvaliable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool LongRidgeHill::checkIfPlaceIsAvaliable </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="class_vector.html">Vector</a>&lt; 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>center</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>radius</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">final</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">true</td><td>Jeśli miejsce jest wolne i okręgi się nie pokrywają. </td></tr>
+    <tr><td class="paramname">false</td><td>Jeśli miejsce jest zajęte i okręgi się pokrywają. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementowana z <a class="el" href="class_geometric_figure.html#a41ab458c567e884ecd18bf8f3c122964">GeometricFigure</a>.</p>
+
+<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8cpp_source.html#l00082">82</a> pliku <a class="el" href="_long_ridge_hill_8cpp_source.html">LongRidgeHill.cpp</a>.</p>
+<div class="dynheader">
+Oto graf wywołań dla tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 -->
+</div>
+</div>
+
+</div>
+</div>
 <a id="a517481984397ec581aef448cb5f7efd6"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a517481984397ec581aef448cb5f7efd6">&#9670;&nbsp;</a></span>getID()</h2>
 
@@ -225,7 +283,7 @@ Atrybuty prywatne</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00017">17</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00018">18</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
 
 </div>
 </div>
@@ -254,7 +312,54 @@ Atrybuty prywatne</h2></td></tr>
 
 <p>Reimplementowana z <a class="el" href="class_geometric_figure.html#a72b0d8cd7b9d560d396bd6aae325dab0">GeometricFigure</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00019">19</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00020">20</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 3 -->
+</div>
+</div>
+
+</div>
+</div>
+<a id="ab04b47631e6fd0c333f00936c32bf993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab04b47631e6fd0c333f00936c32bf993">&#9670;&nbsp;</a></span>getRadius()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual double LongRidgeHill::getRadius </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="retval"><dt>Zwracane wartości</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">Zwracany</td><td>jest promień okręgu zajmowanego przez element sceny </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplementowana z <a class="el" href="class_geometric_figure.html#a26832af41b92299ed3dd43679502c5f6">GeometricFigure</a>.</p>
+
+<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00022">22</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
+<div class="dynheader">
+Oto graf wywoływań tej funkcji:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 4 -->
+</div>
+</div>
 
 </div>
 </div>
@@ -284,7 +389,7 @@ Atrybuty prywatne</h2></td></tr>
 
 <p>Reimplementowana z <a class="el" href="class_geometric_figure.html#ab4255eddb6a905bb4c74c2cc1fb654aa">GeometricFigure</a>.</p>
 
-<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00018">18</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
+<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00019">19</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
 
 </div>
 </div>
@@ -334,6 +439,30 @@ Atrybuty prywatne</h2></td></tr>
 </div><div class="memdoc">
 
 <p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00012">12</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
+
+</div>
+</div>
+<a id="a9bb847ae719cdd8c9d25329c36f6f95c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bb847ae719cdd8c9d25329c36f6f95c">&#9670;&nbsp;</a></span>_radius</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double LongRidgeHill::_radius</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definicja w linii <a class="el" href="_long_ridge_hill_8hh_source.html#l00014">14</a> pliku <a class="el" href="_long_ridge_hill_8hh_source.html">LongRidgeHill.hh</a>.</p>
 
 </div>
 </div>

@@ -8,15 +8,13 @@ var hierarchy =
     [ "Scene", "class_scene.html", null ],
     [ "SceneObject", "class_scene_object.html", [
       [ "Drone", "class_drone.html", null ],
-      [ "DroneGrid", "class_drone_grid.html", null ],
       [ "GeometricFigure", "class_geometric_figure.html", [
         [ "HexagonalPrism", "class_hexagonal_prism.html", null ],
         [ "LongRidgeHill", "class_long_ridge_hill.html", null ],
         [ "Plateau", "class_plateau.html", null ],
         [ "Rectangular", "class_rectangular.html", null ],
         [ "SharpTopHill", "class_sharp_top_hill.html", null ]
-      ] ],
-      [ "ObstacleGrid", "class_obstacle_grid.html", null ]
+      ] ]
     ] ],
     [ "Vector< T >", "class_vector.html", null ],
     [ "Vector< 3 >", "class_vector.html", null ],

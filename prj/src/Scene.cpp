@@ -1,13 +1,12 @@
 #include <cmath>
 #include <unistd.h>
+#include <string.h>
 #include <iterator>
 #include "Vector.hh"
 #include "Scene.hh"
 #include "Plateau.hh"
 #include "LongRidgeHill.hh"
 #include "SharpTopHill.hh"
-#include "DroneGrid.hh"
-#include "ObstacleGrid.hh"
 #define FIRST_DRONE_COLOR 3  //niebieski
 #define SECOND_DRONE_COLOR 3 //niebieski
 #define UNIT_SCALE 1,1,1
@@ -146,6 +145,7 @@ void Scene::droneFlightAnimation(){
 	double flightDirection;
 	double flightLenght;
 	double flightHeight;
+	bool landingFieldIsFree=false, IsItPlateau=false;
 	Vector<3> initialPosition = useActiveDrone().getPosition();
 
 	cout<<"Podaj kierunek lotu (kat w stopniach)> ";
@@ -163,17 +163,35 @@ void Scene::droneFlightAnimation(){
 	useActiveDrone().changeDroneOrientation(flightDirection, _lacze);
 	useActiveDrone().makeHorizontalFlight(flightLenght, 	 _lacze);
 
-	//sprawdzenie czy miejsce lądowania jest wolne
-	while( checkIfPlaceIsOccupied(this->takePointerToActiveDrone()) ){  //jeśli jest zajęte przeleć do przodu o 30:
-		flightLenght+=20;
-		usleep(1500000);
-		useActiveDrone().deleteFlightPath(_lacze);
-		useActiveDrone().planInitialFlightPath(flightHeight, 0, initialPosition, flightLenght, _lacze);
-		useActiveDrone().makeHorizontalFlight(20, _lacze);
+	while(landingFieldIsFree != true){
+		switch (checkIfPlaceIsOccupied(this->takePointerToActiveDrone())){
+		case 1:{
+			flightLenght+=20;
+			usleep(1500000); //1,5sec
+			useActiveDrone().deleteFlightPath(_lacze);
+			useActiveDrone().planInitialFlightPath(flightHeight, 0, initialPosition, flightLenght, _lacze);
+			useActiveDrone().makeHorizontalFlight(20, _lacze);
+			break;
+		}
+		case 2:{
+			landingFieldIsFree=true;
+			break;
+		}
+		case 3:{
+			IsItPlateau=true;
+			usleep(1500000); //1,5sec
+			cout<<":)  Ladowisko dostepne, rozpoczeto procedure ladowania na plaskowyzu" <<endl<<endl<<endl<<endl;
+			flightHeight -= 12;
+			landingFieldIsFree=true;
+			break;
+		}
+		default:
+			cerr<<"Blad: nieprawidlowa opcja w funkcji do sprawdzania dostepnosci miejsca ladowania.";
+			break;
+		}
 	}
-
-	cout<<":)  Ladowisko dostepne, rozpoczeto procedure ladowania" <<endl<<endl<<endl<<endl;
-	useActiveDrone().makeVerticalFlight(-flightHeight, 		 _lacze);
+	if(IsItPlateau == false) {cout<<":)  Ladowisko dostepne, rozpoczeto procedure ladowania" <<endl<<endl<<endl<<endl;}
+	useActiveDrone().makeVerticalFlight(-flightHeight, _lacze);
   	cout<<endl<<"\tDron wyladowal... " <<endl<<endl<<"Usuwam sciezke..."<<endl;
 	useActiveDrone().deleteFlightPath(_lacze);
   	_lacze.Rysuj();
@@ -253,18 +271,24 @@ void Scene::deleteElement(){
  * @brief Funkcja sprawdza czy podany w argumencie dron koliduje z którymś elementem sceny. 
  * 
  * @param[in] drone_Ptr Wskaźnik na drona, dla którego sprawdzamy czy jego aktualne położenie jest zajęte.
- * @retval true Jeśli miejsce jest zajęte.
- * @retval false Jeśli miejsce jest wolne.
+ * @retval 1 Jeśli miejsce jest zajęte.
+ * @retval 2 Jeśli miejsce jest wolne.
+ * @retval 3 Jeśli miejsce zajmuje płaskowyż.
  */
-bool Scene::checkIfPlaceIsOccupied(const shared_ptr<Drone> &drone_Ptr) const {
+int Scene::checkIfPlaceIsOccupied(const shared_ptr<Drone> &drone_Ptr) const {
 	for(const shared_ptr<SceneObject> &Obj : _lstOfObjects){
 		if(Obj==drone_Ptr){ continue; }
 		//Jeśli nieprawda że miejsce jest wolne to zwróć true
 		if( !Obj->checkIfPlaceIsAvaliable( drone_Ptr->getPosition(), drone_Ptr->getRadius() )) { 
+			if(strcmp(Obj->getType(), "Plaskowyz") == 0){
+				cout<<":)  Wykryto element powierzchni:"<< Obj->getType() <<endl<<endl<<endl<<endl;
+				return 3;
+
+			}
 			cout<<":(  Ladowisko niedostepne!"<<endl;
 			cout<<":(  Wykryto element powierzchni:"<< Obj->getType() <<endl<<"Lot zostal wydluzony"<<endl<<endl<<endl<<endl;
-			return true; 
+			return 1; 
 		}
 	}
-	return false;
+	return 2;
 }

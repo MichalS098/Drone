@@ -1,11 +1,10 @@
 var searchData=
 [
-  ['takeactivedrone_430',['takeActiveDrone',['../class_scene.html#afef0ce71ec071c41994719872b9113e0',1,'Scene']]],
-  ['takedroneposition_431',['takeDronePosition',['../class_drone.html#a37a3e693aed550ee5265d4ade78415ab',1,'Drone']]],
-  ['takefilename_5ffinalfig_432',['takeFileName_finalFig',['../class_geometric_figure.html#ac059240fa3036150851f57a4592cba7d',1,'GeometricFigure::takeFileName_finalFig()'],['../class_scene_object.html#ac9bbbed9f49c11f3916801740d935114',1,'SceneObject::takeFileName_finalFig()']]],
-  ['takefilename_5freffig_433',['takeFileName_refFig',['../class_geometric_figure.html#aa023df7264e3ed4bba5900767084a6f1',1,'GeometricFigure::takeFileName_refFig()'],['../class_scene_object.html#a11bd2a08305b682b32f70f3d3a162780',1,'SceneObject::takeFileName_refFig()']]],
-  ['takefirstelemfromlist_434',['takeFirstElemFromList',['../class_scene.html#a75a6fe798601c1f31783a34cf08f71bf',1,'Scene']]],
-  ['takelastelemfromlist_435',['takeLastElemFromList',['../class_scene.html#a5f6c1a76fa23e47d2efb9994acdef8aa',1,'Scene']]],
-  ['tiltforward_436',['tiltForward',['../class_drone.html#aadefef0ff5b551bcd18f5a2504b39923',1,'Drone']]],
-  ['transftoparentcoordsys_437',['transfToParentCoordSys',['../class_drone.html#a2fd7489f927b46b0fffa68400998f938',1,'Drone::transfToParentCoordSys()'],['../class_hexagonal_prism.html#abb41201ef93212c4e720cb9e0ad63473',1,'HexagonalPrism::transfToParentCoordSys()'],['../class_rectangular.html#aeed69a140973c313b9dee29b458df0d0',1,'Rectangular::transfToParentCoordSys()']]]
+  ['scaleup_408',['scaleUp',['../class_geometric_figure.html#a13bd49360e3bb199f3324d70c6922200',1,'GeometricFigure']]],
+  ['scene_409',['Scene',['../class_scene.html#ae6b47a946500a1d904bce5c8cef80066',1,'Scene']]],
+  ['setscale_410',['setScale',['../class_geometric_figure.html#a7087635eb3f456f70de8d4cc8db589c7',1,'GeometricFigure']]],
+  ['sharptophill_411',['SharpTopHill',['../class_sharp_top_hill.html#a4a5ae20d8463d1001e9681c7af0bda42',1,'SharpTopHill']]],
+  ['size_412',['size',['../class_matrix.html#a3a952058b788b08f01c07c0154e7ebc2',1,'Matrix::size()'],['../class_vector.html#a196e9eedc9a88a48f64e69e39405fa72',1,'Vector::size()']]],
+  ['skalax_413',['SkalaX',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a4b1eb252fd785a5aeff938e7b2dce2b1',1,'PzG::LaczeDoGNUPlota']]],
+  ['skalaz_414',['SkalaZ',['../class_pz_g_1_1_lacze_do_g_n_u_plota.html#a44f922ccbc508d6cd7809c669238dae3',1,'PzG::LaczeDoGNUPlota']]]
 ];
